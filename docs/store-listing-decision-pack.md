@@ -1,6 +1,8 @@
 # Zealandia App - Store Listing Decision Pack
 Prepared 2026-10-16 (America/Vancouver) - resolves the three Han-decision items flagged in the COO broadcast, so a single reply can unblock the listing work and the Oct 26 combat milestone. No store submission is made by this pack; prices are in USD store tiers and exclude local taxes/fees which vary by region.
 
+> TITLE DECIDED (Han, 2026-10-21, via the reporting room): **"Espil Online: A to Zealandia"** - 28 characters, inside the 30-character limit on both stores. This replaces every title form below (the 38-character canonical phrase and this pack's 23-character recommendation). Han did not rule on the subtitle / short description, so this pack's proposals stand as the working set: Apple subtitle "Zealandia Extension Pack" (24), Google Play short description "The Zealandia Extension Pack for Espil Online: battle the sunken continent" (74).
+
 ## 1. Listing title (hard limit, verified)
 - Han's canonical title "Espil Online: Zealandia Extension Pack" is 38 characters.
 - Both stores cap the app name/title at 30 characters: Google Play title 30, Apple App Store app name 30 (Apple subtitle is a separate 30-character indexed field; Google Play short description is 80 characters).
