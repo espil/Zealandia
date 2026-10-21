@@ -61,7 +61,7 @@ Architecture and UI pieces that land:
 ## Open decisions for Han (not decided in this package)
 
 Canon decisions, still open:
-• Store listing title - "Espil Online: Zealandia Extension Pack" is 38 characters, over the 30-character limit; config currently uses "Espil Online: Zealandia" (23 characters)
+• Store listing title - DECIDED (Han, 2026-10-21): "Espil Online: A to Zealandia" (28 characters); config updated
 • App price point
 • Enemy pack numbers go-ahead - Strayer (chaser, 30 HP, 12 EXP), Spitter (ranged, 45 HP, 25 EXP), Brute (tank, 150 HP, telegraphed slam, 60 EXP), tuned to the shipped weapons (bare 8, sword 14, dagger 5x2, hammer 26 AoE, staff 12; player 100 HP / 50 MP)
 
