@@ -1,6 +1,8 @@
 # Enemy Pack Tuning Brief — Keeper of Cauldron
 Prepared 2026-10-05 (PDT) · for Han's go-ahead · implements in the 스킬/map build when approved
 
+> PARTIALLY SUPERSEDED (2026-10-21): the EXP level-up curve in this brief ("level x 100") is REPLACED by the Skill room's design v1 (~/workspace/goals/zealandia-game-project/files/zealandia-skill-tree-design-v1.md) - Han's instructed curve: L1 10, L2 50, L3 250, L4 1,225 EXP, then x5 per level to 25. The monster stat lines (Strayer 30 HP / +12 EXP, Spitter, Brute) remain in force - design v1's pacing table uses the same Strayer 12 EXP, and the first town's combat was built and probed on them.
+
 ## Why now
 The skill tree landed tonight (Cauldron Slash + 5 weapon variants, T tree, 3 starter SP).
 `window.__espilSkills.gainExp(n)` is wired but nothing calls it — the damage numbers,
