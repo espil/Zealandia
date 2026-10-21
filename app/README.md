@@ -1,20 +1,20 @@
-# Espil Online: Zealandia Extension Pack - Capacitor App
+# Espil Online: A to Zealandia - Capacitor App
 
 This is the paid mobile app for Espil Online, built as a Capacitor wrap of the
 current web game. Han chose this route on 2026-10-16: reuse the game that is
 already built and verified, instead of a native rewrite.
 
-• Store product: "Espil Online: Zealandia Extension Pack" (paid, Google Play and Apple App Store)
+• Store product: "Espil Online: A to Zealandia" (title decided by Han, 2026-10-21; paid, Google Play and Apple App Store)
 • Web at espil.online stays free: the social and commerce hub
 • This app is the game layer: battle first, housing after
 
-## Store title needs Han's call later
+## Store title - decided
 
-The full title "Espil Online: Zealandia Extension Pack" is 38 characters.
-Store listing titles are limited to 30 characters, so the listing title has to
-be shortened before submission. The native app name in capacitor.config.ts is
-set to "Espil Online: Zealandia" (23 characters) for now. The final listing
-title is Han's decision, not something to guess here.
+Han decided the title on 2026-10-21: **"Espil Online: A to Zealandia"**
+(28 characters, inside the 30-character store limit on both stores). The
+earlier full phrase "Espil Online: Zealandia Extension Pack" is 38 characters
+and could not be a listing title; the native app name in capacitor.config.ts,
+the Android strings, and the iOS display name all carry the decided title.
 
 ## Architecture
 
