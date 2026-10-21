@@ -1,6 +1,6 @@
 # Espil Online: Zealandia Edition
 
-The paid MMORPG app of Espil Online, set on Zealandia - the sunken continent under New Zealand, risen again as a crafted game world.
+Espil Online is, at its base, a community and a free knowledge, information and skill sharing solution. Zealandia is where that community takes its game form: the paid MMORPG app layer, set on the sunken continent under New Zealand, risen again as a crafted game world.
 
 ## The world model
 
