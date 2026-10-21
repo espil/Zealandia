@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Espil Online: Zealandia</string>
-    <string name="title_activity_main">Espil Online: Zealandia</string>
+    <string name="app_name">Espil Online: A to Zealandia</string>
+    <string name="title_activity_main">Espil Online: A to Zealandia</string>
     <string name="package_name">online.espil.zealandia</string>
     <string name="custom_url_scheme">online.espil.zealandia</string>
 </resources>
