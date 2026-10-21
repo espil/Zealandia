@@ -27,6 +27,7 @@ Direction: Han, 2026-10-20. This page is the one-page product shape; detail live
 
 ## The Plushy-to-Meshy pipeline at a glance
 
+• Asset production policy (Han, 2026-10-21): skill effects, footprint effects, all monsters, and buildings are produced with Plushy AI; character assets are pre-made in 2D first, then built into 3D with Meshy AI. Zealandia's monsters and buildings follow this policy (the town's current procedural monsters and buildings are placeholders under it)
 • Plushy AI produces a 2D building (front 3/4 view, clean alpha, house style) from a place's art list
 • Meshy AI builds the 2D art into a 3D model
 • The model is cleaned and optimized to the per-building budget, exported as GLB, and published to object storage with a versioned manifest
