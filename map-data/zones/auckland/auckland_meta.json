@@ -1,0 +1,102 @@
+{
+ "zone": "Auckland - the old capital (capital of NZ 1841-1865), Zealandia start zone per Han 2026-10-16",
+ "spawn": {
+  "name": "Auckland CBD",
+  "lon": 174.7633,
+  "lat": -36.8485,
+  "nzcs_xy_m": [
+   3157371,
+   7458833
+  ]
+ },
+ "source": "GMRT Grid netCDF subset (gmrt.org GridServer, fetched 2026-10-16), validated against NIWA 250 m model identify points",
+ "lonlat_box": {
+  "west": 173.4,
+  "east": 176.6,
+  "south": -38.1,
+  "north": -35.3
+ },
+ "nzcs_extent_m": {
+  "xmin": 3035064.93394876,
+  "ymin": 7315009.174122743,
+  "xmax": 3328322.000562762,
+  "ymax": 7632472.909949939
+ },
+ "grid_px": [
+  1024,
+  1024
+ ],
+ "pixel_size_m": 286,
+ "source_spacing_deg": [
+  0.0044,
+  0.00353
+ ],
+ "elevation_min_m": -2438.9091796875,
+ "elevation_max_m": 894.675048828125,
+ "heightmaps": {
+  "auckland_heightmap16_global.png": "0 = -11000 m, 65535 = +4000 m (same scale as the continent heightmap)",
+  "auckland_heightmap16_local.png": "0 = -2439 m, 65535 = 895 m (zone-local stretch)"
+ },
+ "anchors_gmrt": [
+  {
+   "name": "Auckland CBD (spawn)",
+   "lon": 174.7633,
+   "lat": -36.8485,
+   "gmrt_elevation_m": 40
+  },
+  {
+   "name": "Mt Eden cone",
+   "lon": 174.7653,
+   "lat": -36.8798,
+   "gmrt_elevation_m": 89
+  },
+  {
+   "name": "Rangitoto cone",
+   "lon": 174.86,
+   "lat": -36.786,
+   "gmrt_elevation_m": 157
+  },
+  {
+   "name": "Hauraki Gulf centre",
+   "lon": 175.05,
+   "lat": -36.6,
+   "gmrt_elevation_m": -43
+  },
+  {
+   "name": "Firth of Thames",
+   "lon": 175.42,
+   "lat": -37.15,
+   "gmrt_elevation_m": -2
+  },
+  {
+   "name": "Colville Channel",
+   "lon": 175.75,
+   "lat": -36.38,
+   "gmrt_elevation_m": -93
+  },
+  {
+   "name": "Coromandel / Moehau",
+   "lon": 175.4,
+   "lat": -36.54,
+   "gmrt_elevation_m": 710
+  },
+  {
+   "name": "Manukau Harbour entrance",
+   "lon": 174.4,
+   "lat": -37.05,
+   "gmrt_elevation_m": -39
+  },
+  {
+   "name": "Kaipara Harbour entrance",
+   "lon": 174.2,
+   "lat": -36.42,
+   "gmrt_elevation_m": -15
+  },
+  {
+   "name": "Whangarei Heads",
+   "lon": 174.5,
+   "lat": -35.82,
+   "gmrt_elevation_m": 42
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "source_values": "GMRT Grid (Marine Geoscience Data System, Lamont-Doherty Earth Observatory), netCDF subsets via gmrt.org GridServer, fetched 2026-10-16",
+ "validation": "Spot values cross-checked against the NIWA NZ Region Bathymetry 250 m model (GNS Science ImageServer identify endpoint): Challenger Plateau NIWA -973 m, Campbell Plateau -501 m, Cook Strait -96 m, Aoraki 3333 m (identify, 250 m grid)",
+ "citation_gmrt": "Ryan, W.B.F. et al. (2009) Global Multi-Resolution Topography synthesis. Geochem. Geophys. Geosyst. 10, Q03014",
+ "citation_niwa": "Mitchell, J.S.; Mackay, K.A.; Neil, H.L.; Mackay, E.J.; Pallentin, A.; Notman, P. (2012) New Zealand Region Bathymetry, 1:4,000,000, 2nd Edition. NIWA Chart, Miscellaneous Series No. 92",
+ "crs": "EPSG:3851 (NZGD2000 / NZCS2000, Lambert Conformal Conic, metres)",
+ "extent_m": {
+  "xmin": 1315947.87728211,
+  "ymin": 4997698.101281367,
+  "xmax": 5098697.87728211,
+  "ymax": 8908448.101281367
+ },
+ "extent_corners_lonlat_approx": {
+  "SW": [
+   146.28,
+   -56.49
+  ],
+  "SE": [
+   -154.25,
+   -55.29
+  ],
+  "NW": [
+   157.26,
+   -22.68
+  ],
+  "NE": [
+   -167.5,
+   -21.97
+  ]
+ },
+ "grid_px": [
+  2048,
+  2117
+ ],
+ "pixel_size_m_approx": [
+  1847,
+  1847
+ ],
+ "elevation_min_m_valid": -10453.2431640625,
+ "elevation_max_m_valid": 2234.734619140625,
+ "nodata_fraction": 0.1868,
+ "heightmap_normalization": {
+  "png_0_m": -11000,
+  "png_65535_m": 4000,
+  "note": "recover metres = png/65535*15000-11000; NoData cells are set to the floor value in the PNG and black in the preview"
+ },
+ "zones": [
+  {
+   "name": "Lord Howe Rise",
+   "lon": 162.5,
+   "lat": -30.0,
+   "elevation_m": -1150
+  },
+  {
+   "name": "Norfolk Ridge",
+   "lon": 167.5,
+   "lat": -29.0,
+   "elevation_m": -1934
+  },
+  {
+   "name": "Three Kings Ridge",
+   "lon": 172.0,
+   "lat": -31.5,
+   "elevation_m": -2286
+  },
+  {
+   "name": "Reinga Basin",
+   "lon": 171.0,
+   "lat": -35.0,
+   "elevation_m": -1845
+  },
+  {
+   "name": "Challenger Plateau",
+   "lon": 168.5,
+   "lat": -37.5,
+   "elevation_m": -960
+  },
+  {
+   "name": "New Caledonia Trough",
+   "lon": 163.5,
+   "lat": -33.0,
+   "elevation_m": -984
+  },
+  {
+   "name": "Taranaki Basin",
+   "lon": 173.0,
+   "lat": -39.5,
+   "elevation_m": -134
+  },
+  {
+   "name": "Colville Ridge",
+   "lon": 179.5,
+   "lat": -34.5,
+   "elevation_m": -2987
+  },
+  {
+   "name": "Kermadec Ridge",
+   "lon": 178.5,
+   "lat": -30.5,
+   "elevation_m": -3794
+  },
+  {
+   "name": "North Island (emerged land)",
+   "lon": 176.0,
+   "lat": -38.5,
+   "elevation_m": 502
+  },
+  {
+   "name": "Hikurangi Plateau",
+   "lon": 179.5,
+   "lat": -40.0,
+   "elevation_m": -3209
+  },
+  {
+   "name": "Chatham Rise",
+   "lon": -178.0,
+   "lat": -43.5,
+   "elevation_m": -386
+  },
+  {
+   "name": "South Island (emerged land)",
+   "lon": 169.5,
+   "lat": -43.5,
+   "elevation_m": -77
+  },
+  {
+   "name": "Bounty Trough",
+   "lon": 174.5,
+   "lat": -45.5,
+   "elevation_m": -1331
+  },
+  {
+   "name": "Puysegur Trench",
+   "lon": 165.0,
+   "lat": -46.5,
+   "elevation_m": -4732
+  },
+  {
+   "name": "Great South Basin",
+   "lon": 168.5,
+   "lat": -48.0,
+   "elevation_m": -135
+  },
+  {
+   "name": "Campbell Plateau",
+   "lon": 172.0,
+   "lat": -50.5,
+   "elevation_m": -511
+  },
+  {
+   "name": "Macquarie Ridge",
+   "lon": 163.0,
+   "lat": -53.0,
+   "elevation_m": -4362
+  },
+  {
+   "name": "Cook Strait",
+   "lon": 174.3,
+   "lat": -41.3,
+   "elevation_m": 38
+  },
+  {
+   "name": "Aoraki / Mt Cook",
+   "lon": 170.14,
+   "lat": -43.59,
+   "elevation_m": 1778
+  }
+ ],
+ "source_grid": "GMRT low-resolution subsets for the full extent: 818 x 528 cells over lon 154.97..192.09, lat -58.00..-13.92 (about 0.054 deg lat x 0.070 deg lon, roughly 6 km). The game grid upscales this to 1,847 m pixels; shapes and plateau depths are true, sharp peaks are smoothed.",
+ "known_limits": [
+  "Aoraki / Mt Cook samples 1,778 m in this overview grid vs 3,333 m in NIWA's native 250 m model - peak smoothing from the coarse source, not an error.",
+  "Cook Strait samples +38 m (land-bridged) at this resolution; the strait is narrower than the source cells.",
+  "A finer GMRT core pass over the New Zealand heartland was attempted 2026-10-16 and the GMRT server returned 504 timeouts; retry later, or build the detail grid from NIWA small-area exports once Han picks the first dungeon zone.",
+  "NoData (18.7% of the rectangle) is the corners of the NZCS rectangle outside the fetched lon/lat box - ocean far from the continent, not missing continent data."
+ ]
+}

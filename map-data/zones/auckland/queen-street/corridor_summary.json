@@ -1,0 +1,91 @@
+{
+ "area": "Queen Street corridor, Auckland CBD - first playable area (Han, 2026-10-16: small area, the hottest street)",
+ "street": {
+  "name": "Queen Street",
+  "facts": "Major commercial thoroughfare of Auckland CBD, the 'Golden Mile'; 1.7 km, Customs Street (waterfront) to Karangahape Road; established 1840s",
+  "mapped_length_in_corridor_m": 1999
+ },
+ "hidden_feature": "Waihorotiu Stream ('Queen Street River') ran down the Queen Street gully to Waitemata Harbour; now channelled in brick sewers under Queen Street for about 150 years - a factual under-street route for the dungeon layer",
+ "corridor_bbox_lonlat": {
+  "west": 174.755,
+  "east": 174.775,
+  "south": -36.862,
+  "north": -36.838
+ },
+ "osm": {
+  "buildings": 2252,
+  "building_relations": 33,
+  "buildings_with_height_or_levels": 882,
+  "road_ways": 6976,
+  "queen_street_ways": 42,
+  "named_poi_nodes": 135,
+  "landmarks_found": {
+   "Event Cinemas": "cinema",
+   "Adina Apartment Hotel Auckland Britomart": "hotel",
+   "Britomart Place": "way",
+   "Auckland Town Hall": "townhall",
+   "The Civic": "theatre",
+   "Britomart Car Park": "parking",
+   "Aotea Square": "way",
+   "Albert Park House": "way",
+   "Britomart Place Cycleway": "way",
+   "Les Mills Britomart": "way",
+   "The Britomart": "way",
+   "The Hotel Britomart": "hotel",
+   "Commercial Bay": "way",
+   "Aotea Centre": "theatre",
+   "Sky Tower": "attraction"
+  }
+ },
+ "terrain": {
+  "surface_px": [
+   73,
+   108
+  ],
+  "pixel_m": 25,
+  "note": "Bilinearly resampled from the 286 m/px Auckland zone grid: a smooth valley surface with a true street gradient (see queen_street_profile.json), not street-level detail. Upgrade path: LINZ DEM 8 m / Auckland LiDAR DEM.",
+  "elevation_min_m": -4.293095111846924,
+  "elevation_max_m": 85.214599609375,
+  "street_profile_points": 123,
+  "niwa_reference_points": {
+   "Queen St north end (Customs St / waterfront)": {
+    "lon": 174.7669,
+    "lat": -36.8433,
+    "niwa_elev_m": "-3"
+   },
+   "Queen St at Aotea Square": {
+    "lon": 174.7635,
+    "lat": -36.8523,
+    "niwa_elev_m": "32"
+   },
+   "Queen St south end (Karangahape Rd ridge)": {
+    "lon": 174.7622,
+    "lat": -36.8573,
+    "niwa_elev_m": "42"
+   },
+   "Sky Tower base": {
+    "lon": 174.7623,
+    "lat": -36.8484,
+    "niwa_elev_m": "20"
+   }
+  },
+  "profile_note": "queen_street_profile.json is sampled from the smoothed 25 m surface (itself resampled from the 286 m zone grid), so point values near the waterfront read high; the NIWA reference points here are the ground truth for the street gradient: about 0 m at the waterfront rising to the Karangahape ridge."
+ },
+ "game_points": {
+  "entry_waterfront": {
+   "lon": 174.7669,
+   "lat": -36.8433,
+   "note": "North end at Customs Street / Te Komititanga, by Waitemata Station and Commercial Bay - descent landing"
+  },
+  "hub_aotea_square": {
+   "lon": 174.7635,
+   "lat": -36.8523,
+   "note": "Mid-street square by the Town Hall and Aotea Centre - natural player hub"
+  },
+  "south_gate_karangahape": {
+   "lon": 174.7622,
+   "lat": -36.8573,
+   "note": "South end at the Karangahape Road ridge - exit toward K Road when the world expands"
+  }
+ }
+}

@@ -1,0 +1,6 @@
+node_modules/
+app/www/
+app/android/app/src/main/assets/public/
+app/ios/App/App/public/
+.payload-src-*/
+zealandia-repo-stage/

@@ -1,0 +1,23 @@
+{
+  "name": "zealandia-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Espil Online: Zealandia Extension Pack - Capacitor wrap of the Espil Online web game",
+  "scripts": {
+    "sync": "node scripts/sync-web.mjs",
+    "sync:full": "node scripts/sync-web.mjs --full",
+    "android": "npx cap sync android && npx cap open android",
+    "ios": "npx cap sync ios && npx cap open ios",
+    "serve": "npx cap serve"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/ios": "^8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
+    "typescript": "^7.0.2"
+  },
+  "type": "module"
+}
