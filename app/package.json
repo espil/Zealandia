@@ -8,7 +8,7 @@
     "sync:full": "node scripts/sync-web.mjs --full",
     "android": "npx cap sync android && npx cap open android",
     "ios": "npx cap sync ios && npx cap open ios",
-    "serve": "npx cap serve"
+    "serve": "npx --yes serve -s www -l 3333"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.3",
