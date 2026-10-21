@@ -4,7 +4,7 @@ Prepared 2026-10-16 (America/Vancouver) - for Han's engine decision, then scaffo
 ## What Zealandia is (canon, Han 2026-10-15)
 • Cauldron is the space itself, accessed through espil.online
 • Zealandia is a game dungeon inside that world, set on New Zealand's hidden, sunken continent
-• The app is the paid game layer: "Espil Online: Zealandia Extension pack" (Han, 2026-10-10)
+• The app is the paid game layer: "Espil Online: Zealandia Extension pack" (Han, 2026-10-10) - TITLE SUPERSEDED (Han, 2026-10-21): the app is titled "Espil Online: A to Zealandia" (28 characters)
 • The free web at espil.online stays the social and commerce hub: navigation, meeting people, chatting, shopping
 • Battle comes first, housing after. Housing exists on both from the start: web is view-only except purchased appearance items, the app gets full customization
 
