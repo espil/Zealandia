@@ -2,7 +2,7 @@
   "name": "zealandia-app",
   "version": "0.1.0",
   "private": true,
-  "description": "Espil Online: Zealandia Extension Pack - Capacitor wrap of the Espil Online web game",
+  "description": "Espil Online: A to Zealandia - Capacitor wrap of the Espil Online web game",
   "scripts": {
     "sync": "node scripts/sync-web.mjs",
     "sync:full": "node scripts/sync-web.mjs --full",
