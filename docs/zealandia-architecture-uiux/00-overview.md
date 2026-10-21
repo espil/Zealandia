@@ -6,7 +6,7 @@ Direction: Han, 2026-10-20. This page is the one-page product shape; detail live
 ## What Zealandia is
 
 • Positioning (Han, 2026-10-20): Espil Online's essence is a community and a free knowledge, information and skill sharing solution; the game (MMORPG) is its form. Zealandia is that game form - copy leads with community and sharing, and game elements are described as the form
-• A paid mobile MMORPG: "Espil Online: Zealandia" for Google Play and the App Store (Capacitor wrap, appId online.espil.zealandia, scaffold at ~/workspace/zealandia-app)
+• A paid mobile MMORPG: "Espil Online: A to Zealandia" (title decided by Han, 2026-10-21) for Google Play and the App Store (Capacitor wrap, appId online.espil.zealandia, scaffold at ~/workspace/zealandia-app)
 • The game layer of Espil Online. The free web at espil.online stays the social and commerce hub; the app is where the game is played
 • Battle first: combat and skills land before housing. Housing is a placeholder in v1 and full customization in v1.1
 • In Zealandia, things are made new (Han, 2026-10-20): the world is crafted by us, not generated from real-world data
@@ -44,7 +44,7 @@ Direction: Han, 2026-10-20. This page is the one-page product shape; detail live
 
 ## Decisions still open for Han
 
-• Store listing title: the full "Espil Online: Zealandia Extension Pack" is 38 characters, over the 30-character store limit; the config currently uses "Espil Online: Zealandia"
+• Store listing title DECIDED (Han, 2026-10-21): "Espil Online: A to Zealandia" (28 characters); config updated
 • App price point
 • Enemy pack numbers go-ahead (Strayer / Spitter / Brute brief, 2026-10-05, tuned to the shipped skill numbers; player 100 HP / 50 MP)
 • Full list with flagged design proposals: 03-build-order.md
