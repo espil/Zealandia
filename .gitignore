@@ -1,4 +1,5 @@
 node_modules/
+app/pc/dist/
 app/android/app/src/main/assets/public/
 app/ios/App/App/public/
 .payload-src-*/

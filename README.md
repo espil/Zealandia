@@ -25,6 +25,11 @@ The playable web payload is committed in `app/www/` (Han's decision, 2026-10-21)
 • `npm run android` - opens the Android project in Android Studio
 • `npm run ios` - opens the iOS project in Xcode. Building for iPhone requires a Mac with Xcode (Apple's rule); the project, config, and payload are identical to Android's
 
+PC program (same payload, Electron shell in `app/pc/`):
+
+• `cd app/pc && npm install && npm start` - run it on desktop
+• `npm run dist` (on Windows) - builds one portable `.exe` in `app/pc/dist/`
+
 The payload itself is a hybrid: the current espil.online testing UI over the revived textured-facade building generation, plus the first Zealandia town (Auckland region, real drained terrain, enterable buildings, villagers, monsters, combat). It is assembled from the staged Espil build sources by `app/scripts/sync-web.mjs` whenever it is regenerated.
 
 ## Status
