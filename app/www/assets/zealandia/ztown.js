@@ -46,8 +46,10 @@
     return H[i00]*(1-tx)*(1-tz)+H[i10]*tx*(1-tz)+H[i01]*(1-tx)*tz+H[i11]*tx*tz;
   }
   function groundLocal(lx,lz){
-    var h=heightBilinear(lx,lz);
     var r=Math.sqrt(lx*lx+lz*lz);
+    if(r<=260)return Z.hC; /* town disc: analytically flat. The baked grid is flat at cell centres, but bilinear sampling bled the blend ring's heights up to ~9 m into the fence line and the spawn - posts floated or sank and the ground waved under flat-placed buildings. */
+    var h=heightBilinear(lx,lz);
+    if(r<360)h=Z.hC+(h-Z.hC)*smoothstep(260,360,r);
     if(r>5000){ h-=(r-5000)*0.06; if(h<-60)h=-60; } /* island shelf falloff past the rim */
     return h;
   }
@@ -91,10 +93,11 @@
     out.push(A.r,A.g,A.b);
   }
   function buildTerrain(){
-    var N=100, size=10000, pos=[], col=[], idx=[];
+    var N=100, size=10000, pos=[], col=[], idx=[], uv=[];
     for(var r=0;r<=N;r++)for(var c=0;c<=N;c++){
       var lx=-5000+c*100, lz=-5000+r*100;
       pos.push(CX+lx, groundLocal(lx,lz), CZ+lz);
+      uv.push((lx+5000)/10000, (5000-lz)/10000);
       bandColor(groundLocal(lx,lz), Math.sqrt(lx*lx+lz*lz), col);
     }
     for(var r2=0;r2<N;r2++)for(var c2=0;c2<N;c2++){
@@ -104,12 +107,25 @@
     var g=new THREE.BufferGeometry();
     g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
     g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));
+    g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
     g.setIndex(idx); g.computeVertexNormals();
     var m=new THREE.MeshLambertMaterial({vertexColors:true});
     applyCurve(m);
     var mesh=new THREE.Mesh(g,m);
     mesh.receiveShadow=true; mesh.frustumCulled=false;
     Z.group.add(mesh);
+    Z.terrainMesh=mesh;
+    /* The ground wears the Auckland satellite bake (the same image the
+       minimap shows), so the in-game environment IS the real isthmus:
+       drained channels and hills under the town, not a colour wash. */
+    new THREE.TextureLoader().load('assets/zealandia/auckland_satellite.jpg',function(tex){
+      try{ tex.encoding=THREE.sRGBEncoding; }catch(e){}
+      tex.anisotropy=4;
+      Z.satTex=tex; Z.satLoaded=true;
+      var sm=new THREE.MeshLambertMaterial({map:tex});
+      applyCurve(sm);
+      mesh.material=sm; mesh.receiveShadow=true;
+    });
   }
 
   /* ---------- plaza + paths (inside the flat town disc) ---------- */
@@ -770,6 +786,92 @@
     if(t&&t.id&&/^slot-[qwe]$/.test(t.id)){ doAttack({q:'punch',w:'kick',e:'throw'}[t.id.slice(5)]); }
   },true);
 
+  /* ---------- minimap: 3D satellite terrain (replaces the Leaflet map in town) ---------- */
+  var MM={on:false, ready:false, renderer:null, scene:null, cam:null, patch:null, arrow:null, canvas:null, raf:0, cx:1e9, cz:1e9};
+  var MM_WIN=680, MM_SEG=44;
+  function minimapBuild(){
+    var leaf=document.getElementById('minimap');
+    if(!leaf||!leaf.parentElement)return false;
+    var cv=document.createElement('canvas');
+    cv.id='ztown-minimap';
+    cv.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:none;z-index:5;';
+    if(getComputedStyle(leaf.parentElement).position==='static')leaf.parentElement.style.position='relative';
+    leaf.parentElement.appendChild(cv);
+    MM.canvas=cv;
+    MM.renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+    MM.scene=new THREE.Scene();
+    MM.cam=new THREE.PerspectiveCamera(52,1,1,4000);
+    MM.scene.add(new THREE.AmbientLight(0xffffff,1.2));
+    var dl=new THREE.DirectionalLight(0xffffff,0.6); dl.position.set(120,260,60); MM.scene.add(dl);
+    var g=new THREE.BufferGeometry();
+    var n=(MM_SEG+1)*(MM_SEG+1);
+    g.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array(n*3),3));
+    g.setAttribute('uv',new THREE.Float32BufferAttribute(new Float32Array(n*2),2));
+    var idx=[];
+    for(var r=0;r<MM_SEG;r++)for(var c=0;c<MM_SEG;c++){ var a=r*(MM_SEG+1)+c,b=a+1,d=a+MM_SEG+1,e=d+1; idx.push(a,d,b,b,d,e); }
+    g.setIndex(idx);
+    MM.patch=new THREE.Mesh(g,new THREE.MeshLambertMaterial({color:0x87995f}));
+    MM.patch.frustumCulled=false;
+    MM.scene.add(MM.patch);
+    var ringPts=[];
+    for(var i=0;i<=72;i++){ var a2=i/72*Math.PI*2; ringPts.push(new THREE.Vector3(CX+Math.cos(a2)*FENCE_R,Z.hC+2.5,CZ+Math.sin(a2)*FENCE_R)); }
+    var ring=new THREE.Line(new THREE.BufferGeometry().setFromPoints(ringPts),new THREE.LineBasicMaterial({color:0xffd76e}));
+    ring.frustumCulled=false;
+    MM.scene.add(ring);
+    var coneGeo=new THREE.ConeGeometry(7,22,4); coneGeo.rotateX(-Math.PI/2);
+    MM.arrow=new THREE.Mesh(coneGeo,new THREE.MeshBasicMaterial({color:0xffe23c}));
+    MM.arrow.frustumCulled=false;
+    MM.scene.add(MM.arrow);
+    MM.ready=true;
+    return true;
+  }
+  function minimapPatch(cx,cz){
+    var posA=MM.patch.geometry.attributes.position, uvA=MM.patch.geometry.attributes.uv;
+    var half=MM_WIN/2, step=MM_WIN/MM_SEG, k=0, k2=0;
+    for(var r=0;r<=MM_SEG;r++)for(var c=0;c<=MM_SEG;c++){
+      var wx=cx-half+c*step, wz=cz-half+r*step;
+      posA.array[k++]=wx; posA.array[k++]=groundAt(wx,wz)+0.4; posA.array[k++]=wz;
+      uvA.array[k2++]=(wx-CX+5000)/10000; uvA.array[k2++]=(5000-(wz-CZ))/10000;
+    }
+    posA.needsUpdate=true; uvA.needsUpdate=true;
+    MM.patch.geometry.computeVertexNormals();
+    MM.cx=cx; MM.cz=cz;
+  }
+  function minimapFrame(){
+    if(!MM.on)return;
+    MM.raf=requestAnimationFrame(minimapFrame);
+    var R=refs(), p=R.player; if(!p||!p.pos)return;
+    var host=MM.canvas.parentElement;
+    var w=(host&&host.clientWidth)||160, h=(host&&host.clientHeight)||w;
+    if(MM.canvas.width!==Math.round(w*1.5)||MM.canvas.height!==Math.round(h*1.5)){
+      MM.renderer.setPixelRatio(1.5); MM.renderer.setSize(w,h,false);
+      MM.cam.aspect=w/h; MM.cam.updateProjectionMatrix();
+    }
+    if(Z.satTex&&MM.patch.material.map!==Z.satTex)MM.patch.material=new THREE.MeshLambertMaterial({map:Z.satTex});
+    if(Math.abs(p.pos.x-MM.cx)>40||Math.abs(p.pos.z-MM.cz)>40)minimapPatch(p.pos.x,p.pos.z);
+    var gy=p.pos.y||groundAt(p.pos.x,p.pos.z);
+    MM.arrow.position.set(p.pos.x,gy+13,p.pos.z);
+    MM.arrow.rotation.y=p.faceY||0;
+    MM.cam.position.set(p.pos.x,gy+330,p.pos.z+225);
+    MM.cam.lookAt(p.pos.x,gy,p.pos.z);
+    MM.renderer.render(MM.scene,MM.cam);
+  }
+  function minimapSync(on){
+    var leaf=document.getElementById('minimap');
+    if(on){
+      if(!MM.ready&&!minimapBuild())return;
+      if(leaf)leaf.style.visibility='hidden';
+      MM.canvas.style.display='block';
+      if(!MM.on){ MM.on=true; MM.cx=1e9; minimapFrame(); }
+    }else{
+      if(leaf)leaf.style.visibility='';
+      if(MM.canvas)MM.canvas.style.display='none';
+      MM.on=false;
+      if(MM.raf)cancelAnimationFrame(MM.raf);
+    }
+  }
+  Z.minimap=MM; Z.minimapSync=minimapSync;
+
   /* ---------- build orchestration ---------- */
   function build(){
     if(Z.buildStarted)return; Z.buildStarted=true;
@@ -808,5 +910,22 @@
     Z.active=on;
     window.__ztownActive=on&&Z.built;
     if(on)build();
+    if(on&&Z.built){
+      var R=refs(), p=R.player;
+      if(p&&p.pos){
+        var dx=p.pos.x-CX, dz=p.pos.z-CZ;
+        if(Math.sqrt(dx*dx+dz*dz)>4900){
+          /* a stale save or a wrong-place entry left the player outside
+             the town disc (standing in the Auckland map, character lost):
+             bring them to the town spawn, grounded and visible. */
+          p.pos.set(CX+SPAWN_LOCAL.x, groundAt(CX+SPAWN_LOCAL.x,CZ+SPAWN_LOCAL.z), CZ+SPAWN_LOCAL.z);
+          p.velY=0; p.onGround=true;
+          if(p.av&&p.av.group)p.av.group.position.copy(p.pos);
+        }
+      }
+      minimapSync(true);
+    }else{
+      minimapSync(false);
+    }
   },400);
 })();

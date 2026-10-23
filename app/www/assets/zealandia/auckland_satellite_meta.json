@@ -1,0 +1,17 @@
+{
+ "source": "Esri World Imagery",
+ "zoom": 15,
+ "center": [
+  -36.8523,
+  174.7635
+ ],
+ "bounds": {
+  "north": -36.80738444125045,
+  "south": -36.89721555874955,
+  "west": 174.7073684789597,
+  "east": 174.8196315210403
+ },
+ "sizeM": 10000,
+ "imagePx": 2048,
+ "note": "One-time bake for the Zealandia town terrain + minimap. Check Esri ToS before production use."
+}
