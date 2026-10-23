@@ -90,8 +90,8 @@
 
   /* ---------- persistence ---------- */
   function loadQ(){
-    try{ var q=JSON.parse(localStorage.getItem('espil_zquests')||'{}'); if(q&&q.cleared)return q; }catch(e){}
-    return {cleared:{}, espil:false, debutSeen:false};
+    try{ var q=JSON.parse(localStorage.getItem('espil_zquests')||'{}'); if(q&&q.cleared){ if(!q.dungeons)q.dungeons={}; return q; } }catch(e){}
+    return {cleared:{}, espil:false, debutSeen:false, dungeons:{}};
   }
   var Q=loadQ(); V.quest=Q;
   function saveQ(){ try{ localStorage.setItem('espil_zquests', JSON.stringify(Q)); }catch(e){} }
@@ -173,6 +173,7 @@
     });
     V.sceneMonsters=[];
     VILLAGES.forEach(function(v){ v.guardians=[]; });
+    DUNGEONS.forEach(function(d){ d.guardians=[]; });
   }
 
   /* ---------- DOM ---------- */
@@ -209,7 +210,7 @@
     V.dialog={lines:lines, i:0, onDone:onDone||null};
     if(P&&P.pos)V.pinPos={x:P.pos.x, z:P.pos.z};
     var bx=el('zv-dialog');
-    bx.innerHTML='<div class="who"></div><div class="line"></div><div class="next">E / tap \u25B8</div>';
+    bx.innerHTML='<div class="who"></div><div class="line"></div><div class="next">Space / tap \u25B8</div>';
     bx.querySelector('.who').textContent=who;
     bx.style.display='block';
     bx.onclick=function(){ advanceDialog(); };
@@ -411,7 +412,8 @@
     var ab=seg.slice(0,hash), k=parseInt(seg.slice(hash+1),10);
     var parts=ab.split('>'), a=parts[0], b=parts[1];
     var g=new THREE.Group(); g.name='zealandia-'+fid;
-    var tint=FIELD_TINTS[(k+ab.length)%FIELD_TINTS.length];
+    var TH=FIELD_THEMES[fid];
+    var tint=TH&&TH.tint ? TH.tint : FIELD_TINTS[(k+ab.length)%FIELD_TINTS.length];
     g.add(discGround(190, tint, false));
     for(var i=0;i<14;i++){
       var ang=rand()*Math.PI*2, rr=42+rand()*128;
@@ -429,6 +431,8 @@
     }
     var pS=portalMesh('To '+stopName(a), null); pS.position.set(CX, HC, CZ+150); g.add(pS);
     var pN=portalMesh('To '+stopName(b), null); pN.position.set(CX, HC, CZ-150); g.add(pN);
+    if(TH&&TH.build)TH.build(g);
+    DUNGEONS.forEach(function(d){ if(d.field===fid)buildCaveMouth(g, d); });
     g.visible=false;
     refs().scene.add(g);
     V.groups[fid]=g;
@@ -443,6 +447,264 @@
       registerMonster(f.id, built.grp, built.bodyM, built.sprite, wx, wz);
     }
   }
+
+  /* ================================================================
+     THE ROADS, MADE LIKE THE VILLAGES (Han, 2026-10-23): the field
+     instances between stops are crafted places too - famous waters,
+     rivers and mountains of the southern seas stand along the route,
+     and three dungeons wait off the road. Each field keeps its two
+     gate portals; the themed dressing never blocks the gate axis.
+     ================================================================ */
+  var FX_WATER=[], FX_MIST=[];
+  function mistTex(){
+    if(mistTex._t)return mistTex._t;
+    var cv=document.createElement('canvas'); cv.width=cv.height=64;
+    var c=cv.getContext('2d');
+    var gr=c.createRadialGradient(32,32,4,32,32,30);
+    gr.addColorStop(0,'rgba(255,255,255,0.85)'); gr.addColorStop(1,'rgba(255,255,255,0)');
+    c.fillStyle=gr; c.fillRect(0,0,64,64);
+    mistTex._t=new THREE.CanvasTexture(cv); return mistTex._t;
+  }
+  function nameLabel(g, text, x, y, z, scale){
+    var lb=textSprite(text, scale||5.2, '#ffe9a8'); lb.position.set(x,y,z); g.add(lb); return lb;
+  }
+  function riverBand(g, zOff, w, label){
+    var water=new THREE.Mesh(new THREE.PlaneGeometry(376, w),
+      new THREE.MeshLambertMaterial({color:0x2f6d99, emissive:0x0d2f47}));
+    water.rotation.x=-Math.PI/2; water.position.set(CX, HC+0.07, CZ+zOff); water.receiveShadow=true; g.add(water);
+    for(var sx=-180;sx<=180;sx+=13){
+      if(Math.abs(sx)<9)continue;
+      g.add(box(1+rand()*0.8, 0.5+rand()*0.4, 0.8+rand()*0.6, 0x77705f, CX+sx+(rand()*2-1)*2, HC+0.25, CZ+zOff-w/2-1.2));
+      g.add(box(1+rand()*0.8, 0.5+rand()*0.4, 0.8+rand()*0.6, 0x77705f, CX+sx+(rand()*2-1)*2, HC+0.25, CZ+zOff+w/2+1.2));
+    }
+    for(var px=-w/2-3; px<=w/2+3; px+=2.2){
+      var plank=box(4.6, 0.22, 1.9, 0x8a6a42, CX, HC+0.3, CZ+zOff+px); g.add(plank);
+    }
+    g.add(box(0.22,1.0, w+7, 0x6e5136, CX-2.2, HC+0.8, CZ+zOff));
+    g.add(box(0.22,1.0, w+7, 0x6e5136, CX+2.2, HC+0.8, CZ+zOff));
+    if(label)nameLabel(g, label, CX+30, HC+3.6, CZ+zOff+w/2+4, 5.0);
+  }
+  function waterfall(g, x, zOff, h, w, label){
+    var rock=0x5d5648, dark=0x4c463c;
+    g.add(box(w+9, h, 5, rock, CX+x, HC+h/2, CZ+zOff-3.4));
+    g.add(box(w+13, h*0.55, 6, dark, CX+x, HC+h*0.275, CZ+zOff-2.6));
+    var wm=new THREE.MeshBasicMaterial({color:0xd6f2ff, transparent:true, opacity:0.5, depthWrite:false, side:THREE.DoubleSide});
+    var falls=new THREE.Mesh(new THREE.PlaneGeometry(w, h), wm);
+    falls.position.set(CX+x, HC+h/2, CZ+zOff-0.6); g.add(falls); FX_WATER.push(wm);
+    var pool=new THREE.Mesh(new THREE.CircleGeometry(w*0.95, 22),
+      new THREE.MeshLambertMaterial({color:0x2f6d99, emissive:0x0d2f47}));
+    pool.rotation.x=-Math.PI/2; pool.position.set(CX+x, HC+0.08, CZ+zOff+w*0.55); g.add(pool);
+    for(var i=0;i<3;i++){
+      var foam=new THREE.Mesh(new THREE.CircleGeometry(1.1+rand()*0.9, 12),
+        new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0.5, depthWrite:false}));
+      foam.rotation.x=-Math.PI/2;
+      foam.position.set(CX+x+(rand()*2-1)*w*0.3, HC+0.12, CZ+zOff+0.8+rand()*1.6); g.add(foam); FX_MIST.push(foam.material);
+    }
+    for(var j=0;j<3;j++){
+      var mist=new THREE.Sprite(new THREE.SpriteMaterial({map:mistTex(), transparent:true, opacity:0.2, depthWrite:false}));
+      mist.scale.set(7+rand()*4, 3.4+rand()*1.6, 1);
+      mist.position.set(CX+x+(rand()*2-1)*3, HC+1.4+rand()*1.8, CZ+zOff+1.2); g.add(mist); FX_MIST.push(mist.material);
+    }
+    if(label)nameLabel(g, label, CX+x, HC+h+2.6, CZ+zOff-2, 5.4);
+  }
+  function mountain(g, x, zOff, r, h, label, snow){
+    var cols=[0x6e6258, 0x77675a, 0x655a4e];
+    for(var i=0;i<3;i++){
+      var rr=r*(1-i*0.27), hh=h*(i===0?0.52:(i===1?0.34:0.26));
+      var cone=new THREE.Mesh(new THREE.ConeGeometry(rr, hh, 9), mat(cols[i]));
+      cone.position.set(CX+x, HC+hh/2+i*h*0.26, CZ+zOff); cone.castShadow=true; g.add(cone);
+    }
+    if(snow){
+      var cap=new THREE.Mesh(new THREE.ConeGeometry(r*0.30, h*0.20, 9),
+        new THREE.MeshLambertMaterial({color:0xf4f7f7, emissive:0x555c5c}));
+      cap.position.set(CX+x, HC+h*0.86, CZ+zOff); g.add(cap);
+    }
+    if(label)nameLabel(g, label, CX+x, HC+h+3.2, CZ+zOff, 5.6);
+  }
+  var FIELD_THEMES={
+    'field:town>nan-madol#1': { tint:0x7f9a5e, build:function(g){
+      riverBand(g, -16, 15, 'Waikato River');
+      waterfall(g, 58, -64, 13, 9, 'Huka Falls');
+    } },
+    'field:nan-madol>haamonga#1': { tint:0x8a8168, build:function(g){
+      mountain(g, -74, -26, 40, 26, null, false);
+      mountain(g, 76, 6, 44, 30, 'Sokehs Ridge', false);
+    } },
+    'field:nan-madol>haamonga#2': { tint:0x7d9a70, build:function(g){
+      waterfall(g, -58, -70, 10, 12, 'Kepirohi Falls');
+      for(var i=0;i<3;i++){
+        var log=new THREE.Mesh(new THREE.CylinderGeometry(0.34,0.34,8.5,7), mat(0x3d3d45));
+        log.rotation.z=Math.PI/2; log.position.set(CX+44, HC+0.4+i*0.66, CZ+52); g.add(log);
+      }
+    } },
+    'field:haamonga>taputapuatea#1': { tint:0x8fa06a, build:function(g){
+      mountain(g, -42, -72, 46, 34, 'Mount Taranaki', true);
+    } },
+    'field:taputapuatea>ahu-tongariki#1': { tint:0x6f9455, build:function(g){
+      g.add(box(10, 22, 30, 0x5d5648, CX-19, HC+11, CZ-118));
+      g.add(box(10, 22, 30, 0x554e42, CX+19, HC+11, CZ-118));
+      waterfall(g, 0, -122, 20, 8, 'Fautaua Falls');
+    } },
+    'field:taputapuatea>ahu-tongariki#2': { tint:0x7c7a5e, build:function(g){
+      mountain(g, 60, -62, 52, 30, 'Mount Finkol', false);
+      var crater=new THREE.Mesh(new THREE.CylinderGeometry(6.5, 7.5, 2.2, 12, 1, true), mat(0x3d382f,{side:THREE.DoubleSide}));
+      crater.position.set(CX+60, HC+29.4, CZ-62); g.add(crater);
+    } },
+    'field:ahu-tongariki>leluh#1': { tint:0x9a8a5f, build:function(g){
+      g.add(box(64, 3.2, 20, 0x7a6c50, CX-30, HC+1.6, CZ-72));
+      g.add(box(48, 3.0, 16, 0x847453, CX-30, HC+4.4, CZ-72));
+      for(var i=0;i<5;i++){
+        var head=box(1.6, 3.4, 1.4, 0x4c463c, CX-52+i*11, HC+5.4-(i%2)*0.5, CZ-72);
+        head.rotation.z=(rand()-0.5)*0.16; g.add(head);
+        g.add(box(1.2, 1.1, 1.2, 0x554e42, CX-52+i*11, HC+7.4-(i%2)*0.5, CZ-72));
+      }
+      nameLabel(g, 'Rano Raraku', CX-30, HC+11.5, CZ-72, 5.4);
+    } },
+    'field:leluh>pulemelei#1': { tint:0x7fa05f, build:function(g){
+      waterfall(g, -52, -66, 12, 10, 'Sopoaga Falls');
+      g.add(box(7, 0.35, 5, 0x8a6a42, CX-30, HC+0.5, CZ-38));
+      for(var p=0;p<4;p++)g.add(box(0.28, 1.1, 0.28, 0x6e5136, CX-33+(p%2)*6, HC+0.28, CZ-40+Math.floor(p/2)*4));
+    } },
+    'field:leluh>pulemelei#2': { tint:0x86966b, build:function(g){
+      for(var i=0;i<16;i++){
+        var a=(i/16)*Math.PI*2;
+        var rim=box(7+rand()*3, 3.4+rand()*2.2, 5+rand()*2, 0x6e6258,
+          CX+Math.cos(a)*57, HC+1.8, CZ-44+Math.sin(a)*57);
+        rim.rotation.y=-a; g.add(rim);
+      }
+      var lake=new THREE.Mesh(new THREE.CircleGeometry(46, 26),
+        new THREE.MeshLambertMaterial({color:0x2e7d86, emissive:0x0b3038}));
+      lake.rotation.x=-Math.PI/2; lake.position.set(CX, HC+0.09, CZ-44); g.add(lake);
+      nameLabel(g, 'Rano Kau', CX, HC+9.5, CZ-44, 5.6);
+    } }
+  };
+  V.fieldThemes=FIELD_THEMES;
+
+  /* ---------- dungeons off the road (Han, 2026-10-23) ---------- */
+  var DUNGEONS=[
+    { id:'sunken-grotto', name:'The Sunken Grotto', field:'field:nan-madol>haamonga#2', ex:64, ez:-52,
+      tint:0x3d4a52, accent:0x6fd3ff, guardianCount:3,
+      intro:['The Sunken Grotto - a store-cave of the canal builders, drowned when the balance broke.',
+             'What nests in the dark here unmakes a little of the world with every tide. Clear it, and the falls above will run clean again.'],
+      clear:'The grotto is quiet. Water drips somewhere, slow and even, like a clock starting again.' },
+    { id:'emberdeep', name:'Emberdeep', field:'field:taputapuatea>ahu-tongariki#1', ex:-66, ez:26,
+      tint:0x4a3a34, accent:0xff8a3c, guardianCount:4,
+      intro:['Emberdeep - the old forge-deep, where sky-iron was smelted before the masters were masters.',
+             'The unmakers nest in its heat now and feed on the old fire. Drive them out, and let the deep cool.'],
+      clear:'The embers settle. Emberdeep sleeps warm, not hungry.' },
+    { id:'drowned-vault', name:'The Drowned Vault', field:'field:leluh>pulemelei#1', ex:66, ez:48,
+      tint:0x33483f, accent:0x59e0b0, guardianCount:4,
+      intro:['The Drowned Vault - the sea-kings of Leluh sealed their memory here, and the water kept it.',
+             'What gnaws at the seals now would unmake the remembering itself. Clear the vault, traveller.'],
+      clear:'The seals hold. The vault remembers - and so does the world.' }
+  ];
+  var BY_DUNGEON={}; DUNGEONS.forEach(function(d){ BY_DUNGEON[d.id]=d; d.guardians=[]; });
+  V.dungeons=DUNGEONS;
+  function buildCaveMouth(g, d){
+    var grp=new THREE.Group();
+    var r1=box(2.2, 4.8, 2.2, 0x554e42, -2.3, 2.4, 0); r1.rotation.z=0.1; grp.add(r1);
+    var r2=box(2.2, 4.8, 2.2, 0x5d5648, 2.3, 2.4, 0); r2.rotation.z=-0.1; grp.add(r2);
+    grp.add(box(6.4, 1.4, 2.4, 0x4c463c, 0, 5.2, 0));
+    var mouth=new THREE.Mesh(new THREE.PlaneGeometry(3.6, 3.9),
+      new THREE.MeshBasicMaterial({color:0x05070a, side:THREE.DoubleSide}));
+    mouth.position.set(0, 1.95, 0.3); grp.add(mouth);
+    var lab=textSprite(d.name, 4.4, '#ffd9a8'); lab.position.set(0, 7.0, 0); grp.add(lab);
+    grp.position.set(CX+d.ex, HC, CZ+d.ez);
+    grp.rotation.y=Math.atan2(-d.ex, -d.ez);
+    g.add(grp);
+  }
+  function buildDungeon(d){
+    var g=new THREE.Group(); g.name='dungeon-'+d.id;
+    g.add(discGround(92, d.tint, false));
+    for(var i=0;i<30;i++){
+      var a=(i/30)*Math.PI*2;
+      var wallH=5.5+rand()*2.6;
+      var wb=box(9.5, wallH, 4.5, 0x37332c, CX+Math.cos(a)*85, HC+wallH/2, CZ+Math.sin(a)*85);
+      wb.rotation.y=-a+Math.PI/2; g.add(wb);
+      if(i%3===0){
+        var stal=new THREE.Mesh(new THREE.ConeGeometry(1.1+rand()*0.7, 3.6+rand()*2, 6), mat(0x453f35));
+        stal.rotation.x=Math.PI; stal.position.set(CX+Math.cos(a)*70, HC+9.5, CZ+Math.sin(a)*70); g.add(stal);
+      }
+    }
+    for(var ci=0;ci<5;ci++){
+      var ca=rand()*Math.PI*2, cr=18+rand()*44;
+      var cx2=CX+Math.cos(ca)*cr, cz2=CZ+Math.sin(ca)*cr;
+      for(var cj=0;cj<3;cj++){
+        var cry=new THREE.Mesh(new THREE.OctahedronGeometry(0.5+rand()*0.55),
+          mat(d.accent, {emissive:d.accent, emissiveIntensity:0.9}));
+        cry.position.set(cx2+(rand()*2-1)*1.6, HC+0.6+rand()*0.9, cz2+(rand()*2-1)*1.6);
+        g.add(cry);
+      }
+      var gl=new THREE.Sprite(new THREE.SpriteMaterial({map:mistTex(), color:d.accent, transparent:true, opacity:0.16, depthWrite:false}));
+      gl.scale.set(9, 4.5, 1); gl.position.set(cx2, HC+1.8, cz2); g.add(gl); FX_MIST.push(gl.material);
+    }
+    var stele=box(1.6, 3.4, 0.9, 0x55555e, CX, HC+1.7, CZ-18); g.add(stele);
+    var slab=new THREE.Mesh(new THREE.OctahedronGeometry(0.55), mat(d.accent, {emissive:d.accent, emissiveIntensity:0.8}));
+    slab.position.set(CX, HC+4.1, CZ-18); g.add(slab); d.slab=slab;
+    nameLabel(g, d.name, CX, HC+8.6, CZ-18, 5.2);
+    var exit=portalMesh('Leave '+d.name, null); exit.position.set(CX, HC, CZ+62); g.add(exit);
+    g.visible=false;
+    refs().scene.add(g);
+    V.groups['dungeon:'+d.id]=g;
+    d.group=g;
+    return g;
+  }
+  function spawnDungeonGuardians(d){
+    if(Q.dungeons[d.id])return;
+    for(var i=0;i<d.guardianCount;i++){
+      var a=(i/d.guardiansCount)*Math.PI*2+0.5;
+      var wx=CX+Math.cos(a)*24, wz=CZ-18+Math.sin(a)*24;
+      var built=strayMesh();
+      built.grp.position.set(wx, HC, wz);
+      d.group.add(built.grp);
+      var m=registerMonster('dungeon:'+d.id, built.grp, built.bodyM, built.sprite, wx, wz);
+      if(m)d.guardians.push(m);
+    }
+  }
+  function dungeonGuardiansAlive(d){ return d.guardians.filter(function(m){ return m.alive; }).length; }
+  function enterDungeon(id){
+    var d=BY_DUNGEON[id]; if(!d)return;
+    travel(function(){ return {scene:'dungeon:'+id, spawn:{x:CX, z:CZ+48}, faceY:Math.PI}; });
+  }
+  function leaveDungeon(){
+    var d=BY_DUNGEON[V.scene.slice(8)]; if(!d)return;
+    travel(function(){ return {scene:d.field, spawn:{x:CX+d.ex*0.82, z:CZ+d.ez*0.82}, faceY:Math.atan2(-d.ex, -d.ez)}; });
+  }
+  V.enterDungeon=enterDungeon; V.leaveDungeon=leaveDungeon;
+  function scanDungeon(P){
+    var d=BY_DUNGEON[V.scene.slice(8)]; if(!d)return false;
+    if(near(P.pos.x, P.pos.z, CX, CZ+62, 6)){
+      showPrompt('<b>Space</b> · Leave '+d.name, function(){ leaveDungeon(); }, 'dg-exit');
+      return true;
+    }
+    if(near(P.pos.x, P.pos.z, CX, CZ-18, 4.5)){
+      showPrompt('<b>Space</b> · Read the stele', function(){
+        focusPair(CX, CZ-18, 20.5);
+        if(Q.dungeons[d.id])openDialog('The Stele', [d.clear]);
+        else if(dungeonGuardiansAlive(d)>0)openDialog('The Stele', d.intro);
+        else openDialog('The Stele', ['The dark is empty now. Whatever nested here is gone.']);
+      }, 'dg-stele');
+      return true;
+    }
+    return false;
+  }
+  function checkDungeonClear(){
+    if(V.scene.indexOf('dungeon:')!==0)return;
+    var d=BY_DUNGEON[V.scene.slice(8)]; if(!d||Q.dungeons[d.id])return;
+    if(d.guardians.length&&dungeonGuardiansAlive(d)===0){
+      Q.dungeons[d.id]=true; saveQ();
+      toast(d.name+' cleared - '+(Object.keys(Q.dungeons).filter(function(k){return Q.dungeons[k];}).length)+' / '+DUNGEONS.length+' dungeons');
+      openDialog('The Stele', [d.clear]);
+    }
+  }
+  /* falling-water shimmer + crystal glow breathing */
+  (function fxLoop(){
+    requestAnimationFrame(fxLoop);
+    if(window.__espilCityKey!=='zealandia'||document.hidden)return;
+    var t=Date.now()*0.001;
+    for(var i=0;i<FX_WATER.length;i++)FX_WATER[i].opacity=0.42+0.12*Math.sin(t*2.3+i*1.7);
+    for(var j=0;j<FX_MIST.length;j++)FX_MIST[j].opacity=0.13+0.07*Math.sin(t*1.25+j*2.05);
+  })();
 
   /* ---------- Espil: first story appearance, after all six ruins ---------- */
   function buildEspilFigure(){
@@ -482,10 +744,15 @@
   function groupOf(sceneId){
     if(sceneId==='town'){ var Z0=ztown(); return Z0?Z0.group:null; }
     if(sceneId.indexOf('field:')===0)return V.groups[sceneId]||null;
+    if(sceneId.indexOf('dungeon:')===0)return V.groups[sceneId]||null;
     var v=BY_SLUG[sceneId]; return v?v.group:null;
   }
   function setScene(next, spawnAt, faceY){
-    if(next!=='town'&&next.indexOf('field:')!==0){
+    if(next.indexOf('dungeon:')===0){
+      var db=BY_DUNGEON[next.slice(8)];
+      if(db&&!V.groups[next])buildDungeon(db);
+    }
+    else if(next!=='town'&&next.indexOf('field:')!==0){
       var vb=BY_SLUG[next];
       if(vb&&!vb.group)buildVillage(vb);
     }
@@ -507,6 +774,10 @@
     if(next.indexOf('field:')===0){
       var f=V.fields&&V.fields[next];
       if(f)spawnFieldMonsters(f);
+    }
+    if(next.indexOf('dungeon:')===0){
+      var dg=BY_DUNGEON[next.slice(8)];
+      if(dg)spawnDungeonGuardians(dg);
     }
     var P=R.player;
     if(P&&P.pos&&spawnAt){
@@ -637,6 +908,16 @@
   }
   function scanField(P){
     var f=V.fields&&V.fields[V.scene]; if(!f)return false;
+    for(var di=0;di<DUNGEONS.length;di++){
+      var dgn=DUNGEONS[di];
+      if(dgn.field!==V.scene)continue;
+      if(near(P.pos.x,P.pos.z,CX+dgn.ex,CZ+dgn.ez,6)){
+        (function(d2){
+          showPrompt('<b>Space</b> · Enter '+d2.name+(Q.dungeons[d2.id]?' (cleared)':''), function(){ enterDungeon(d2.id); }, 'dg-enter');
+        })(dgn);
+        return true;
+      }
+    }
     if(near(P.pos.x,P.pos.z,f.pS.x,f.pS.z,6)){
       showPrompt('<b>Space</b> · To '+stopName(f.a), function(){ hopTo(f.a); }, 'portal-s');
       return true;
@@ -653,7 +934,7 @@
     if(V.scene==='town'){
       if(r>TOWN_CAP){ var s=TOWN_CAP/r; P.pos.x=CX+dx*s; P.pos.z=CZ+dz*s; }
     } else {
-      var cap=V.scene.indexOf('field:')===0?182:250;
+      var cap=V.scene.indexOf('field:')===0?182:(V.scene.indexOf('dungeon:')===0?82:250);
       if(r>cap){ var s2=cap/r; P.pos.x=CX+dx*s2; P.pos.z=CZ+dz*s2; }
     }
   }
@@ -685,11 +966,13 @@
         if(v&&v.heart){ v.heart.rotation.y+=0.012; v.heart.position.y=HC+2.0+Math.sin(Date.now()*0.0016)*0.18; }
       }
       if(V.pinPos&&V.dialog){ P.pos.x=V.pinPos.x; P.pos.z=V.pinPos.z; }
+      checkDungeonClear();
       if(document.hidden)return;
       if(V.dialog){ hidePrompt(); return; }
       var handled=false;
       if(V.scene==='town')handled=scanTown(P);
       else if(V.scene.indexOf('field:')===0)handled=scanField(P);
+      else if(V.scene.indexOf('dungeon:')===0)handled=scanDungeon(P);
       else handled=scanVillage(P, V.scene);
       if(!handled)hidePrompt();
     }catch(e){}
@@ -707,6 +990,9 @@
     return { built:V.built, scene:V.scene, gates:'instance-route', chip:(document.getElementById('zv-story')||{}).textContent||'',
              cleared:clearedCount(), espilPlaced:V.espilPlaced,
              dialogOpen:!!V.dialog, promptFor:V.promptFor,
+             themedFields:Object.keys(FIELD_THEMES).length,
+             dungeonsCleared:Object.keys(Q.dungeons||{}).filter(function(k){return Q.dungeons[k];}).length,
+             dungeonTotal:DUNGEONS.length,
              fieldCount:V.fields?Object.keys(V.fields).length:0 };
   };
 })();
