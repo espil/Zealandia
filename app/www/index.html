@@ -3746,7 +3746,7 @@ html, body { height:100dvh; }
        at entry and a city switch reloads (see startCityEntry). --- */
     var ESPIL_CITIES={
       vancouver:{district:'assets/osm/vancouver_district_sample.json',collision:'assets/osm/vancouver_collision.json',ox:0,oz:0,core:true,bounds:{x0:-1799,z0:-2028,x1:2027,z1:1956},spawn:{x:3,z:31}}, /* bounds = the district extent, added 2026-10-19 for the last-place resume rule (Han PC verdict #9): resume judges the full playable extent, not the smaller downtown boundary polygon. First-summon place (Han 2026-10-18): the Vancouver Art Gallery's Robson Square plaza - gallery record bbox x[-46.9..52.9] z[-57.6..16.8], the point sits 14.2 m south of its south face on its centre axis, inside no footprint */
-      auckland:{district:'assets/osm/auckland_district.json',collision:'assets/osm/auckland_collision.json',ox:10000,oz:0,core:false,spawn:{x:10302.9,z:-1001.9},bounds:{x0:9243,z0:-1595,x1:11024,z1:1080},harbour:{w:3600,d:1750,dx:140,dz:-1865}},
+      auckland:{district:'assets/osm/auckland_district.json',collision:'assets/osm/auckland_collision.json',ox:10000,oz:0,core:false,spawn:{x:10415,z:-1024},bounds:{x0:9243,z0:-1595,x1:11024,z1:1080},harbour:{w:3600,d:1750,dx:140,dz:-1865}},
       zealandia:{town:true,district:null,collision:null,ox:0,oz:10000,core:false,spawn:{x:0,z:10232},bounds:{x0:-5000,z0:5000,x1:5000,z1:15000}},
       tokyo:{district:'assets/osm/tokyo_district.json',collision:'assets/osm/tokyo_collision.json',ox:5000,oz:0,core:false,spawn:{x:4870,z:0},bounds:{x0:3010,z0:-2032,x1:7034,z1:2011}}, /* Tokyo (built 2026-10-18, restored to this tree 2026-10-19 after the production-mirror reset): OSM extract radius 2 km on Tokyo Station (35.68124, 139.76714), 18,002 buildings; spawn = local (-130, 0), the Marunouchi plaza in front of the station, 15.5 m clear of every footprint */
       newyork:{district:'assets/osm/newyork_district.json',collision:'assets/osm/newyork_collision.json',ox:-5000,oz:0,core:false,spawn:{x:-5000,z:0},bounds:{x0:-6906,z0:-2063,x1:-2972,z1:2058}}, /* New York (2026-10-19): OSM extract radius 2 km on Times Square (40.75800, -73.98554), 9,020 buildings; spawn = local (0, 0), the Times Square pedestrian plaza at the anchor itself, 17.8 m clear of every footprint (offline scan of the shipped district records) */
@@ -4804,6 +4804,7 @@ html, body { height:100dvh; }
           if(Math.abs(espilP1.zoomT-espilP1.zoom)<0.001)espilP1.zoom=espilP1.zoomT;
           walkCamDist=espilP1DistFromZoom(espilP1.zoom);
         }
+        if(window.__espilCamFocus){ var __cf=window.__espilCamFocus; ll=espilP1LngLat(__cf.x,__cf.z); espilP1.zoom+=(__cf.zoom-espilP1.zoom)*0.18; if(Math.abs(__cf.zoom-espilP1.zoom)<0.002)espilP1.zoom=__cf.zoom; if(__cf.bearing!=null)brg=__cf.bearing; } /* ZEALANDIA dialogue two-shot: centre+zoom ease to the focus while set; the default follow resumes on clear */
         var zoom=espilP1.zoom;
         try{ espilP1.map.jumpTo({center:ll,bearing:brg,pitch:52,zoom:zoom}); }catch(e){}
         if(espilP1.layerLive){ try{ espilP1.map.triggerRepaint(); }catch(e){} } /* the map's render pass draws the game scene via the custom layer */

@@ -20,6 +20,8 @@
    ================================================================ */
 (function(){
   'use strict';
+  var SELF_SRC=(document.currentScript&&document.currentScript.src)||'';
+  var DECODER_URL=SELF_SRC.replace(/ztown\.js(\?.*)?$/, 'meshopt_decoder.js');
   var CX=0, CZ=10000;                 /* town world centre */
   var FENCE_R=250, GATE_HALF=4.0;     /* fence circle + gate half width (m) */
   var HOME_LOCAL={x:0,z:-70};         /* Espil House centre (town-local) */
@@ -484,22 +486,36 @@
 
   /* ---------- monsters (outside the fence) + combat ---------- */
   var MONSTER_COLORS=[0x33262e,0x26302a,0x2c2438,0x38262a];
+  /* The town's Strayers wear the produced sprite sheets (files/monster-sprites):
+     state-driven frame sets on camera billboards, EverPlanet-style. */
+  var STRAYER_SETS={idle:4, walk_front:4, walk_back:4, walk_left:6, walk_right:6, aggro:4, attack:4, hit:4};
+  var _strayerTex={};
+  function strayerTex(set, i){
+    var key=set+'_'+i;
+    if(!_strayerTex[key]){
+      _strayerTex[key]=new THREE.TextureLoader().load('assets/zealandia/sprites/strayer/strayer_'+set+'_'+i+'.png');
+    }
+    return _strayerTex[key];
+  }
+  var _shadowTex=null;
+  function shadowTex(){
+    if(_shadowTex)return _shadowTex;
+    var cv=document.createElement('canvas'); cv.width=cv.height=64;
+    var c=cv.getContext('2d');
+    var gr=c.createRadialGradient(32,32,4,32,32,30);
+    gr.addColorStop(0,'rgba(0,0,0,0.34)'); gr.addColorStop(1,'rgba(0,0,0,0)');
+    c.fillStyle=gr; c.fillRect(0,0,64,64);
+    _shadowTex=new THREE.CanvasTexture(cv); return _shadowTex;
+  }
   function monsterMesh(color){
     var g=new THREE.Group();
-    var bodyM=mat(color);
-    var body=new THREE.Mesh(new THREE.CylinderGeometry(0.42,0.58,1.18,7),bodyM);
-    body.position.y=0.85; body.castShadow=true; g.add(body);
-    var head=new THREE.Mesh(new THREE.SphereGeometry(0.34,9,8),bodyM);
-    head.position.y=1.68; head.castShadow=true; g.add(head);
-    var eyeM=new THREE.MeshBasicMaterial({color:0xff4040});
-    [-0.13,0.13].forEach(function(ex){ var e=new THREE.Mesh(new THREE.SphereGeometry(0.05,6,5),eyeM); e.position.set(ex,1.74,-0.29); g.add(e); });
-    var spike=new THREE.Mesh(new THREE.ConeGeometry(0.15,0.55,5),bodyM);
-    spike.position.set(0,2.1,0.05); spike.rotation.x=0.35; g.add(spike);
-    [-1,1].forEach(function(s){
-      var arm=box(0.13,0.85,0.13,color, s*0.58, 0.95, -0.08);
-      arm.material=bodyM; arm.rotation.z=s*0.35; g.add(arm);
-    });
-    return {grp:g, bodyM:bodyM};
+    var bodyM=new THREE.SpriteMaterial({map:strayerTex('idle',1), transparent:true});
+    var sp=new THREE.Sprite(bodyM);
+    sp.scale.set(1.93,2.0,1); sp.position.y=1.02; g.add(sp);
+    var sh=new THREE.Mesh(new THREE.PlaneGeometry(1.7,1.7),
+      new THREE.MeshBasicMaterial({map:shadowTex(), transparent:true, depthWrite:false}));
+    sh.rotation.x=-Math.PI/2; sh.position.y=0.04; g.add(sh);
+    return {grp:g, bodyM:bodyM, sprite:sp};
   }
   function makeHpBar(){
     var cv=document.createElement('canvas'); cv.width=96; cv.height=14;
@@ -530,7 +546,7 @@
       var bar=makeHpBar();
       bar.sp.position.y=2.35; g.add(bar.sp);
       Z.group.add(g);
-      var m={grp:g, bodyM:built.bodyM, bar:bar, hp:30, maxhp:30, alive:true,
+      var m={grp:g, bodyM:built.bodyM, sprite:built.sprite, bar:bar, hp:30, maxhp:30, alive:true, animT:rand()*0.5, animSet:'', animIdx:-1, atkT:0,
              spawnX:wx, spawnZ:wz, lx:lx, lz:lz, atkCd:0, flashT:0,
              state:'idle', timer:rand()*5, tx:wx, tz:wz, deathT:0, respawnAt:0, fallK:0};
       drawHpBar(m);
@@ -540,6 +556,7 @@
   function damageMonster(m,dmg,src){
     if(!m.alive)return;
     m.hp-=dmg; m.flashT=0.18;
+    spawnBurst(m.grp.position.x, m.grp.position.y+1.2, m.grp.position.z);
     drawHpBar(m);
     if(m.hp<=0){
       m.alive=false; m.deathT=Z.time; m.respawnAt=Z.time+20; m.fallK=0;
@@ -708,9 +725,11 @@
     for(var i=0;i<Z.monsters.length;i++){
       var m=Z.monsters[i];
       if(m.atkCd>0)m.atkCd-=dt;
-      if(m.flashT>0){ m.flashT-=dt; m.bodyM.emissive=new THREE.Color(0x661111); if(m.flashT<=0)m.bodyM.emissive=new THREE.Color(0x000000); }
+      if(m.flashT>0){ m.flashT-=dt; m.bodyM.color.setHex(0xff9a8a); if(m.flashT<=0)m.bodyM.color.setHex(0xffffff); }
+      if(m.atkT>0)m.atkT-=dt;
       if(!m.alive){
         if(m.fallK<1){ m.fallK=Math.min(1,m.fallK+dt*2.6); m.grp.rotation.x=-Math.PI/2*m.fallK*0.92;
+          setMonsterFrame(m,'hit',Math.min(3,Math.floor(m.fallK*4)));
           m.bodyM.transparent=true; m.bodyM.opacity=1-m.fallK*0.85; }
         else m.grp.visible=false;
         if(Z.time>=m.respawnAt){
@@ -732,7 +751,7 @@
         if(nr<258){ var s=258/Math.max(0.001,nr); nx=CX+nlx*s; nz=CZ+nlz*s; }
         m.grp.position.set(nx, groundAt(nx,nz), nz);
         m.grp.rotation.y=Math.atan2(-(dx/dist),-(dz/dist));
-        if(dist<1.7&&m.atkCd<=0){ m.atkCd=1.0; damagePlayer(5); if(window.__ztownLog)window.__ztownLog('monster hit player (hp '+Math.max(0,(refs().state||{}).hp)+')'); }
+        if(dist<1.7&&m.atkCd<=0){ m.atkCd=1.0; m.atkT=0.42; damagePlayer(5); if(window.__ztownLog)window.__ztownLog('monster hit player (hp '+Math.max(0,(refs().state||{}).hp)+')'); }
       }else{
         m.timer-=dt;
         if(m.timer<=0){ m.timer=5+rand()*5; var a=rand()*Math.PI*2, rr=rand()*14; m.tx=m.spawnX+Math.cos(a)*rr; m.tz=m.spawnZ+Math.sin(a)*rr; }
@@ -744,7 +763,24 @@
           if(rr2>=258){ m.grp.position.set(nx2, groundAt(nx2,nz2), nz2); m.grp.rotation.y=Math.atan2(-(wx2/wd),-(wz2/wd)); }
         }
       }
+      /* sprite frame selection: attack > chase (toward the player reads
+         as walk_front) > wander by heading vs the player > idle */
+      var set='idle';
+      if(m.atkT>0)set='attack';
+      else if(dist<25)set='walk_front';
+      else if(wd>0.5){
+        var mvx=wx2/wd, mvz=wz2/wd, tvx=-dx/Math.max(0.01,dist), tvz=-dz/Math.max(0.01,dist);
+        var dot=mvx*tvx+mvz*tvz, cross=mvx*tvz-mvz*tvx;
+        set=dot>0.5?'walk_back':(dot<-0.5?'walk_front':(cross>0?'walk_left':'walk_right'));
+      }
+      m.animT+=dt;
+      setMonsterFrame(m, set, Math.floor(m.animT*(set==='idle'?3:7))%STRAYER_SETS[set]);
     }
+  }
+  function setMonsterFrame(m, set, idx){
+    if(!m.sprite||(m.animSet===set&&m.animIdx===idx))return;
+    m.animSet=set; m.animIdx=idx;
+    m.bodyM.map=strayerTex(set, idx+1); m.bodyM.needsUpdate=true;
   }
   function tickRoofs(p){
     var lx=p.pos.x-CX, lz=p.pos.z-CZ;
@@ -765,6 +801,8 @@
     resolveWalls(p);
     tickNPCs(dt);
     tickMonsters(dt);
+    tickFigures(dt);
+    tickFx(dt);
     tickRoofs(p);
     if(!Z.hintDone&&document.body.classList.contains('in-map')){
       Z.hintDone=true;
@@ -785,6 +823,106 @@
     var t=e.target;
     if(t&&t.id&&/^slot-[qwe]$/.test(t.id)){ doAttack({q:'punch',w:'kick',e:'throw'}[t.id.slice(5)]); }
   },true);
+
+  /* ================================================================
+     Produced figures in the town: the two masters at the Espil House
+     yard (Ahi = the fire master's model, Huka = the ice master's),
+     and Hermes roaming the continent at giant scale, never aggroed.
+     Plus the skill-burst hit FX (produced ability frames).
+     ================================================================ */
+  var FIG={masters:[], hermes:null, hermesA:2.2, loaded:false};
+  Z.figures=FIG;
+  function figureLoader(cb){
+    if(!THREE.GLTFLoader){ cb(null); return; }
+    var loader=new THREE.GLTFLoader();
+    if(window.MeshoptDecoder){ try{ loader.setMeshoptDecoder(window.MeshoptDecoder); }catch(e){} cb(loader); }
+    else {
+      import(DECODER_URL).then(function(m){
+        window.MeshoptDecoder=m.MeshoptDecoder;
+        return window.MeshoptDecoder.ready;
+      }).then(function(){ try{ loader.setMeshoptDecoder(window.MeshoptDecoder); }catch(e){} cb(loader); })
+      .catch(function(){ cb(loader); });
+    }
+  }
+  function buildFigures(){
+    if(FIG.loaded)return; FIG.loaded=true;
+    figureLoader(function(loader){
+      if(!loader)return;
+      var masters=[
+        {f:'ahi',  name:'Ahi · Master of Fire', lx:-13, lz:-52, ry:0.12},
+        {f:'huka', name:'Huka · Master of Ice', lx:13,  lz:-52, ry:-0.12}
+      ];
+      masters.forEach(function(md){
+        loader.load('assets/zealandia/'+md.f+'.glb', function(gltf){
+          var o=gltf.scene;
+          o.position.set(CX+md.lx, Z.hC, CZ+md.lz);
+          o.rotation.y=md.ry;
+          o.traverse(function(n){ if(n.isMesh)n.frustumCulled=false; });
+          Z.group.add(o);
+          var label=textSprite(md.name, 3.4, '#ffe9c9');
+          label.position.set(CX+md.lx, Z.hC+2.05, CZ+md.lz);
+          Z.group.add(label);
+          FIG.masters.push({obj:o, baseRy:md.ry, phase:rand()*6.28});
+        }, undefined, function(){});
+      });
+      loader.load('assets/zealandia/hermes.glb', function(gltf){
+        var o=gltf.scene;
+        o.scale.setScalar(6);
+        o.traverse(function(n){ if(n.isMesh)n.frustumCulled=false; });
+        Z.group.add(o);
+        var H={obj:o, mixer:null, clips:{}};
+        if(gltf.animations&&gltf.animations.length){
+          H.mixer=new THREE.AnimationMixer(o);
+          gltf.animations.forEach(function(c){ H.clips[c.name]=H.mixer.clipAction(c); });
+          if(H.clips.Walk)H.clips.Walk.play();
+          else if(H.clips.Idle)H.clips.Idle.play();
+        }
+        FIG.hermes=H;
+      }, undefined, function(){});
+    });
+  }
+  function tickFigures(dt){
+    for(var i=0;i<FIG.masters.length;i++){
+      var m=FIG.masters[i];
+      m.obj.rotation.y=m.baseRy+Math.sin(Z.time*0.55+m.phase)*0.05;
+    }
+    var H=FIG.hermes;
+    if(H&&H.obj){
+      FIG.hermesA+=dt*(16/1500);
+      var hx=CX+Math.cos(FIG.hermesA)*1500, hz=CZ+Math.sin(FIG.hermesA)*1500;
+      H.obj.position.set(hx, groundAt(hx,hz), hz);
+      H.obj.rotation.y=Math.atan2(-Math.sin(FIG.hermesA), Math.cos(FIG.hermesA));
+      if(H.mixer)H.mixer.update(dt);
+    }
+  }
+
+  /* ---------- hit FX: produced Ice Burst frames ---------- */
+  var _burstTex=null;
+  function burstTex(i){
+    if(!_burstTex){ _burstTex=[]; for(var k=1;k<=9;k++)_burstTex.push(new THREE.TextureLoader().load('assets/zealandia/fx/burst/'+k+'.png')); }
+    return _burstTex[i];
+  }
+  Z.fx=[];
+  function spawnBurst(x,y,z){
+    if(!Z.group)return;
+    var m=new THREE.SpriteMaterial({map:burstTex(0), transparent:true, depthWrite:false});
+    var sp=new THREE.Sprite(m);
+    sp.position.set(x,y,z); sp.scale.set(1.4,1.4,1);
+    Z.group.add(sp);
+    Z.fx.push({sp:sp, life:0});
+    if(Z.fx.length>24){ var old=Z.fx.shift(); Z.group.remove(old.sp); old.sp.material.dispose(); }
+  }
+  function tickFx(dt){
+    for(var i=Z.fx.length-1;i>=0;i--){
+      var f=Z.fx[i]; f.life+=dt;
+      var k=f.life/0.45;
+      if(k>=1){ Z.group.remove(f.sp); f.sp.material.dispose(); Z.fx.splice(i,1); continue; }
+      f.sp.material.map=burstTex(Math.min(8, Math.floor(k*9)));
+      f.sp.material.needsUpdate=true;
+      var sc=1.4+k*1.5; f.sp.scale.set(sc,sc,1);
+      f.sp.material.opacity=1-k*0.7;
+    }
+  }
 
   /* ---------- minimap: 3D satellite terrain (replaces the Leaflet map in town) ---------- */
   var MM={on:false, ready:false, renderer:null, scene:null, cam:null, patch:null, arrow:null, canvas:null, raf:0, cx:1e9, cz:1e9};
@@ -895,6 +1033,7 @@
         buildVillagers();
         buildAnimals();
         buildMonsters();
+        buildFigures();
         Z.built=true;
         console.log('[Zealandia] town built: '+Z.buildings.length+' buildings, fence posts '+Z.fencePosts+', rails '+Z.fenceRails+', trees '+Z.trees+', villagers '+Z.villagers.length+', animals '+Z.animals.length+', monsters '+Z.monsters.length+', terrain centre '+Z.hC+' m');
       },200);
