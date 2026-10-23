@@ -62,7 +62,7 @@
   var ROUTE=['town','nan-madol','haamonga','taputapuatea','ahu-tongariki','leluh','pulemelei'];
   var HOPS={ 'town>nan-madol':1, 'nan-madol>haamonga':2, 'haamonga>taputapuatea':1,
              'taputapuatea>ahu-tongariki':2, 'ahu-tongariki>leluh':1, 'leluh>pulemelei':2 };
-  function stopName(id){ return id==='town' ? 'Zealandia Town' : BY_SLUG[id].name; }
+  function stopName(id){ return id==='town' ? 'Waitematā' : BY_SLUG[id].name; }
   function hopsBetween(a, b){ return HOPS[a+'>'+b] || HOPS[b+'>'+a] || 0; }
   function neighbours(id){
     var i=ROUTE.indexOf(id);

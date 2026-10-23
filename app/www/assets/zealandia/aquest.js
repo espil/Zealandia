@@ -357,7 +357,7 @@
     aqStyles();
     var f=aqEl('aquest-fade'); f.style.opacity='1';
     setTimeout(function(){
-      try{ sessionStorage.setItem('espil_pending_city','Zealandia Town'); }catch(e){}
+      try{ sessionStorage.setItem('espil_pending_city','Waitematā'); }catch(e){}
       location.reload();
     }, 620);
   }
