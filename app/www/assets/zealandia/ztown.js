@@ -748,7 +748,7 @@
         var sp=Math.min(dist,3.1*dt);
         var nx=m.grp.position.x+dx/dist*sp, nz=m.grp.position.z+dz/dist*sp;
         var nlx=nx-CX, nlz=nz-CZ, nr=Math.sqrt(nlx*nlx+nlz*nlz);
-        if(nr<258){ var s=258/Math.max(0.001,nr); nx=CX+nlx*s; nz=CZ+nlz*s; }
+        if(nr<258&&!m.village){ var s=258/Math.max(0.001,nr); nx=CX+nlx*s; nz=CZ+nlz*s; }
         m.grp.position.set(nx, groundAt(nx,nz), nz);
         m.grp.rotation.y=Math.atan2(-(dx/dist),-(dz/dist));
         if(dist<1.7&&m.atkCd<=0){ m.atkCd=1.0; m.atkT=0.42; damagePlayer(5); if(window.__ztownLog)window.__ztownLog('monster hit player (hp '+Math.max(0,(refs().state||{}).hp)+')'); }
@@ -760,7 +760,7 @@
           var sp2=Math.min(wd,0.7*dt);
           var nx2=m.grp.position.x+wx2/wd*sp2, nz2=m.grp.position.z+wz2/wd*sp2;
           var rx=nx2-CX, rz=nz2-CZ, rr2=Math.sqrt(rx*rx+rz*rz);
-          if(rr2>=258){ m.grp.position.set(nx2, groundAt(nx2,nz2), nz2); m.grp.rotation.y=Math.atan2(-(wx2/wd),-(wz2/wd)); }
+          if(rr2>=258||m.village){ m.grp.position.set(nx2, groundAt(nx2,nz2), nz2); m.grp.rotation.y=Math.atan2(-(wx2/wd),-(wz2/wd)); }
         }
       }
       /* sprite frame selection: attack > chase (toward the player reads
@@ -797,6 +797,7 @@
     dt=Math.min(0.05,dt||0.016);
     Z.time+=dt;
     for(var k in Z.atkCd)if(Z.atkCd[k]>0)Z.atkCd[k]-=dt;
+    if(window.__zscene&&window.__zscene!=='town'){ tickMonsters(dt); tickFx(dt); return; }
     resolveFence(p);
     resolveWalls(p);
     tickNPCs(dt);
@@ -814,6 +815,7 @@
   /* ---------- input ---------- */
   document.addEventListener('keydown',function(e){
     if(!Z.active||!Z.built||isTyping())return;
+    if(window.__zscene&&window.__zscene!=='town')return;
     if(e.code==='KeyB'){ pressB(); return; }
     var map={KeyQ:'punch',KeyW:'kick',KeyE:'throw'};
     if(map[e.code])doAttack(map[e.code]);
@@ -888,8 +890,8 @@
     }
     var H=FIG.hermes;
     if(H&&H.obj){
-      FIG.hermesA+=dt*(16/1500);
-      var hx=CX+Math.cos(FIG.hermesA)*1500, hz=CZ+Math.sin(FIG.hermesA)*1500;
+      FIG.hermesA+=dt*(16/1050);
+      var hx=CX+Math.cos(FIG.hermesA)*1050, hz=CZ+Math.sin(FIG.hermesA)*1050;
       H.obj.position.set(hx, groundAt(hx,hz), hz);
       H.obj.rotation.y=Math.atan2(-Math.sin(FIG.hermesA), Math.cos(FIG.hermesA));
       if(H.mixer)H.mixer.update(dt);
