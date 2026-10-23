@@ -11,9 +11,9 @@
   'use strict';
   var OX=10000, OZ=0;                       /* Auckland world slot */
   var STONE={x:OX+382, z:OZ-1018};          /* fall point, Map room measurement */
-  var PORTAL={x:OX+461, z:OZ-1034};         /* the teleporter: 79.5 m past the stone on the spawn axis (measured clear) */
-  var SPAWN={x:OX+415, z:OZ-1024};           /* Auckland summon beside the teleporter (matches the city cfg spawn) */
-  var A={built:false, active:false, group:null, monsters:[], lunaris:null, stone:null, stoneLight:null, ring:null, bubble:null, dialog:null, promptFor:null, pinPos:null, cinePlaying:false, streetCount:0, portalFx:null};
+  /* the old teleporter pad is gone: the Time Stone itself is the only portal to Zealandia (Han, 2026-10-23) */
+  var SPAWN={x:OX+415, z:OZ-1024};           /* Auckland summon beside the Time Stone (matches the city cfg spawn) */
+  var A={built:false, active:false, group:null, monsters:[], lunaris:null, stone:null, stoneLight:null, ring:null, bubble:null, dialog:null, promptFor:null, pinPos:null, cinePlaying:false, streetCount:0};
   window.__aquest=A;
   var SELF_SRC=(document.currentScript&&document.currentScript.src)||'';
   var DECODER_URL=SELF_SRC?SELF_SRC.replace(/[^/]*$/,'meshopt_decoder.js'):'./assets/zealandia/meshopt_decoder.js';
@@ -145,6 +145,20 @@
     b.position.set(home.x,2.25,home.z); b.material.opacity=0; A.bubble=b; A.group.add(b);
     var label=textSprite('Lunaris', {height:0.5, color:'#eef2ff'});
     label.position.set(home.x,2.02,home.z); A.group.add(label); L.label=label;
+    /* A pink light dwells around Lunaris (Han, 2026-10-23): a soft
+       pink point light, a breathing halo and a pink ring on the ground
+       at her place beside the stone. She does not move, so the glow
+       is anchored where she stands. */
+    var glow=new THREE.Group(); glow.position.set(home.x,0,home.z);
+    var pl=new THREE.PointLight(0xff8ac2, 1.15, 11, 1.6); pl.position.y=1.7; glow.add(pl);
+    var halo=new THREE.Mesh(new THREE.SphereGeometry(1.7,20,16),
+      new THREE.MeshBasicMaterial({color:0xff9fd0, transparent:true, opacity:0.09, depthWrite:false, side:THREE.BackSide}));
+    halo.position.y=1.15; glow.add(halo);
+    var ringG=new THREE.Mesh(new THREE.CircleGeometry(2.4,36),
+      new THREE.MeshBasicMaterial({color:0xff9fd0, transparent:true, opacity:0.15, depthWrite:false}));
+    ringG.rotation.x=-Math.PI/2; ringG.position.y=0.06; glow.add(ringG);
+    A.group.add(glow);
+    A.lunarisGlow={light:pl, halo:halo, ring:ringG};
   }
   function lunarisPlay(L, name, fade){
     if(!L.mixer||!L.clips[name]||L.current===name)return;
@@ -168,15 +182,11 @@
       bubbleTarget=0.55+0.3*Math.sin(L.t*2.1);
       if(L.t>=L.dur){
         L.t=0; L.cycle++;
+        /* Lunaris does not walk (Han, 2026-10-23): she keeps her place
+           beside the stone - her cycle is gaze, and now and then the
+           time-cast, both in place. */
         if(L.cycle%3===0&&L.clips&&L.clips.TimeCast){ L.state='cast'; L.dur=2.7; lunarisPlay(L,'TimeCast',0.3); if(L.clips.TimeCast)L.clips.TimeCast.setLoop(THREE.LoopOnce); }
-        else { L.state='walk'; L.to=(L.at===L.from)?L.otherRef:L.from; lunarisPlay(L,'Walk',0.3); }
-      }
-    } else if(L.state==='walk'){
-      var dx=L.to.x-o.position.x, dz=L.to.z-o.position.z, dist=Math.hypot(dx,dz);
-      if(dist<0.15){ L.at=L.to; L.state='gaze'; L.t=0; L.dur=3.5+rand()*3; lunarisPlay(L,'Idle',0.3); }
-      else {
-        o.rotation.y=Math.atan2(dx,dz);
-        var sp=0.55*dt; o.position.x+=dx/dist*sp; o.position.z+=dz/dist*sp;
+        else { L.dur=4+rand()*3; }
       }
     } else if(L.state==='talk'){
       var tp=null; try{ tp=refs().player; }catch(e){}
@@ -191,6 +201,12 @@
       A.bubble.material.opacity+= (bubbleTarget-A.bubble.material.opacity)*Math.min(1,dt*4);
     }
     if(L.label)L.label.position.set(o.position.x, 2.04, o.position.z);
+    if(A.lunarisGlow){
+      var gt=Date.now()/1000, pulse=0.5+0.5*Math.sin(gt*1.7);
+      A.lunarisGlow.light.intensity=1.0+0.35*pulse;
+      A.lunarisGlow.halo.material.opacity=0.07+0.045*pulse;
+      A.lunarisGlow.ring.material.opacity=0.12+0.07*pulse;
+    }
     if(L.mixer)L.mixer.update(dt);
   }
 
@@ -207,7 +223,6 @@
         buildStone(loader);
         buildMonsters();
         buildLunaris(loader);
-        buildPortal();
         buildStreet(loader);
         A.built=true;
         maybeStartCine();
@@ -258,14 +273,6 @@
       }
     });
     if(A.lunaris)lunarisTick(A.lunaris, dt);
-    if(A.portalFx){
-      A.portalFx.shards.forEach(function(sh,i){
-        var a2=t*0.7+i*2.094;
-        sh.position.set(PORTAL.x+Math.cos(a2)*1.9, 1.5+Math.sin(t*1.3+i*2.1)*0.35, PORTAL.z+Math.sin(a2)*1.9);
-        sh.rotation.y=t*1.2+i; sh.rotation.x=t*0.6;
-      });
-      A.portalFx.beam.material.opacity=0.10+0.05*Math.sin(t*2.0);
-    }
     /* dialogue / cinematic pin: hold the player still, grounded */
     if(A.pinPos&&P&&pp){ pp.x=A.pinPos.x; pp.z=A.pinPos.z; P.velY=0; }
     /* proximity prompt scan (throttled) */
@@ -300,7 +307,7 @@
       groupChildren:A.group?A.group.children.length:0,
       lunarisState:L?L.state:null, lunarisClip:L?L.current:null,
       lunarisPos:(L&&L.obj)?{x:+L.obj.position.x.toFixed(1), z:+L.obj.position.z.toFixed(1)}:null,
-      portal:true, street:A.streetCount, cinePlaying:A.cinePlaying,
+      portal:'timestone', street:A.streetCount, cinePlaying:A.cinePlaying,
       cineSeen:(function(){ try{ return !!localStorage.getItem('espil_auckland_cine_seen'); }catch(e){ return false; } })(),
       dialogOpen:!!A.dialog, camFocus:!!window.__espilCamFocus };
   };
@@ -332,27 +339,7 @@
     return el;
   }
 
-  /* ---------- the teleporter ---------- */
-  function buildPortal(){
-    var g=new THREE.Group();
-    var pad=new THREE.Mesh(new THREE.CylinderGeometry(2.7,3.0,0.28,28), mat(0x274b57,{emissive:0x0d2b33}));
-    pad.position.set(PORTAL.x,0.14,PORTAL.z); g.add(pad);
-    var rim=new THREE.Mesh(new THREE.TorusGeometry(2.7,0.09,8,40), mat(0x39d3e8,{emissive:0x1b6d7d}));
-    rim.rotation.x=Math.PI/2; rim.position.set(PORTAL.x,0.32,PORTAL.z); g.add(rim);
-    var beam=new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.85,34,12,1,true),
-      new THREE.MeshBasicMaterial({color:0x54e0f5, transparent:true, opacity:0.12, depthWrite:false, side:THREE.DoubleSide}));
-    beam.position.set(PORTAL.x,17,PORTAL.z); g.add(beam);
-    var light=new THREE.PointLight(0x3fc6dd, 0.9, 22); light.position.set(PORTAL.x,2.4,PORTAL.z); g.add(light);
-    var shards=[];
-    for(var i=0;i<3;i++){
-      var sh=new THREE.Mesh(new THREE.OctahedronGeometry(0.30), mat(0x9beaff,{emissive:0x2b7c8f}));
-      g.add(sh); shards.push(sh);
-    }
-    var label=textSprite('Zealandia Portal', {height:0.55, color:'#c9f4ff'});
-    label.position.set(PORTAL.x,4.6,PORTAL.z); g.add(label);
-    A.group.add(g);
-    A.portalFx={beam:beam, shards:shards};
-  }
+  /* ---------- crossing: the Time Stone IS the portal (Han, 2026-10-23) ---------- */
   function crossToZealandia(){
     aqStyles();
     var f=aqEl('aquest-fade'); f.style.opacity='1';
@@ -405,25 +392,24 @@
     if(A.dialog||A.cinePlaying){ hidePrompt(); return; }
     var L=A.lunaris, best=null, bd=1e9;
     if(L&&L.obj){ var dl=Math.hypot(pp.x-L.obj.position.x, pp.z-L.obj.position.z); if(dl<4.5){ best='lunaris'; bd=dl; } }
-    var dp=Math.hypot(pp.x-PORTAL.x, pp.z-PORTAL.z); if(dp<4.0&&dp<bd){ best='portal'; bd=dp; }
     var ds=Math.hypot(pp.x-STONE.x, pp.z-STONE.z); if(ds<4.2&&ds<bd){ best='stone'; bd=ds; }
-    if(best==='lunaris')showPrompt('lunaris', '<b>E</b> &nbsp;Talk — Lunaris');
-    else if(best==='portal')showPrompt('portal', '<b>E</b> &nbsp;Enter the portal — Zealandia');
-    else if(best==='stone')showPrompt('stone', '<b>E</b> &nbsp;Touch the Time Stone');
+    if(best==='lunaris')showPrompt('lunaris', '<b>Space</b> &nbsp;Talk — Lunaris');
+    else if(best==='stone')showPrompt('stone', '<b>Space</b> &nbsp;Touch the Time Stone');
     else hidePrompt();
   }
   function activatePrompt(){
     var kind=A.promptFor; if(!kind)return;
     hidePrompt();
     if(kind==='lunaris')startDialog();
-    else if(kind==='portal')crossToZealandia();
     else if(kind==='stone')touchStone();
   }
+  /* The action key is Spacebar, never E (Han, 2026-10-23 - the same
+     ruling the engine itself follows: Space interacts, Shift jumps). */
   document.addEventListener('keydown', function(e){
-    if(e.code!=='KeyE')return;
-    if(A.dialog){ advanceDialog(); return; }
+    if(e.code!=='Space')return;
+    if(A.dialog){ e.preventDefault(); advanceDialog(); return; }
     if(!A.active||!A.built)return;
-    if(A.promptFor)activatePrompt();
+    if(A.promptFor){ e.preventDefault(); activatePrompt(); }
   });
 
   /* ---------- Lunaris dialogue (two-shot) ---------- */
@@ -431,7 +417,7 @@
     'You felt it too, did you not? The moment the Time Stone fell.',
     'Hermes dropped it here, in the middle of the city. Why... even I cannot see that thread yet.',
     'Do not touch the stone unless your heart is certain. What sleeps inside it answers only the certain.',
-    'The teleporter beside it is the way onward - to Zealandia. I will be watching over you.'
+    'The stone itself is the door. Touch it, and the way onward opens - to a land no map names. I will be watching over you.'
   ];
   function startDialog(){
     var L=A.lunaris, P=refs().player;
@@ -440,10 +426,15 @@
     L.state='talk'; L.t=0;
     P.faceY=Math.atan2(-(L.obj.position.x-P.pos.x), -(L.obj.position.z-P.pos.z));
     A.pinPos={x:P.pos.x, z:P.pos.z};
-    window.__espilCamFocus={ x:(P.pos.x+L.obj.position.x)/2, z:(P.pos.z+L.obj.position.z)/2, zoom:21.0 };
+    /* Frontal on Lunaris (Han, 2026-10-23): the camera centres on her
+       and bears along the player-to-Lunaris line, so she is framed
+       face-on - she turns to face the player in her talk state, which
+       makes the shot a true front view. */
+    window.__espilCamFocus={ x:L.obj.position.x, z:L.obj.position.z, zoom:21.6,
+      bearing:Math.atan2(L.obj.position.x-P.pos.x, -(L.obj.position.z-P.pos.z))*180/Math.PI };
     aqStyles();
     var box=aqEl('aquest-dialog');
-    box.innerHTML='<div class="who">Lunaris</div><div class="line"></div><div class="next">E / tap ▸</div>';
+    box.innerHTML='<div class="who">Lunaris</div><div class="line"></div><div class="next">Space / tap ▸</div>';
     box.style.display='block';
     box.onclick=function(){ advanceDialog(); };
     paintDialogLine();
@@ -488,9 +479,11 @@
         for(var s2=0;s2<steps;s2++){ var seg=len/steps; a+=(rand()-0.5)*0.5; x+=Math.cos(a)*seg; y+=Math.sin(a)*seg; ctx.lineTo(x,y); }
         ctx.stroke();
       }
-      setTimeout(function(){ cv.style.display='none'; }, 1500);
+      /* The crack holds a beat, then the stone itself carries the
+         traveller onward: the Time Stone IS the portal (Han,
+         2026-10-23) - there is no other way into Zealandia. */
+      setTimeout(function(){ cv.style.display='none'; crossToZealandia(); }, 1500);
     }, 90);
-    if(window.__espilToast)window.__espilToast('The way onward is the teleporter, east of the stone.');
   }
 
   /* ---------- first-entry cinematic ---------- */

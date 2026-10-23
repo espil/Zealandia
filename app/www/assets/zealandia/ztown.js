@@ -117,17 +117,9 @@
     mesh.receiveShadow=true; mesh.frustumCulled=false;
     Z.group.add(mesh);
     Z.terrainMesh=mesh;
-    /* The ground wears the Auckland satellite bake (the same image the
-       minimap shows), so the in-game environment IS the real isthmus:
-       drained channels and hills under the town, not a colour wash. */
-    new THREE.TextureLoader().load('assets/zealandia/auckland_satellite.jpg',function(tex){
-      try{ tex.encoding=THREE.sRGBEncoding; }catch(e){}
-      tex.anisotropy=4;
-      Z.satTex=tex; Z.satLoaded=true;
-      var sm=new THREE.MeshLambertMaterial({map:tex});
-      applyCurve(sm);
-      mesh.material=sm; mesh.receiveShadow=true;
-    });
+    /* No satellite ground (Han, 2026-10-23): Waitematā is a built
+       village, not a photo of Auckland. The terrain keeps its crafted
+       vertex-colour bands and the village dressing carries the place. */
   }
 
   /* ---------- plaza + paths (inside the flat town disc) ---------- */
@@ -827,6 +819,86 @@
   },true);
 
   /* ================================================================
+     THE BUILT VILLAGE - KayKit Medieval Hexagon Pack (CC0)
+     (Han, 2026-10-23: no satellite map - build a village, with the
+     assets sourced from itch.io.) Models by Kay Lousberg, KayKit
+     Medieval Hexagon Pack 1.0, CC0 - free for any use, no
+     attribution required. The pack was chosen on its itch.io page;
+     after itch.io's own download endpoint refused direct fetches,
+     the files came from the author's official GitHub mirror of the
+     same pack and were converted glTF -> GLB for this payload.
+     Landmarks join the town's enterable homes: a well by the plaza,
+     a market, the blacksmith, a chapel, a tavern, a windmill, a
+     lumbermill, two more homes and a watchtower over the south
+     gate, dressed with the pack's trees, rocks and props.
+     ================================================================ */
+  var VILLAGE_BUILDINGS=[
+    {f:'village_well',       x:-14,  z:-14,  w:4.5, ry:0.4,  label:'Well'},
+    {f:'village_market',     x:38,   z:-8,   w:9,   ry:-1.2, label:'Market'},
+    {f:'village_blacksmith', x:-46,  z:-118, w:10,  ry:0.15, label:'Blacksmith'},
+    {f:'village_chapel',     x:185,  z:-30,  w:12,  ry:-0.5, label:'Chapel'},
+    {f:'village_tavern',     x:-150, z:60,   w:11,  ry:0.9,  label:'Tavern'},
+    {f:'village_windmill',   x:-155, z:-150, w:9,   ry:0.7,  label:'Windmill'},
+    {f:'village_lumbermill', x:120,  z:-150, w:11,  ry:-0.3, label:'Lumbermill'},
+    {f:'village_home_a',     x:-120, z:170,  w:9,   ry:0.2},
+    {f:'village_home_b',     x:60,   z:175,  w:9,   ry:-0.15},
+    {f:'village_tower',      x:16,   z:222,  w:7,   ry:3.14, label:'Watchtower'}
+  ];
+  var VILLAGE_NATURE=[
+    {f:'village_tree_a', x:30,   z:42,   w:3.4},{f:'village_tree_b', x:-34,  z:58,   w:3.0},
+    {f:'village_tree_a', x:88,   z:-22,  w:3.8},{f:'village_tree_b', x:-88,  z:-48,  w:3.2},
+    {f:'village_tree_a', x:24,   z:-44,  w:3.0},{f:'village_tree_b', x:-18,  z:108,  w:3.6},
+    {f:'village_tree_a', x:132,  z:18,   w:3.4},{f:'village_tree_b', x:-138, z:-18,  w:3.0},
+    {f:'village_tree_a', x:48,   z:132,  w:3.8},{f:'village_tree_b', x:-64,  z:-188, w:3.4},
+    {f:'village_tree_a', x:172,  z:-64,  w:3.2},{f:'village_tree_b', x:-186, z:112,  w:3.6},
+    {f:'village_rock_a', x:95,   z:205,  w:2.6},{f:'village_rock_b', x:-95,  z:215,  w:3.0},
+    {f:'village_rock_a', x:205,  z:95,   w:2.8},{f:'village_rock_b', x:-215, z:-95,  w:2.6}
+  ];
+  var VILLAGE_PROPS=[
+    {f:'village_barrel', x:-40, z:-112, w:1.15},{f:'village_barrel', x:-52.5, z:-112, w:1.15},
+    {f:'village_crate',  x:33,  z:-1,   w:1.3}, {f:'village_crate',  x:43,   z:-15,  w:1.3},
+    {f:'village_sack',   x:35.5,z:-15,  w:1.0}, {f:'village_wheelbarrow', x:113, z:-143, w:1.7},
+    {f:'village_tent',   x:205, z:-120, w:4.2, ry:0.8},
+    {f:'village_weaponrack', x:9, z:216, w:2.2, ry:3.14}
+  ];
+  function villagePlace(loader, def, collide){
+    loader.load('assets/zealandia/'+def.f+'.glb', function(gltf){
+      var o=gltf.scene;
+      var bb=new THREE.Box3().setFromObject(o);
+      var sx=bb.max.x-bb.min.x, sz=bb.max.z-bb.min.z, sy=bb.max.y-bb.min.y;
+      var s=def.w/Math.max(sx,sz);
+      o.scale.setScalar(s);
+      o.rotation.y=def.ry||0;
+      o.position.set(CX+def.x, Z.hC-(bb.min.y*s), CZ+def.z);
+      o.traverse(function(n){ if(n.isMesh){ n.frustumCulled=false; n.castShadow=true; } });
+      Z.group.add(o);
+      Z.villageCount=(Z.villageCount||0)+1;
+      if(def.label){
+        var lb=textSprite(def.label, 4.2, '#ffe9c9');
+        lb.position.set(CX+def.x, Z.hC+sy*s+0.9, CZ+def.z);
+        Z.group.add(lb);
+      }
+      if(collide){
+        var hw=sx*s/2*0.92, hd=sz*s/2*0.92, ry=def.ry||0, c=Math.cos(ry), sn=Math.sin(ry);
+        var cs=[[-hw,-hd],[hw,-hd],[hw,hd],[-hw,hd]];
+        for(var i=0;i<4;i++){
+          var a=cs[i], b=cs[(i+1)%4];
+          addWallSeg(def.x+a[0]*c+a[1]*sn, def.z-a[0]*sn+a[1]*c, def.x+b[0]*c+b[1]*sn, def.z-b[0]*sn+b[1]*c);
+        }
+      }
+    }, undefined, function(){});
+  }
+  function buildVillageAssets(){
+    if(Z.villageStarted)return; Z.villageStarted=true;
+    figureLoader(function(loader){
+      if(!loader)return;
+      VILLAGE_BUILDINGS.forEach(function(d){ villagePlace(loader, d, true); });
+      VILLAGE_NATURE.forEach(function(d){ villagePlace(loader, d, false); });
+      VILLAGE_PROPS.forEach(function(d){ villagePlace(loader, d, false); });
+    });
+  }
+
+  /* ================================================================
      Produced figures in the town: the two masters at the Espil House
      yard (Ahi = the fire master's model, Huka = the ice master's),
      and Hermes roaming the continent at giant scale, never aggroed.
@@ -926,7 +998,7 @@
     }
   }
 
-  /* ---------- minimap: 3D satellite terrain (replaces the Leaflet map in town) ---------- */
+  /* ---------- minimap: 3D terrain view (replaces the Leaflet map in town) ---------- */
   var MM={on:false, ready:false, renderer:null, scene:null, cam:null, patch:null, arrow:null, canvas:null, raf:0, cx:1e9, cz:1e9};
   var MM_WIN=680, MM_SEG=44;
   function minimapBuild(){
@@ -987,7 +1059,6 @@
       MM.renderer.setPixelRatio(1.5); MM.renderer.setSize(w,h,false);
       MM.cam.aspect=w/h; MM.cam.updateProjectionMatrix();
     }
-    if(Z.satTex&&MM.patch.material.map!==Z.satTex)MM.patch.material=new THREE.MeshLambertMaterial({map:Z.satTex});
     if(Math.abs(p.pos.x-MM.cx)>40||Math.abs(p.pos.z-MM.cz)>40)minimapPatch(p.pos.x,p.pos.z);
     var gy=p.pos.y||groundAt(p.pos.x,p.pos.z);
     MM.arrow.position.set(p.pos.x,gy+13,p.pos.z);
@@ -1031,6 +1102,7 @@
         buildEspilHouse();
         buildStalls();
         buildPens();
+        buildVillageAssets();
         buildTrees();
         buildVillagers();
         buildAnimals();

@@ -62,7 +62,7 @@
   var ROUTE=['town','nan-madol','haamonga','taputapuatea','ahu-tongariki','leluh','pulemelei'];
   var HOPS={ 'town>nan-madol':1, 'nan-madol>haamonga':2, 'haamonga>taputapuatea':1,
              'taputapuatea>ahu-tongariki':2, 'ahu-tongariki>leluh':1, 'leluh>pulemelei':2 };
-  function stopName(id){ return id==='town' ? 'Waitematā' : BY_SLUG[id].name; }
+  function stopName(id){ return id==='town' ? 'Unknown Land' : BY_SLUG[id].name; } /* the hidden land's name is never displayed (Han, 2026-10-23) */
   function hopsBetween(a, b){ return HOPS[a+'>'+b] || HOPS[b+'>'+a] || 0; }
   function neighbours(id){
     var i=ROUTE.indexOf(id);
@@ -582,14 +582,14 @@
   function near(x1,z1,x2,z2,d){ var dx=x1-x2, dz=z1-z2; return dx*dx+dz*dz<d*d; }
   function scanTown(P){
     if(V.espil&&near(P.pos.x,P.pos.z,CX,CZ-16,4.5)){
-      showPrompt('<b>E</b> · Talk - Espil', function(){
+      showPrompt('<b>Space</b> · Talk - Espil', function(){
         focusPair(CX, CZ-16, 21.0);
         openDialog('Espil', ['The anchors hold, and the story goes on. There is more of this world to mend - and I will not watch from outside it any longer.']);
       }, 'espil');
       return true;
     }
     if(V.roadGate&&near(P.pos.x,P.pos.z,V.roadGate.x,V.roadGate.z,6)){
-      showPrompt('<b>E</b> · To '+BY_SLUG['nan-madol'].name+' (via 1 field)',
+      showPrompt('<b>Space</b> · To '+BY_SLUG['nan-madol'].name+' (via 1 field)',
         function(){ hopTo('nan-madol'); }, 'roadgate');
       return true;
     }
@@ -598,7 +598,7 @@
   function scanVillage(P, slug){
     var v=BY_SLUG[slug]; if(!v)return false;
     if(near(P.pos.x,P.pos.z,CX+6,CZ-26,4.5)){
-      showPrompt('<b>E</b> · Talk - '+v.elder, function(){
+      showPrompt('<b>Space</b> · Talk - '+v.elder, function(){
         focusPair(CX+6, CZ-26, 20.5);
         if(Q.cleared[slug]){
           openDialog(v.elder, [v.clear]);
@@ -614,7 +614,7 @@
     }
     if(near(P.pos.x,P.pos.z,CX,CZ-40,4.5)){
       if(!Q.cleared[slug]&&v.introDone&&guardiansAlive(v)===0){
-        showPrompt('<b>E</b> · Touch the ruin heart', function(){ clearVillage(v); }, 'heart');
+        showPrompt('<b>Space</b> · Touch the ruin heart', function(){ clearVillage(v); }, 'heart');
         return true;
       }
       if(!Q.cleared[slug]){
@@ -624,12 +624,12 @@
     }
     var nb=neighbours(slug);
     if(nb.prev&&near(P.pos.x,P.pos.z,CX+GATE_W.x,CZ+GATE_W.z,6)){
-      showPrompt('<b>E</b> · To '+stopName(nb.prev)+(hopsBetween(slug,nb.prev)>0?' (via '+hopsBetween(slug,nb.prev)+' field'+(hopsBetween(slug,nb.prev)>1?'s':'')+')':''),
+      showPrompt('<b>Space</b> · To '+stopName(nb.prev)+(hopsBetween(slug,nb.prev)>0?' (via '+hopsBetween(slug,nb.prev)+' field'+(hopsBetween(slug,nb.prev)>1?'s':'')+')':''),
         function(){ hopTo(nb.prev); }, 'gate-w');
       return true;
     }
     if(nb.next&&near(P.pos.x,P.pos.z,CX+GATE_E.x,CZ+GATE_E.z,6)){
-      showPrompt('<b>E</b> · To '+stopName(nb.next)+' (via '+hopsBetween(slug,nb.next)+' field'+(hopsBetween(slug,nb.next)>1?'s':'')+')',
+      showPrompt('<b>Space</b> · To '+stopName(nb.next)+' (via '+hopsBetween(slug,nb.next)+' field'+(hopsBetween(slug,nb.next)>1?'s':'')+')',
         function(){ hopTo(nb.next); }, 'gate-e');
       return true;
     }
@@ -638,11 +638,11 @@
   function scanField(P){
     var f=V.fields&&V.fields[V.scene]; if(!f)return false;
     if(near(P.pos.x,P.pos.z,f.pS.x,f.pS.z,6)){
-      showPrompt('<b>E</b> · To '+stopName(f.a), function(){ hopTo(f.a); }, 'portal-s');
+      showPrompt('<b>Space</b> · To '+stopName(f.a), function(){ hopTo(f.a); }, 'portal-s');
       return true;
     }
     if(near(P.pos.x,P.pos.z,f.pN.x,f.pN.z,6)){
-      showPrompt('<b>E</b> · To '+stopName(f.b), function(){ hopTo(f.b); }, 'portal-n');
+      showPrompt('<b>Space</b> · To '+stopName(f.b), function(){ hopTo(f.b); }, 'portal-n');
       return true;
     }
     return false;
@@ -695,10 +695,10 @@
     }catch(e){}
   }, 200);
 
-  /* E advances dialogue or fires the standing prompt */
+  /* Space advances dialogue or fires the standing prompt (Han, 2026-10-23) */
   document.addEventListener('keydown', function(e){
     if(window.__espilCityKey!=='zealandia')return;
-    if(e.code!=='KeyE')return;
+    if(e.code!=='Space')return; /* action key is Spacebar (Han, 2026-10-23) */
     if(V.dialog){ advanceDialog(); return; }
     if(V.promptAction)V.promptAction();
   });

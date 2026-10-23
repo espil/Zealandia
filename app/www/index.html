@@ -2444,7 +2444,7 @@ html, body { height:100dvh; }
       ['Vancouver',49.2827,-123.1207,'sails','Canada Place sails'],['San Francisco',37.7749,-122.4194,'bridge','Golden Gate Bridge'],['Los Angeles',34.0522,-118.2437,'star','Hollywood star'],['Chicago',41.8781,-87.6298,'tower','Willis Tower'],['Mexico City',19.4326,-99.1332,'pyramid','Sun Pyramid'],['New York',40.7128,-74.006,'liberty','Statue of Liberty'],['Toronto',43.6532,-79.3832,'needle','CN Tower'],
       ['Rio de Janeiro',-22.9068,-43.1729,'christ','Christ the Redeemer'],['São Paulo',-23.5505,-46.6333,'beam','MASP'],['Buenos Aires',-34.6037,-58.3816,'obelisk','Obelisk'],['London',51.5072,-.1276,'clock','Big Ben'],['Paris',48.8566,2.3522,'eiffel','Eiffel Tower'],['Madrid',40.4168,-3.7038,'tree','Bear and strawberry tree'],['Rome',41.9028,12.4964,'colosseum','Colosseum'],['Berlin',52.52,13.405,'gate','Brandenburg Gate'],['Moscow',55.7558,37.6173,'domes','Saint Basil domes'],
       ['Lagos',6.5244,3.3792,'theatre','National Theatre'],['Nairobi',-1.2921,36.8219,'spire','KICC'],['Cairo',30.0444,31.2357,'pyramid','Great Pyramid'],['Cape Town',-33.9249,18.4241,'mountain','Table Mountain'],['Istanbul',41.0082,28.9784,'mosque','Blue Mosque'],['Dubai',25.2048,55.2708,'burj','Burj Khalifa'],['Mumbai',19.076,72.8777,'gateway','Gateway of India'],['Delhi',28.6139,77.209,'arch','India Gate'],
-      ['Singapore',1.3521,103.8198,'merlion','Merlion'],['Bangkok',13.7563,100.5018,'temple','Wat Arun'],['Shanghai',31.2304,121.4737,'pearl','Oriental Pearl Tower'],['Hong Kong',22.3193,114.1694,'junk','Harbour junk'],['Beijing',39.9042,116.4074,'hall','Temple of Heaven'],['Seoul',37.5665,126.978,'needle','N Seoul Tower'],['Tokyo',35.6762,139.6503,'torii','Torii gate'],['Manila',14.5995,120.9842,'sun','Philippine sun'],['Jakarta',-6.2088,106.8456,'obelisk','National Monument'],['Sydney',-33.8688,151.2093,'sails','Sydney Opera House'],['Melbourne',-37.8136,144.9631,'station','Flinders Street Station'],['Auckland',-36.8509,174.7645,'needle','Sky Tower'],['Waitematā',-36.99,174.95,'mountain','The Sunken Land']
+      ['Singapore',1.3521,103.8198,'merlion','Merlion'],['Bangkok',13.7563,100.5018,'temple','Wat Arun'],['Shanghai',31.2304,121.4737,'pearl','Oriental Pearl Tower'],['Hong Kong',22.3193,114.1694,'junk','Harbour junk'],['Beijing',39.9042,116.4074,'hall','Temple of Heaven'],['Seoul',37.5665,126.978,'needle','N Seoul Tower'],['Tokyo',35.6762,139.6503,'torii','Torii gate'],['Manila',14.5995,120.9842,'sun','Philippine sun'],['Jakarta',-6.2088,106.8456,'obelisk','National Monument'],['Sydney',-33.8688,151.2093,'sails','Sydney Opera House'],['Melbourne',-37.8136,144.9631,'station','Flinders Street Station'],['Auckland',-36.8509,174.7645,'needle','Sky Tower']
     ];
     /* Landing city availability (Han 2026-10-18; production config
        the same day): only these SIX cities are selectable in the
@@ -2452,7 +2452,7 @@ html, body { height:100dvh; }
        Every other city is shown but inactive (grey, not selectable
        by click, pin, Enter, arrows or by name). Selection behaviour
        for the active six is unchanged. */
-    var ESPIL_SELECTABLE_CITIES={'Tokyo':true,'Vancouver':true,'New York':true,'Paris':true,'London':true,'Auckland':true,'Waitematā':true};
+    var ESPIL_SELECTABLE_CITIES={'Tokyo':true,'Vancouver':true,'New York':true,'Paris':true,'London':true,'Auckland':true}; /* Zealandia is a hidden land (Han, 2026-10-23): never listed or selectable - entry only through the Auckland Time Stone */
     var markers=[],markerGroup=new THREE.Group();
     earthSpin.add(markerGroup);
     function latLon(lat,lon,r){var phi=(90-lat)*Math.PI/180,theta=(lon+180)*Math.PI/180;return new THREE.Vector3(-r*Math.sin(phi)*Math.cos(theta),r*Math.cos(phi),r*Math.sin(phi)*Math.sin(theta));}
@@ -3756,7 +3756,7 @@ html, body { height:100dvh; }
     function espilCityKey(){ var k=window.__espilCityKey||'vancouver'; return ESPIL_CITIES[k]?k:'vancouver'; }
     function espilCityCfg(){ return ESPIL_CITIES[espilCityKey()]; }
     var ESPIL_CITY_KEYS={'Vancouver':'vancouver','Auckland':'auckland','Tokyo':'tokyo','New York':'newyork','Paris':'paris','London':'london','Waitematā':'zealandia'};
-    var ESPIL_CITY_DISPLAY={vancouver:'Vancouver Downtown',auckland:'Auckland',tokyo:'Tokyo',newyork:'New York',paris:'Paris',london:'London',zealandia:'Waitematā'};
+    var ESPIL_CITY_DISPLAY={vancouver:'Vancouver Downtown',auckland:'Auckland',tokyo:'Tokyo',newyork:'New York',paris:'Paris',london:'London',zealandia:'Unknown Land'}; /* the hidden land's name is never displayed (Han, 2026-10-23) */
     function espilCityDisplayName(){ return ESPIL_CITY_DISPLAY[espilCityKey()]||'Vancouver Downtown'; }
     /* Ground for offset cities (Auckland phase 1): a land plane under
        the district plus a harbour plane north of the waterfront
@@ -9471,7 +9471,7 @@ html, body { height:100dvh; }
     /* Production config (Han 2026-10-18): Vancouver is the only city
        that dives; the other five selectable cities show COMING SOON
        with the button disabled. */
-    function espilPlayableCity(name){return name==='Vancouver'||name==='Auckland'||name==='Tokyo'||name==='New York'||name==='Paris'||name==='London'||name==='Waitematā';} /* per-city activation (Han 2026-10-18): Auckland opened after its Mapbox-line verification; New York, Paris and London joined 2026-10-19 with their builds, and Tokyo rejoined the same day when its data was restored to this tree - all six reel cities are playable on testing; production opens per city on Han's order only */
+    function espilPlayableCity(name){return name==='Vancouver'||name==='Auckland'||name==='Tokyo'||name==='New York'||name==='Paris'||name==='London';} /* per-city activation (Han 2026-10-18): Auckland opened after its Mapbox-line verification; New York, Paris and London joined 2026-10-19 with their builds, and Tokyo rejoined the same day when its data was restored to this tree - all six reel cities are playable on testing; production opens per city on Han's order only */
     function showCityInfo(marker){
       infoShown=true;approachSlow=false;
       var facts=cityFacts[marker.userData.name]||{pop:'—',brands:[],img:''};
@@ -9646,10 +9646,12 @@ html, body { height:100dvh; }
       if(!selected||entryActive||cityPhaseActive)return;
       if(!espilPlayableCity(selected.userData.name))return;
       var newCityKey=ESPIL_CITY_KEYS[selected.userData.name]||'vancouver';
+      var __stoneCrossing=false;
+      if(window.__espilForceCityKey){ newCityKey=window.__espilForceCityKey; __stoneCrossing=true; window.__espilForceCityKey=null; } /* Time Stone crossing (Han, 2026-10-23): the dive targets the Auckland marker - the hidden land lies at Auckland's place - but the district that loads is Zealandia */
       if(window.__espilLoadedCityKey&&window.__espilLoadedCityKey!==newCityKey){
         /* One district per page load: switching cities reloads and
            re-selects the target city on boot (phase 1, 2026-10-16). */
-        try{sessionStorage.setItem('espil_pending_city',selected.userData.name);}catch(e){}
+        try{sessionStorage.setItem('espil_pending_city',__stoneCrossing?'Waitematā':selected.userData.name);}catch(e){}
         location.reload(); return;
       }
       window.__espilCityKey=newCityKey;
@@ -9989,6 +9991,30 @@ html, body { height:100dvh; }
       }
       return false;
     };
+    /* Time Stone crossing into the hidden land (Han, 2026-10-23):
+       Zealandia has no marker, no listing and no direct selection -
+       the ONLY way in is the Auckland Time Stone, whose crossing sets
+       the pending token this hook answers. The dive borrows the
+       Auckland marker (the hidden land lies at Auckland's place)
+       while __espilForceCityKey makes the loaded district Zealandia. */
+    window.__espilEnterZealandiaViaStone=function(){
+      if(typeof markers==='undefined'||!markers.length)return false;
+      for(var i=0;i<markers.length;i++){
+        if(markers[i].userData&&markers[i].userData.name==='Auckland'){
+          selectCity(markers[i]);
+          window.__espilForceCityKey='zealandia';
+          var et=0;
+          (function clickEnter(){
+            if(++et>2400)return;
+            var info=document.getElementById('city-info'),btn=document.getElementById('city-info-enter');
+            if(info&&btn&&getComputedStyle(info).display!=='none'&&!btn.disabled){ btn.click(); return; }
+            setTimeout(clickEnter,250);
+          })();
+          return true;
+        }
+      }
+      return false;
+    };
     animate();
   }());
   </script>
@@ -10134,6 +10160,7 @@ html, body { height:100dvh; }
            fired on any machine). */
         if(++tries>2400)return;
         if(window.__espilCityKey)return; // an entry already began (manual or ours); stop.
+        if(name==='Waitematā'&&window.__espilEnterZealandiaViaStone){ if(window.__espilEnterZealandiaViaStone())return; setTimeout(poll,250); return; } /* hidden land: the Time Stone token routes through the stone hook, never a marker */
         if(!window.__espilSelectCityByName||!window.__espilSelectCityByName(name)){ setTimeout(poll,250); return; }
         var et=0;
         (function clickEnter(){
