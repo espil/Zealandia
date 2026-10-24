@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마을 맵 에디터 - Zealandia</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+    background: #17181c; color: #e8e9eb; font-size: 13px;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  button {
+    background: #2c2e35; color: #e8e9eb; border: 1px solid #3f424c;
+    border-radius: 6px; padding: 5px 9px; cursor: pointer; font-size: 12px;
+  }
+  button:hover { background: #383b44; }
+  button.on { background: #2f6f4f; border-color: #46a06e; color: #fff; }
+  button.danger { border-color: #7a3535; }
+  button.danger:hover { background: #5a2b2b; }
+  input[type="text"], select {
+    background: #232429; color: #e8e9eb; border: 1px solid #3f424c;
+    border-radius: 6px; padding: 5px 7px; font-size: 12px;
+  }
+  input[type="range"] { accent-color: #46a06e; }
+  label { font-size: 12px; color: #b9bcc4; }
+
+  #topbar {
+    height: 48px; flex: 0 0 48px; display: flex; align-items: center; gap: 10px;
+    padding: 0 12px; background: #1e1f24; border-bottom: 1px solid #33353d;
+  }
+  #topbar .title { font-weight: 700; font-size: 14px; margin-right: 4px; white-space: nowrap; }
+  #topbar .sep { width: 1px; height: 24px; background: #3a3c44; }
+  #topbar .spacer { flex: 1; }
+  #villageName { width: 130px; }
+
+  #main { flex: 1; display: flex; min-height: 0; }
+  .panel {
+    background: #1e1f24; padding: 10px; overflow-y: auto; flex: 0 0 auto;
+  }
+  #leftPanel { width: 224px; border-right: 1px solid #33353d; }
+  #rightPanel { width: 264px; border-left: 1px solid #33353d; }
+  .panel h3 {
+    font-size: 11px; letter-spacing: .06em; color: #9a9ea9;
+    margin: 14px 0 7px; text-transform: uppercase;
+  }
+  .panel h3:first-child { margin-top: 0; }
+  .btnGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .btnGrid button { width: 100%; text-align: left; }
+  .full { width: 100%; }
+
+  .tileBtn { display: flex; align-items: center; gap: 7px; }
+  .tileBtn img { width: 22px; height: 22px; border-radius: 4px; border: 1px solid #0006; }
+  .tileBtn .sw { width: 22px; height: 22px; border-radius: 4px; border: 1px dashed #8a8f9a;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 13px; color: #c8ccd4; }
+
+  .palItem {
+    display: flex; align-items: center; gap: 8px; width: 100%; margin-bottom: 6px;
+    padding: 6px; text-align: left;
+  }
+  .palItem img {
+    width: 40px; height: 40px; object-fit: contain;
+    background: repeating-conic-gradient(#3a3c44 0% 25%, #2c2e35 0% 50%) 0 0/12px 12px;
+    border-radius: 4px;
+  }
+  .palItem small { color: #9a9ea9; display: block; }
+  .palItem.on { background: #2f6f4f; border-color: #46a06e; }
+
+  .row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .row > *:first-child { flex: 0 0 auto; }
+  .grow { flex: 1; }
+
+  .listItem {
+    display: flex; align-items: center; gap: 7px; padding: 5px 7px; margin-bottom: 5px;
+    background: #26272e; border: 1px solid #34363f; border-radius: 6px; font-size: 12px;
+  }
+  .listItem.sel { border-color: #46a06e; background: #2a332c; }
+  .listItem .nm { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .listItem .del { padding: 1px 7px; }
+  .chip { width: 10px; height: 10px; border-radius: 3px; flex: 0 0 10px; }
+  .empty { color: #777b86; font-size: 12px; padding: 4px 0; }
+  .hint { color: #8a8f9a; font-size: 11px; line-height: 1.5; }
+
+  #canvasWrap { flex: 1; position: relative; min-width: 0; background: #0c0d10; }
+  #cv { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  #cv.armed { cursor: crosshair; }
+  #cv.panning { cursor: grabbing; }
+
+  #statusbar {
+    flex: 0 0 26px; display: flex; align-items: center; gap: 16px; padding: 0 12px;
+    background: #1e1f24; border-top: 1px solid #33353d; font-size: 12px; color: #b9bcc4;
+    white-space: nowrap; overflow: hidden;
+  }
+  #statusbar b { color: #e8e9eb; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <span class="title">🏘️ 마을 맵 에디터</span>
+  <label>마을 이름 <input type="text" id="villageName" value="waitemata"></label>
+  <div class="sep"></div>
+  <button id="btnFit">전체 보기</button>
+  <button id="btn100">100%</button>
+  <label>배경 투명도 <input type="range" id="satOpacity" min="0" max="1" step="0.05" value="1" style="width:90px"></label>
+  <label><input type="checkbox" id="showGrid" checked> 격자</label>
+  <div class="spacer"></div>
+  <label class="hint" for="importFile" style="cursor:pointer">
+    <span style="border:1px solid #3f424c;border-radius:6px;padding:5px 9px;background:#2c2e35;color:#e8e9eb">가져오기</span>
+  </label>
+  <input type="file" id="importFile" accept=".json,application/json" style="display:none">
+  <button id="btnExport">내보내기 (JSON)</button>
+  <button id="btnClear" class="danger">전부 지우기</button>
+</div>
+
+<div id="main">
+  <div class="panel" id="leftPanel">
+    <h3>도구</h3>
+    <div class="btnGrid">
+      <button data-tool="select" class="toolBtn on">↖ 선택 (V)</button>
+      <button data-tool="pan" class="toolBtn">✋ 이동 (H)</button>
+      <button data-tool="tile" class="toolBtn">🖌 타일 (T)</button>
+      <button data-tool="zone" class="toolBtn">▦ 스폰 구역 (Z)</button>
+    </div>
+
+    <h3>타일 종류</h3>
+    <div class="btnGrid" style="grid-template-columns:1fr">
+      <button class="tileBtn brushBtn on" data-brush="village-road"><img src="assets/tiles/village-road.png" alt="">마을길</button>
+      <button class="tileBtn brushBtn" data-brush="grass-road"><img src="assets/tiles/grass-road.png" alt="">풀길</button>
+      <button class="tileBtn brushBtn" data-brush="water"><img src="assets/tiles/water.png" alt="">물</button>
+      <button class="tileBtn brushBtn" data-brush="paved-road"><img src="assets/tiles/paved-road.png" alt="">포장길</button>
+      <button class="tileBtn brushBtn" data-brush="erase"><span class="sw">✕</span>지우개</button>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <label>셀 크기</label>
+      <select id="tileSize" class="grow">
+        <option value="5">5 m</option>
+        <option value="10" selected>10 m</option>
+        <option value="20">20 m</option>
+      </select>
+    </div>
+
+    <h3>스폰 구역 종류</h3>
+    <div class="btnGrid" style="grid-template-columns:1fr">
+      <button class="zoneBtn" data-zone="player"><span class="chip" style="background:#ffc107"></span> 플레이어 스폰</button>
+      <button class="zoneBtn" data-zone="npc"><span class="chip" style="background:#009688"></span> NPC 스폰</button>
+      <button class="zoneBtn on" data-zone="monster"><span class="chip" style="background:#f44336"></span> 몬스터 스폰</button>
+    </div>
+
+    <h3>스프라이트 팔레트</h3>
+    <div id="palette"></div>
+    <p class="hint">팔레트에서 고른 뒤 지도를 클릭하면 배치됩니다. 연속으로 찍을 수 있고, Esc를 누르면 해제됩니다.</p>
+
+    <h3>사용법</h3>
+    <p class="hint">
+      • 화면 이동: 스페이스+드래그, 마우스 가운데/오른쪽 드래그, 또는 이동 도구<br>
+      • 확대/축소: 마우스 휠 (커서 위치 기준)<br>
+      • 타일: 타일 도구로 클릭/드래그<br>
+      • 스프라이트: 선택 도구로 드래그 이동, Delete 키로 삭제<br>
+      • 구역: 스폰 구역 도구로 드래그해 사각형 그리기<br>
+      • 모든 변경은 자동 저장됩니다 (브라우저 localStorage)
+    </p>
+  </div>
+
+  <div id="canvasWrap"><canvas id="cv"></canvas></div>
+
+  <div class="panel" id="rightPanel">
+    <h3>선택한 스프라이트</h3>
+    <div id="selInfo" class="empty">선택된 스프라이트가 없습니다.</div>
+    <div id="selControls" style="display:none">
+      <div class="row"><label>너비</label><input type="range" id="selW" class="grow" min="0.3" max="30" step="0.1"><span id="selWVal"></span></div>
+      <div class="row"><label>좌표</label><span id="selPos" class="grow"></span></div>
+      <button id="btnDelSel" class="danger full">삭제 (Delete)</button>
+    </div>
+
+    <h3>배치 목록</h3>
+    <div id="placementList"></div>
+
+    <h3>스폰 구역 목록</h3>
+    <div id="zoneList"></div>
+  </div>
+</div>
+
+<div id="statusbar">
+  <span id="stPos">X: - m, Y: - m</span>
+  <span id="stZoom">줌: -</span>
+  <span id="stCounts">타일 0개 · 배치 0개 · 구역 0개</span>
+  <span id="stTool">도구: 선택</span>
+</div>
+
+<script>
+'use strict';
+/* ================================================================
+   마을 맵 에디터 v1
+   좌표계: 위성사진(2048px = 10000m x 10000m) 중심이 원점(0,0).
+   x = 동쪽(+), y = 남쪽(+) [화면 아래]. 셀 인덱스 (cx, cy)는
+   월드좌표를 셀 크기로 나눈 floor 값.
+   ================================================================ */
+const WORLD_M = 10000;
+const HALF = WORLD_M / 2;
+const Z100 = 2048 / WORLD_M; // 100% 배율: 화면 1px = 이미지 1px -> 10000m가 2048px로 그려지는 z값
+
+const TILE_TYPES = {
+  'village-road': { label: '마을길', src: 'assets/tiles/village-road.png' },
+  'grass-road':   { label: '풀길',   src: 'assets/tiles/grass-road.png' },
+  'water':        { label: '물',     src: 'assets/tiles/water.png' },
+  'paved-road':   { label: '포장길', src: 'assets/tiles/paved-road.png' }
+};
+const ZONE_TYPES = {
+  'player':  { label: '플레이어 스폰', fill: 'rgba(255,193,7,0.28)',  line: '#ffc107' },
+  'npc':     { label: 'NPC 스폰',      fill: 'rgba(0,150,136,0.28)',  line: '#009688' },
+  'monster': { label: '몬스터 스폰',   fill: 'rgba(244,67,54,0.28)',  line: '#f44336' }
+};
+const LS_KEY = 'villageEditorAutosave.v1';
+
+// ---------------- 상태 ----------------
+let state = freshState();
+function freshState() {
+  return { village: 'waitemata', tileSizeM: 10, tiles: {}, placements: [], zones: [] };
+}
+let cam = { x: 0, y: 0, z: 0.1 };        // x,y = 화면 중심의 월드좌표, z = px/m
+let tool = 'select';                     // select | pan | tile | zone
+let brush = 'village-road';              // 타일 종류 또는 'erase'
+let zoneType = 'monster';
+let paletteDefs = [];                    // sprites.json 내용
+let armed = null;                        // 배치 대기 중인 팔레트 항목
+let selected = -1;                       // 선택된 placement 인덱스
+let satOpacity = 1;
+let showGrid = true;
+let mouse = { wx: 0, wy: 0, sx: 0, sy: 0, inside: false };
+
+// ---------------- 이미지 ----------------
+function loadImg(src) { const i = new Image(); i.src = src; i.onload = draw; return i; }
+const satImg = loadImg('assets/satellite.jpg');
+const tileImgs = {};
+for (const k in TILE_TYPES) tileImgs[k] = loadImg(TILE_TYPES[k].src);
+const spriteImgs = {}; // id -> Image
+
+// ---------------- 캔버스 ----------------
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+let cssW = 0, cssH = 0, dpr = 1;
+function resize() {
+  const r = cv.getBoundingClientRect();
+  dpr = window.devicePixelRatio || 1;
+  cssW = Math.max(1, r.width); cssH = Math.max(1, r.height);
+  cv.width = Math.round(cssW * dpr); cv.height = Math.round(cssH * dpr);
+  draw();
+}
+window.addEventListener('resize', resize);
+
+function s2w(sx, sy) { return [ (sx - cssW / 2) / cam.z + cam.x, (sy - cssH / 2) / cam.z + cam.y ]; }
+function viewRect() {
+  const [x0, y0] = s2w(0, 0), [x1, y1] = s2w(cssW, cssH);
+  return { x0, y0, x1, y1 };
+}
+function spriteH(p) {
+  const img = spriteImgs[p.asset];
+  if (!img || !img.complete || !img.naturalWidth) return p.w;
+  return p.w * img.naturalHeight / img.naturalWidth;
+}
+function spriteRect(p) { const h = spriteH(p); return { x: p.x - p.w / 2, y: p.y - h, w: p.w, h }; }
+
+// ---------------- 그리기 ----------------
+function draw() {
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = '#0c0d10';
+  ctx.fillRect(0, 0, cv.width, cv.height);
+  ctx.setTransform(dpr * cam.z, 0, 0, dpr * cam.z,
+                   dpr * (cssW / 2 - cam.x * cam.z), dpr * (cssH / 2 - cam.y * cam.z));
+  const v = viewRect();
+
+  // 위성 배경
+  if (satImg.complete && satImg.naturalWidth) {
+    ctx.globalAlpha = satOpacity;
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(satImg, -HALF, -HALF, WORLD_M, WORLD_M);
+    ctx.globalAlpha = 1;
+  }
+  ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+  ctx.lineWidth = 1.5 / cam.z;
+  ctx.strokeRect(-HALF, -HALF, WORLD_M, WORLD_M);
+
+  // 타일
+  const S = state.tileSizeM;
+  for (const key in state.tiles) {
+    const [cx, cy] = key.split(',').map(Number);
+    const x = cx * S, y = cy * S;
+    if (x + S < v.x0 || x > v.x1 || y + S < v.y0 || y > v.y1) continue;
+    const img = tileImgs[state.tiles[key]];
+    if (img && img.complete && img.naturalWidth) ctx.drawImage(img, x, y, S, S);
+  }
+
+  // 격자
+  if (showGrid && cam.z * S >= 5) {
+    ctx.strokeStyle = 'rgba(255,255,255,0.13)';
+    ctx.lineWidth = 1 / cam.z;
+    ctx.beginPath();
+    const gx0 = Math.max(Math.floor(v.x0 / S) * S, -HALF), gx1 = Math.min(v.x1, HALF);
+    const gy0 = Math.max(Math.floor(v.y0 / S) * S, -HALF), gy1 = Math.min(v.y1, HALF);
+    for (let x = gx0; x <= gx1; x += S) { ctx.moveTo(x, gy0); ctx.lineTo(x, gy1); }
+    for (let y = gy0; y <= gy1; y += S) { ctx.moveTo(gx0, y); ctx.lineTo(gx1, y); }
+    ctx.stroke();
+  }
+
+  // 타일 브러시 호버 셀
+  if (tool === 'tile' && mouse.inside) {
+    const [cx, cy] = cellOf(mouse.wx, mouse.wy);
+    ctx.strokeStyle = 'rgba(255,255,255,0.8)';
+    ctx.lineWidth = 1.5 / cam.z;
+    ctx.strokeRect(cx * S, cy * S, S, S);
+  }
+
+  // 스폰 구역
+  for (const z of state.zones) drawZone(z);
+  if (zoneDrag) drawZone(zoneDrag, true);
+
+  // 배치 스프라이트
+  state.placements.forEach((p, i) => {
+    const img = spriteImgs[p.asset];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const r = spriteRect(p);
+    ctx.drawImage(img, r.x, r.y, r.w, r.h);
+    if (i === selected) {
+      ctx.strokeStyle = '#46a06e';
+      ctx.lineWidth = 2 / cam.z;
+      ctx.strokeRect(r.x, r.y, r.w, r.h);
+      ctx.fillStyle = '#46a06e';
+      const a = 3 / cam.z;
+      ctx.fillRect(p.x - a / 2, p.y - a / 2, a, a); // 바닥 중심 앵커 표시
+    }
+  });
+
+  // 팔레트 배치 미리보기
+  if (armed && mouse.inside && tool === 'place') {
+    const img = spriteImgs[armed.id];
+    if (img && img.complete && img.naturalWidth) {
+      const w = armed.defaultW, h = w * img.naturalHeight / img.naturalWidth;
+      ctx.globalAlpha = 0.65;
+      ctx.drawImage(img, mouse.wx - w / 2, mouse.wy - h, w, h);
+      ctx.globalAlpha = 1;
+    }
+  }
+  updateStatus();
+}
+
+function drawZone(z, preview) {
+  const t = ZONE_TYPES[z.type]; if (!t) return;
+  ctx.fillStyle = t.fill;
+  ctx.fillRect(z.x, z.y, z.w, z.h);
+  ctx.strokeStyle = t.line;
+  ctx.lineWidth = 2 / cam.z;
+  if (preview) ctx.setLineDash([6 / cam.z, 4 / cam.z]);
+  ctx.strokeRect(z.x, z.y, z.w, z.h);
+  if (preview) ctx.setLineDash([]);
+  const fs = Math.max(11 / cam.z, z.h * 0.12);
+  ctx.font = '600 ' + fs + 'px sans-serif';
+  ctx.fillStyle = t.line;
+  ctx.fillText(t.label, z.x + 4 / cam.z, z.y + fs + 3 / cam.z);
+}
+
+function cellOf(wx, wy) {
+  return [Math.floor(wx / state.tileSizeM), Math.floor(wy / state.tileSizeM)];
+}
+
+// ---------------- 상태바 / 패널 ----------------
+const stPos = document.getElementById('stPos'), stZoom = document.getElementById('stZoom'),
+      stCounts = document.getElementById('stCounts'), stTool = document.getElementById('stTool');
+const TOOL_NAMES = { select: '선택', pan: '이동', tile: '타일', zone: '스폰 구역', place: '스프라이트 배치' };
+function updateStatus() {
+  stPos.innerHTML = mouse.inside
+    ? 'X: <b>' + mouse.wx.toFixed(1) + ' m</b>, Y: <b>' + mouse.wy.toFixed(1) + ' m</b>' : 'X: - m, Y: - m';
+  stZoom.textContent = '줌: ' + (cam.z / Z100 * 100).toFixed(0) + '% (' + cam.z.toFixed(3) + ' px/m)';
+  stCounts.textContent = '타일 ' + Object.keys(state.tiles).length + '개 · 배치 ' +
+    state.placements.length + '개 · 구역 ' + state.zones.length + '개';
+  stTool.textContent = '도구: ' + (TOOL_NAMES[tool] || tool) +
+    (tool === 'place' && armed ? ' - ' + armed.name : '');
+}
+
+function renderLists() {
+  const pl = document.getElementById('placementList');
+  pl.innerHTML = '';
+  if (!state.placements.length) pl.innerHTML = '<div class="empty">아직 배치된 스프라이트가 없습니다.</div>';
+  state.placements.forEach((p, i) => {
+    const def = paletteDefs.find(d => d.id === p.asset);
+    const div = document.createElement('div');
+    div.className = 'listItem' + (i === selected ? ' sel' : '');
+    div.innerHTML = '<span class="nm"></span><span></span><button class="del">✕</button>';
+    div.querySelector('.nm').textContent = (def ? def.name : p.asset);
+    div.querySelectorAll('span')[1].textContent = p.w.toFixed(1) + 'm';
+    div.querySelector('.nm').title = 'x ' + p.x.toFixed(1) + ', y ' + p.y.toFixed(1);
+    div.addEventListener('click', e => { if (e.target.tagName !== 'BUTTON') { selected = i; syncSelPanel(); draw(); renderLists(); } });
+    div.querySelector('.del').addEventListener('click', () => { removePlacement(i); });
+    pl.appendChild(div);
+  });
+  const zl = document.getElementById('zoneList');
+  zl.innerHTML = '';
+  if (!state.zones.length) zl.innerHTML = '<div class="empty">아직 스폰 구역이 없습니다.</div>';
+  state.zones.forEach((z, i) => {
+    const t = ZONE_TYPES[z.type];
+    const div = document.createElement('div');
+    div.className = 'listItem';
+    div.innerHTML = '<span class="chip"></span><span class="nm"></span><button class="del">✕</button>';
+    div.querySelector('.chip').style.background = t ? t.line : '#888';
+    div.querySelector('.nm').textContent = (t ? t.label : z.type) + ' (' + z.w.toFixed(0) + '×' + z.h.toFixed(0) + 'm)';
+    div.querySelector('.del').addEventListener('click', () => {
+      state.zones.splice(i, 1); changed(); draw(); renderLists();
+    });
+    zl.appendChild(div);
+  });
+}
+
+function syncSelPanel() {
+  const has = selected >= 0 && selected < state.placements.length;
+  document.getElementById('selInfo').style.display = has ? 'none' : '';
+  document.getElementById('selControls').style.display = has ? '' : 'none';
+  if (has) {
+    const p = state.placements[selected];
+    document.getElementById('selW').value = p.w;
+    document.getElementById('selWVal').textContent = p.w.toFixed(1) + ' m';
+    document.getElementById('selPos').textContent = 'x ' + p.x.toFixed(1) + ', y ' + p.y.toFixed(1);
+  }
+}
+
+function removePlacement(i) {
+  state.placements.splice(i, 1);
+  if (selected === i) selected = -1; else if (selected > i) selected--;
+  syncSelPanel(); changed(); draw(); renderLists();
+}
+
+// ---------------- 저장 / 내보내기 / 가져오기 ----------------
+function exportObj() {
+  return {
+    village: state.village, tileSizeM: state.tileSizeM,
+    tiles: state.tiles, placements: state.placements, zones: state.zones
+  };
+}
+function changed() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(exportObj())); } catch (e) { /* 저장 실패 무시 */ }
+}
+function applyData(d) {
+  if (!d || typeof d !== 'object') return false;
+  state = freshState();
+  if (typeof d.village === 'string') state.village = d.village;
+  if ([5, 10, 20].includes(d.tileSizeM)) state.tileSizeM = d.tileSizeM;
+  if (d.tiles && typeof d.tiles === 'object') {
+    for (const k in d.tiles) if (TILE_TYPES[d.tiles[k]]) state.tiles[k] = d.tiles[k];
+  }
+  if (Array.isArray(d.placements)) {
+    state.placements = d.placements.filter(p => p && typeof p.asset === 'string')
+      .map(p => ({ asset: p.asset, x: +p.x || 0, y: +p.y || 0, w: Math.max(0.1, +p.w || 1) }));
+  }
+  if (Array.isArray(d.zones)) {
+    state.zones = d.zones.filter(z => z && ZONE_TYPES[z.type])
+      .map(z => ({ type: z.type, x: +z.x || 0, y: +z.y || 0, w: Math.abs(+z.w || 0), h: Math.abs(+z.h || 0) }));
+  }
+  selected = -1; armed = null; setTool('select');
+  document.getElementById('villageName').value = state.village;
+  document.getElementById('tileSize').value = String(state.tileSizeM);
+  document.querySelectorAll('.palItem').forEach(el => el.classList.remove('on'));
+  syncSelPanel(); changed(); draw(); renderLists();
+  return true;
+}
+
+// ---------------- 입력 처리 ----------------
+let panDrag = null, paintDrag = false, moveDrag = null, zoneDrag = null, spaceDown = false;
+
+function evPos(e) {
+  const r = cv.getBoundingClientRect();
+  return { sx: e.clientX - r.left, sy: e.clientY - r.top };
+}
+function paintAt(wx, wy) {
+  const [cx, cy] = cellOf(wx, wy);
+  const key = cx + ',' + cy;
+  if (brush === 'erase') { if (key in state.tiles) { delete state.tiles[key]; changed(); } }
+  else if (state.tiles[key] !== brush) { state.tiles[key] = brush; changed(); }
+  draw();
+}
+function hitPlacement(wx, wy) {
+  for (let i = state.placements.length - 1; i >= 0; i--) {
+    const r = spriteRect(state.placements[i]);
+    if (wx >= r.x && wx <= r.x + r.w && wy >= r.y && wy <= r.y + r.h) return i;
+  }
+  return -1;
+}
+
+cv.addEventListener('pointerdown', e => {
+  cv.setPointerCapture(e.pointerId);
+  const { sx, sy } = evPos(e);
+  const [wx, wy] = s2w(sx, sy);
+  if (spaceDown || tool === 'pan' || e.button === 1 || e.button === 2) {
+    panDrag = { sx, sy, camX: cam.x, camY: cam.y };
+    cv.classList.add('panning');
+    return;
+  }
+  if (e.button !== 0) return;
+  if (tool === 'tile') { paintDrag = true; paintAt(wx, wy); }
+  else if (tool === 'place' && armed) {
+    state.placements.push({ asset: armed.id, x: Math.round(wx * 10) / 10, y: Math.round(wy * 10) / 10, w: armed.defaultW });
+    selected = state.placements.length - 1;
+    syncSelPanel(); changed(); draw(); renderLists();
+  }
+  else if (tool === 'zone') {
+    zoneDrag = { type: zoneType, x: wx, y: wy, w: 0, h: 0, sx: wx, sy: wy };
+  }
+  else { // select
+    const hit = hitPlacement(wx, wy);
+    selected = hit;
+    if (hit >= 0) {
+      const p = state.placements[hit];
+      moveDrag = { i: hit, dx: p.x - wx, dy: p.y - wy, moved: false };
+    }
+    syncSelPanel(); draw(); renderLists();
+  }
+});
+cv.addEventListener('pointermove', e => {
+  const { sx, sy } = evPos(e);
+  const [wx, wy] = s2w(sx, sy);
+  mouse = { wx, wy, sx, sy, inside: true };
+  if (panDrag) {
+    cam.x = panDrag.camX - (sx - panDrag.sx) / cam.z;
+    cam.y = panDrag.camY - (sy - panDrag.sy) / cam.z;
+    draw(); return;
+  }
+  if (paintDrag) { paintAt(wx, wy); return; }
+  if (moveDrag) {
+    const p = state.placements[moveDrag.i];
+    p.x = Math.round((wx + moveDrag.dx) * 10) / 10;
+    p.y = Math.round((wy + moveDrag.dy) * 10) / 10;
+    moveDrag.moved = true;
+    syncSelPanel(); draw(); return;
+  }
+  if (zoneDrag) {
+    zoneDrag.x = Math.min(zoneDrag.sx, wx); zoneDrag.y = Math.min(zoneDrag.sy, wy);
+    zoneDrag.w = Math.abs(wx - zoneDrag.sx); zoneDrag.h = Math.abs(wy - zoneDrag.sy);
+    draw(); return;
+  }
+  draw();
+});
+function endPointer(e) {
+  if (panDrag) { panDrag = null; cv.classList.remove('panning'); }
+  if (paintDrag) paintDrag = false;
+  if (moveDrag) { if (moveDrag.moved) { changed(); renderLists(); } moveDrag = null; }
+  if (zoneDrag) {
+    if (zoneDrag.w >= 1 && zoneDrag.h >= 1) {
+      state.zones.push({ type: zoneDrag.type,
+        x: Math.round(zoneDrag.x * 10) / 10, y: Math.round(zoneDrag.y * 10) / 10,
+        w: Math.round(zoneDrag.w * 10) / 10, h: Math.round(zoneDrag.h * 10) / 10 });
+      changed(); renderLists();
+    }
+    zoneDrag = null; draw();
+  }
+}
+cv.addEventListener('pointerup', endPointer);
+cv.addEventListener('pointercancel', endPointer);
+cv.addEventListener('pointerleave', () => { mouse.inside = false; draw(); });
+cv.addEventListener('contextmenu', e => e.preventDefault());
+cv.addEventListener('wheel', e => {
+  e.preventDefault();
+  const { sx, sy } = evPos(e);
+  const [wx, wy] = s2w(sx, sy);
+  const f = Math.exp(-e.deltaY * 0.0015);
+  cam.z = Math.min(8, Math.max(0.02, cam.z * f));
+  cam.x = wx - (sx - cssW / 2) / cam.z;
+  cam.y = wy - (sy - cssH / 2) / cam.z;
+  draw();
+}, { passive: false });
+
+window.addEventListener('keydown', e => {
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'select' || tag === 'textarea') return;
+  if (e.code === 'Space') { spaceDown = true; e.preventDefault(); }
+  else if (e.key === 'Delete' || e.key === 'Backspace') {
+    if (selected >= 0) { removePlacement(selected); e.preventDefault(); }
+  }
+  else if (e.key === 'Escape') {
+    armed = null;
+    if (tool === 'place') setTool('select');
+    selected = -1; syncSelPanel(); draw(); renderLists();
+  }
+  else if (e.key === 'v' || e.key === 'V') setTool('select');
+  else if (e.key === 'h' || e.key === 'H') setTool('pan');
+  else if (e.key === 't' || e.key === 'T') setTool('tile');
+  else if (e.key === 'z' || e.key === 'Z') setTool('zone');
+});
+window.addEventListener('keyup', e => { if (e.code === 'Space') spaceDown = false; });
+
+// ---------------- UI 연결 ----------------
+function setTool(t) {
+  tool = t;
+  if (t !== 'place') { armed = null; document.querySelectorAll('.palItem').forEach(el => el.classList.remove('on')); }
+  document.querySelectorAll('.toolBtn').forEach(b => b.classList.toggle('on', b.dataset.tool === t));
+  cv.classList.toggle('armed', t === 'place');
+  draw();
+}
+document.querySelectorAll('.toolBtn').forEach(b => b.addEventListener('click', () => setTool(b.dataset.tool)));
+document.querySelectorAll('.brushBtn').forEach(b => b.addEventListener('click', () => {
+  brush = b.dataset.brush;
+  document.querySelectorAll('.brushBtn').forEach(x => x.classList.toggle('on', x === b));
+  setTool('tile');
+}));
+document.querySelectorAll('.zoneBtn').forEach(b => b.addEventListener('click', () => {
+  zoneType = b.dataset.zone;
+  document.querySelectorAll('.zoneBtn').forEach(x => x.classList.toggle('on', x === b));
+  setTool('zone');
+}));
+document.getElementById('tileSize').addEventListener('change', e => {
+  const v = Number(e.target.value);
+  if (v === state.tileSizeM) return;
+  if (Object.keys(state.tiles).length &&
+      !confirm('셀 크기를 바꾸면 기존 타일 배치가 초기화됩니다. 계속할까요?')) {
+    e.target.value = String(state.tileSizeM); return;
+  }
+  state.tileSizeM = v; state.tiles = {};
+  changed(); draw();
+});
+document.getElementById('villageName').addEventListener('input', e => { state.village = e.target.value; changed(); });
+document.getElementById('satOpacity').addEventListener('input', e => { satOpacity = Number(e.target.value); draw(); });
+document.getElementById('showGrid').addEventListener('change', e => { showGrid = e.target.checked; draw(); });
+document.getElementById('selW').addEventListener('input', e => {
+  if (selected < 0) return;
+  state.placements[selected].w = Number(e.target.value);
+  document.getElementById('selWVal').textContent = Number(e.target.value).toFixed(1) + ' m';
+  changed(); draw(); renderLists();
+});
+document.getElementById('btnDelSel').addEventListener('click', () => { if (selected >= 0) removePlacement(selected); });
+
+function fitView() {
+  cam.x = 0; cam.y = 0;
+  cam.z = Math.min(cssW / WORLD_M, cssH / WORLD_M) * 0.99;
+  draw();
+}
+document.getElementById('btnFit').addEventListener('click', fitView);
+document.getElementById('btn100').addEventListener('click', () => { cam.z = Z100; draw(); });
+
+document.getElementById('btnExport').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(exportObj(), null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'village-map.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+});
+document.getElementById('importFile').addEventListener('change', e => {
+  const f = e.target.files[0]; if (!f) return;
+  const rd = new FileReader();
+  rd.onload = () => {
+    try {
+      const d = JSON.parse(rd.result);
+      if (applyData(d)) alert('맵을 불러왔습니다.');
+      else alert('파일 형식이 올바르지 않습니다.');
+    } catch (err) { alert('JSON을 읽을 수 없습니다: ' + err.message); }
+    e.target.value = '';
+  };
+  rd.readAsText(f);
+});
+document.getElementById('btnClear').addEventListener('click', () => {
+  if (!confirm('타일, 배치, 스폰 구역을 전부 지울까요?')) return;
+  const keepVillage = state.village, keepSize = state.tileSizeM;
+  state = freshState(); state.village = keepVillage; state.tileSizeM = keepSize;
+  selected = -1; syncSelPanel(); changed(); draw(); renderLists();
+});
+
+// ---------------- 팔레트 ----------------
+fetch('assets/sprites.json')
+  .then(r => r.json())
+  .then(d => {
+    paletteDefs = d.sprites || [];
+    const pal = document.getElementById('palette');
+    paletteDefs.forEach(def => {
+      spriteImgs[def.id] = loadImg(def.image);
+      const b = document.createElement('button');
+      b.className = 'palItem';
+      b.innerHTML = '<img alt=""><span><span class="pn"></span><small></small></span>';
+      b.querySelector('img').src = def.image;
+      b.querySelector('.pn').textContent = def.name;
+      b.querySelector('small').textContent = '기본 너비 ' + def.defaultW + ' m';
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.palItem').forEach(el => el.classList.toggle('on', el === b));
+        armed = def;              // setTool('place')는 armed를 지우지 않는다
+        setTool('place');
+      });
+      pal.appendChild(b);
+    });
+    draw();
+  })
+  .catch(err => {
+    document.getElementById('palette').innerHTML =
+      '<div class="empty">팔레트를 불러오지 못했습니다. 로컬 서버(http://localhost)로 열어 주세요.<br>(' + err.message + ')</div>';
+  });
+
+// ---------------- 시작 ----------------
+(function init() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) { const d = JSON.parse(raw); if (d) { applyDataSilent(d); } }
+  } catch (e) { /* 무시 */ }
+  function applyDataSilent(d) {
+    // applyData와 같지만 confirm/알림 없이 복원
+    if (typeof d.village === 'string') state.village = d.village;
+    if ([5, 10, 20].includes(d.tileSizeM)) state.tileSizeM = d.tileSizeM;
+    if (d.tiles) state.tiles = d.tiles;
+    if (Array.isArray(d.placements)) state.placements = d.placements;
+    if (Array.isArray(d.zones)) state.zones = d.zones;
+    document.getElementById('villageName').value = state.village;
+    document.getElementById('tileSize').value = String(state.tileSizeM);
+  }
+  resize();
+  fitView();
+  syncSelPanel();
+  renderLists();
+})();
+</script>
+</body>
+</html>
