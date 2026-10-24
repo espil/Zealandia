@@ -104,7 +104,7 @@
   <div class="sep"></div>
   <button id="btnFit">전체 보기</button>
   <button id="btn100">100%</button>
-  <label>배경 투명도 <input type="range" id="satOpacity" min="0" max="1" step="0.05" value="1" style="width:90px"></label>
+  <label>배경 투명도 <input type="range" id="bgOpacity" min="0" max="1" step="0.05" value="1" style="width:90px"></label>
   <label><input type="checkbox" id="showGrid" checked> 격자</label>
   <div class="spacer"></div>
   <label class="hint" for="importFile" style="cursor:pointer">
@@ -193,14 +193,14 @@
 <script>
 'use strict';
 /* ================================================================
-   마을 맵 에디터 v1
-   좌표계: 위성사진(2048px = 10000m x 10000m) 중심이 원점(0,0).
+   마을 맵 에디터 v2
+   좌표계: 지형 배경(1024px = 600m x 600m) 중심이 원점(0,0).
    x = 동쪽(+), y = 남쪽(+) [화면 아래]. 셀 인덱스 (cx, cy)는
    월드좌표를 셀 크기로 나눈 floor 값.
    ================================================================ */
-const WORLD_M = 10000;
+const WORLD_M = 600;
 const HALF = WORLD_M / 2;
-const Z100 = 2048 / WORLD_M; // 100% 배율: 화면 1px = 이미지 1px -> 10000m가 2048px로 그려지는 z값
+const Z100 = 1024 / WORLD_M; // 100% 배율: 화면 1px = 이미지 1px -> 600m가 1024px로 그려지는 z값
 
 const TILE_TYPES = {
   'village-road': { label: '마을길', src: 'assets/tiles/village-road.png' },
@@ -227,13 +227,13 @@ let zoneType = 'monster';
 let paletteDefs = [];                    // sprites.json 내용
 let armed = null;                        // 배치 대기 중인 팔레트 항목
 let selected = -1;                       // 선택된 placement 인덱스
-let satOpacity = 1;
+let bgOpacity = 1;
 let showGrid = true;
 let mouse = { wx: 0, wy: 0, sx: 0, sy: 0, inside: false };
 
 // ---------------- 이미지 ----------------
 function loadImg(src) { const i = new Image(); i.src = src; i.onload = draw; return i; }
-const satImg = loadImg('assets/satellite.jpg');
+const bgImg = loadImg('assets/terrain.jpg');
 const tileImgs = {};
 for (const k in TILE_TYPES) tileImgs[k] = loadImg(TILE_TYPES[k].src);
 const spriteImgs = {}; // id -> Image
@@ -272,11 +272,11 @@ function draw() {
                    dpr * (cssW / 2 - cam.x * cam.z), dpr * (cssH / 2 - cam.y * cam.z));
   const v = viewRect();
 
-  // 위성 배경
-  if (satImg.complete && satImg.naturalWidth) {
-    ctx.globalAlpha = satOpacity;
+  // 지형 배경
+  if (bgImg.complete && bgImg.naturalWidth) {
+    ctx.globalAlpha = bgOpacity;
     ctx.imageSmoothingEnabled = true;
-    ctx.drawImage(satImg, -HALF, -HALF, WORLD_M, WORLD_M);
+    ctx.drawImage(bgImg, -HALF, -HALF, WORLD_M, WORLD_M);
     ctx.globalAlpha = 1;
   }
   ctx.strokeStyle = 'rgba(255,255,255,0.35)';
@@ -617,7 +617,7 @@ document.getElementById('tileSize').addEventListener('change', e => {
   changed(); draw();
 });
 document.getElementById('villageName').addEventListener('input', e => { state.village = e.target.value; changed(); });
-document.getElementById('satOpacity').addEventListener('input', e => { satOpacity = Number(e.target.value); draw(); });
+document.getElementById('bgOpacity').addEventListener('input', e => { bgOpacity = Number(e.target.value); draw(); });
 document.getElementById('showGrid').addEventListener('change', e => { showGrid = e.target.checked; draw(); });
 document.getElementById('selW').addEventListener('input', e => {
   if (selected < 0) return;
