@@ -1,0 +1,2167 @@
+{
+ "note": "마을 에디터 팔레트 레지스트리. image 경로는 index.html 기준 상대경로, defaultW는 배치 시 기본 너비(m). 새 스프라이트는 assets/sprites/ 에 PNG를 넣고 여기에 항목을 추가하면 팔레트에 나타납니다.",
+ "sprites": [
+  {
+   "defaultW": 1.4,
+   "id": "strayer",
+   "image": "assets/sprites/strayer.png",
+   "name": "스트레이어"
+  },
+  {
+   "defaultW": 1.3,
+   "id": "spitter",
+   "image": "assets/sprites/spitter.png",
+   "name": "스피터"
+  },
+  {
+   "defaultW": 2.4,
+   "id": "brute",
+   "image": "assets/sprites/brute.png",
+   "name": "브루트"
+  },
+  {
+   "defaultW": 4,
+   "id": "well",
+   "image": "assets/sprites/well.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "우물"
+  },
+  {
+   "defaultW": 11,
+   "id": "market",
+   "image": "assets/sprites/market.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "시장"
+  },
+  {
+   "defaultW": 11,
+   "id": "blacksmith",
+   "image": "assets/sprites/blacksmith.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "대장간"
+  },
+  {
+   "defaultW": 12,
+   "id": "chapel",
+   "image": "assets/sprites/chapel.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "예배당"
+  },
+  {
+   "defaultW": 11,
+   "id": "tavern",
+   "image": "assets/sprites/tavern.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "주점/여관"
+  },
+  {
+   "defaultW": 10,
+   "id": "windmill",
+   "image": "assets/sprites/windmill.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "풍차"
+  },
+  {
+   "defaultW": 12,
+   "id": "lumbermill",
+   "image": "assets/sprites/lumbermill.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "제재소"
+  },
+  {
+   "defaultW": 10,
+   "id": "house_a",
+   "image": "assets/sprites/house_a.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "민가 A"
+  },
+  {
+   "defaultW": 10,
+   "id": "house_b",
+   "image": "assets/sprites/house_b.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "민가 B"
+  },
+  {
+   "defaultW": 9,
+   "id": "watchtower",
+   "image": "assets/sprites/watchtower.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "망루"
+  },
+  {
+   "defaultW": 6,
+   "id": "tree_round",
+   "image": "assets/sprites/tree_round.png",
+   "name": "둥근 나무"
+  },
+  {
+   "defaultW": 5,
+   "id": "tree_pine",
+   "image": "assets/sprites/tree_pine.png",
+   "name": "소나무"
+  },
+  {
+   "defaultW": 3,
+   "id": "rock",
+   "image": "assets/sprites/rock.png",
+   "name": "바위"
+  },
+  {
+   "defaultW": 1,
+   "id": "barrel",
+   "image": "assets/sprites/barrel.png",
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ],
+   "name": "나무통"
+  },
+  {
+   "defaultW": 1.6,
+   "id": "crates",
+   "image": "assets/sprites/crates.png",
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ],
+   "name": "상자 더미"
+  },
+  {
+   "defaultW": 2.4,
+   "id": "handcart",
+   "image": "assets/sprites/handcart.png",
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ],
+   "name": "손수레"
+  },
+  {
+   "defaultW": 1.4,
+   "id": "sacks",
+   "image": "assets/sprites/sacks.png",
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ],
+   "name": "자루 더미"
+  },
+  {
+   "defaultW": 4.5,
+   "id": "tent",
+   "image": "assets/sprites/tent.png",
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ],
+   "name": "천막 노점"
+  },
+  {
+   "defaultW": 2.2,
+   "id": "weapon_rack",
+   "image": "assets/sprites/weapon_rack.png",
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ],
+   "name": "무기 거치대"
+  },
+  {
+   "defaultW": 10,
+   "id": "wm_b01_espil_house",
+   "image": "assets/sprites/wm_b01_espil_house.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "에스필 하우스"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b02_storyteller_cottage",
+   "image": "assets/sprites/wm_b02_storyteller_cottage.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "이야기꾼 오두막"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b03_cottage_blue",
+   "image": "assets/sprites/wm_b03_cottage_blue.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "파란 지붕 오두막"
+  },
+  {
+   "defaultW": 10,
+   "id": "wm_b04_family_house",
+   "image": "assets/sprites/wm_b04_family_house.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "가족 주택"
+  },
+  {
+   "defaultW": 10,
+   "id": "wm_b05_house_honey",
+   "image": "assets/sprites/wm_b05_house_honey.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "꿀색 주택"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b06_fisherman_cottage",
+   "image": "assets/sprites/wm_b06_fisherman_cottage.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "어부 오두막"
+  },
+  {
+   "defaultW": 10,
+   "id": "wm_b07_farmer_house",
+   "image": "assets/sprites/wm_b07_farmer_house.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "농부 주택"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b08_elder_cottage",
+   "image": "assets/sprites/wm_b08_elder_cottage.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "장로 오두막"
+  },
+  {
+   "defaultW": 12,
+   "id": "wm_b09_chief_hall",
+   "image": "assets/sprites/wm_b09_chief_hall.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "족장 회관"
+  },
+  {
+   "defaultW": 11,
+   "id": "wm_b10_inn_tavern",
+   "image": "assets/sprites/wm_b10_inn_tavern.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "여관/주점 (신규)"
+  },
+  {
+   "defaultW": 11,
+   "id": "wm_b11_market_hall",
+   "image": "assets/sprites/wm_b11_market_hall.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "시장 회관"
+  },
+  {
+   "defaultW": 11,
+   "id": "wm_b12_workshop",
+   "image": "assets/sprites/wm_b12_workshop.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "제작공방"
+  },
+  {
+   "defaultW": 10,
+   "id": "wm_b13_kitchen_hall",
+   "image": "assets/sprites/wm_b13_kitchen_hall.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "요리 회관"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b14_healer_house",
+   "image": "assets/sprites/wm_b14_healer_house.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "치유사 주택"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b15_south_gate",
+   "image": "assets/sprites/wm_b15_south_gate.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "남문"
+  },
+  {
+   "defaultW": 9,
+   "id": "wm_b16_watchtower",
+   "image": "assets/sprites/wm_b16_watchtower.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "망루 (신규)"
+  },
+  {
+   "defaultW": 11,
+   "id": "wm_b17_storage_barn",
+   "image": "assets/sprites/wm_b17_storage_barn.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "창고 헛간"
+  },
+  {
+   "defaultW": 11,
+   "id": "wm_b18_harbor_storehouse",
+   "image": "assets/sprites/wm_b18_harbor_storehouse.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "항구 창고"
+  },
+  {
+   "defaultW": 4,
+   "id": "wm_p01_well",
+   "image": "assets/sprites/wm_p01_well.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "우물 (신규)"
+  },
+  {
+   "defaultW": 2.2,
+   "id": "wm_p02_notice_board",
+   "image": "assets/sprites/wm_p02_notice_board.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "게시판"
+  },
+  {
+   "defaultW": 3.5,
+   "id": "wm_p03_market_stall",
+   "image": "assets/sprites/wm_p03_market_stall.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "시장 노점"
+  },
+  {
+   "defaultW": 0.9,
+   "id": "wm_p04_lantern_post",
+   "image": "assets/sprites/wm_p04_lantern_post.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "가로등 기둥"
+  },
+  {
+   "defaultW": 3,
+   "id": "wm_p05_fence",
+   "image": "assets/sprites/wm_p05_fence.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "울타리"
+  },
+  {
+   "defaultW": 1.6,
+   "id": "wm_p06_gate_lanterns",
+   "image": "assets/sprites/wm_p06_gate_lanterns.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "문 등불"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "wm_p07_anvil_station",
+   "image": "assets/sprites/wm_p07_anvil_station.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "모루 작업대"
+  },
+  {
+   "defaultW": 2,
+   "id": "wm_p08_cooking_table",
+   "image": "assets/sprites/wm_p08_cooking_table.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "요리 테이블"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "wm_p09_herb_rack",
+   "image": "assets/sprites/wm_p09_herb_rack.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "약초 건조대"
+  },
+  {
+   "defaultW": 0.8,
+   "id": "wm_p10_mailbox",
+   "image": "assets/sprites/wm_p10_mailbox.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "우체통"
+  },
+  {
+   "defaultW": 1.2,
+   "id": "wm_p11_signpost",
+   "image": "assets/sprites/wm_p11_signpost.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "이정표"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "wm_p12_dock_crates",
+   "image": "assets/sprites/wm_p12_dock_crates.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "부두 상자"
+  },
+  {
+   "defaultW": 2.2,
+   "id": "wm_p13_flower_cart",
+   "image": "assets/sprites/wm_p13_flower_cart.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "꽃 수레"
+  },
+  {
+   "defaultW": 1.1,
+   "id": "wm_p14_training_dummy",
+   "image": "assets/sprites/wm_p14_training_dummy.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "훈련 허수아비"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "wm_p15_bench",
+   "image": "assets/sprites/wm_p15_bench.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "벤치"
+  },
+  {
+   "defaultW": 1,
+   "id": "wm_p16_water_pump",
+   "image": "assets/sprites/wm_p16_water_pump.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "물 펌프"
+  },
+  {
+   "defaultW": 4,
+   "id": "wm_p17_bunting_arch",
+   "image": "assets/sprites/wm_p17_bunting_arch.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "축제 깃발 아치"
+  },
+  {
+   "defaultW": 1.6,
+   "id": "wm_p18_coin_stand",
+   "image": "assets/sprites/wm_p18_coin_stand.png",
+   "maps": [
+    "waitemata"
+   ],
+   "name": "동전 진열대"
+  },
+  {
+   "defaultW": 10,
+   "id": "v01_nanmadol_islet_house",
+   "image": "assets/sprites/v01_nanmadol_islet_house.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 섬집"
+  },
+  {
+   "defaultW": 11,
+   "id": "v02_nanmadol_elder_hall",
+   "image": "assets/sprites/v02_nanmadol_elder_hall.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 장로 회관"
+  },
+  {
+   "defaultW": 9,
+   "id": "v03_nanmadol_canal_gate",
+   "image": "assets/sprites/v03_nanmadol_canal_gate.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 운하 문"
+  },
+  {
+   "defaultW": 8,
+   "id": "v04_nanmadol_tide_shrine",
+   "image": "assets/sprites/v04_nanmadol_tide_shrine.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 조수 신전"
+  },
+  {
+   "defaultW": 10,
+   "id": "v05_nanmadol_warehouse",
+   "image": "assets/sprites/v05_nanmadol_warehouse.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 창고"
+  },
+  {
+   "defaultW": 12,
+   "id": "v06_haamonga_trilithon",
+   "image": "assets/sprites/v06_haamonga_trilithon.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 삼석문"
+  },
+  {
+   "defaultW": 8,
+   "id": "v07_haamonga_season_shrine",
+   "image": "assets/sprites/v07_haamonga_season_shrine.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 계절 신전"
+  },
+  {
+   "defaultW": 11,
+   "id": "v08_haamonga_elder_hall",
+   "image": "assets/sprites/v08_haamonga_elder_hall.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 장로 회관"
+  },
+  {
+   "defaultW": 9,
+   "id": "v09_haamonga_observatory",
+   "image": "assets/sprites/v09_haamonga_observatory.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 천문대"
+  },
+  {
+   "defaultW": 10,
+   "id": "v10_haamonga_fale_house",
+   "image": "assets/sprites/v10_haamonga_fale_house.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 팔레 집"
+  },
+  {
+   "defaultW": 14,
+   "id": "v11_tapu_marae_platform",
+   "image": "assets/sprites/v11_tapu_marae_platform.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 마라에 제단"
+  },
+  {
+   "defaultW": 11,
+   "id": "v12_tapu_canoe_house",
+   "image": "assets/sprites/v12_tapu_canoe_house.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 카누 집"
+  },
+  {
+   "defaultW": 9,
+   "id": "v13_tapu_compass_pavilion",
+   "image": "assets/sprites/v13_tapu_compass_pavilion.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 나침 파빌리온"
+  },
+  {
+   "defaultW": 11,
+   "id": "v14_tapu_elder_hall",
+   "image": "assets/sprites/v14_tapu_elder_hall.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 장로 회관"
+  },
+  {
+   "defaultW": 8,
+   "id": "v15_tapu_offering_shrine",
+   "image": "assets/sprites/v15_tapu_offering_shrine.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 공물 신전"
+  },
+  {
+   "defaultW": 16,
+   "id": "v16_ahu_moai_platform",
+   "image": "assets/sprites/v16_ahu_moai_platform.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 모아이 제단"
+  },
+  {
+   "defaultW": 11,
+   "id": "v17_ahu_sunrise_terrace",
+   "image": "assets/sprites/v17_ahu_sunrise_terrace.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 일출 테라스"
+  },
+  {
+   "defaultW": 11,
+   "id": "v18_ahu_elder_hall",
+   "image": "assets/sprites/v18_ahu_elder_hall.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 장로 회관"
+  },
+  {
+   "defaultW": 8,
+   "id": "v19_ahu_carver_shelter",
+   "image": "assets/sprites/v19_ahu_carver_shelter.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 조각가 쉼터"
+  },
+  {
+   "defaultW": 10,
+   "id": "v20_ahu_quarry_storehouse",
+   "image": "assets/sprites/v20_ahu_quarry_storehouse.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 채석 창고"
+  },
+  {
+   "defaultW": 12,
+   "id": "v21_leluh_royal_court",
+   "image": "assets/sprites/v21_leluh_royal_court.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 왕궁"
+  },
+  {
+   "defaultW": 10,
+   "id": "v22_leluh_canal_house",
+   "image": "assets/sprites/v22_leluh_canal_house.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 운하 집"
+  },
+  {
+   "defaultW": 14,
+   "id": "v23_leluh_dynasty_wall",
+   "image": "assets/sprites/v23_leluh_dynasty_wall.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 왕조 벽"
+  },
+  {
+   "defaultW": 11,
+   "id": "v24_leluh_elder_hall",
+   "image": "assets/sprites/v24_leluh_elder_hall.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 장로 회관"
+  },
+  {
+   "defaultW": 8,
+   "id": "v25_leluh_watch_post",
+   "image": "assets/sprites/v25_leluh_watch_post.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 파수대"
+  },
+  {
+   "defaultW": 24,
+   "id": "v26_pulemelei_mound",
+   "image": "assets/sprites/v26_pulemelei_mound.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 봉분"
+  },
+  {
+   "defaultW": 9,
+   "id": "v27_pulemelei_summit_shrine",
+   "image": "assets/sprites/v27_pulemelei_summit_shrine.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 정상 신전"
+  },
+  {
+   "defaultW": 11,
+   "id": "v28_pulemelei_elder_hall",
+   "image": "assets/sprites/v28_pulemelei_elder_hall.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 장로 회관"
+  },
+  {
+   "defaultW": 9,
+   "id": "v29_pulemelei_stair_gate",
+   "image": "assets/sprites/v29_pulemelei_stair_gate.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 계단 문"
+  },
+  {
+   "defaultW": 10,
+   "id": "v30_pulemelei_terraced_house",
+   "image": "assets/sprites/v30_pulemelei_terraced_house.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 계단식 집"
+  },
+  {
+   "defaultW": 3,
+   "id": "p01_nanmadol_basalt_bundle",
+   "image": "assets/sprites/p01_nanmadol_basalt_bundle.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 현무암 묶음"
+  },
+  {
+   "defaultW": 1.2,
+   "id": "p02_nanmadol_mooring_post",
+   "image": "assets/sprites/p02_nanmadol_mooring_post.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 계류 기둥"
+  },
+  {
+   "defaultW": 1.5,
+   "id": "p03_nanmadol_offering_bowl",
+   "image": "assets/sprites/p03_nanmadol_offering_bowl.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 공물 그릇"
+  },
+  {
+   "defaultW": 3,
+   "id": "p04_nanmadol_fish_trap",
+   "image": "assets/sprites/p04_nanmadol_fish_trap.png",
+   "maps": [
+    "nan-madol"
+   ],
+   "name": "난마돌 물고기 덫"
+  },
+  {
+   "defaultW": 2,
+   "id": "p05_haamonga_sundial",
+   "image": "assets/sprites/p05_haamonga_sundial.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 해시계"
+  },
+  {
+   "defaultW": 4,
+   "id": "p06_haamonga_feast_mats",
+   "image": "assets/sprites/p06_haamonga_feast_mats.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 잔치 돗자리"
+  },
+  {
+   "defaultW": 2,
+   "id": "p07_haamonga_shell_pole",
+   "image": "assets/sprites/p07_haamonga_shell_pole.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 조개 기둥"
+  },
+  {
+   "defaultW": 3,
+   "id": "p08_haamonga_season_markers",
+   "image": "assets/sprites/p08_haamonga_season_markers.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 계절 표지"
+  },
+  {
+   "defaultW": 3,
+   "id": "p09_tapu_canoe_prow",
+   "image": "assets/sprites/p09_tapu_canoe_prow.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 카누 뱃머리"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "p10_tapu_conch_stand",
+   "image": "assets/sprites/p10_tapu_conch_stand.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 소라 받침"
+  },
+  {
+   "defaultW": 2,
+   "id": "p11_tapu_star_tablet",
+   "image": "assets/sprites/p11_tapu_star_tablet.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 별 석판"
+  },
+  {
+   "defaultW": 2,
+   "id": "p12_tapu_offering_bowls",
+   "image": "assets/sprites/p12_tapu_offering_bowls.png",
+   "maps": [
+    "taputapuatea"
+   ],
+   "name": "타푸 공물 그릇들"
+  },
+  {
+   "defaultW": 2.5,
+   "id": "p13_ahu_moai_head",
+   "image": "assets/sprites/p13_ahu_moai_head.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 모아이 머리"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "p14_ahu_topknot_stone",
+   "image": "assets/sprites/p14_ahu_topknot_stone.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 상투 돌"
+  },
+  {
+   "defaultW": 2,
+   "id": "p15_ahu_tool_set",
+   "image": "assets/sprites/p15_ahu_tool_set.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 도구 세트"
+  },
+  {
+   "defaultW": 2,
+   "id": "p16_ahu_dawn_marker",
+   "image": "assets/sprites/p16_ahu_dawn_marker.png",
+   "maps": [
+    "ahu-tongariki"
+   ],
+   "name": "아후 새벽 표지"
+  },
+  {
+   "defaultW": 2.5,
+   "id": "p17_leluh_banner_stand",
+   "image": "assets/sprites/p17_leluh_banner_stand.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 깃발 받침"
+  },
+  {
+   "defaultW": 2.5,
+   "id": "p18_leluh_court_drum",
+   "image": "assets/sprites/p18_leluh_court_drum.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 궁정 북"
+  },
+  {
+   "defaultW": 6,
+   "id": "p19_leluh_lantern_barge",
+   "image": "assets/sprites/p19_leluh_lantern_barge.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 등불 바지선"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "p20_leluh_treasury_chest",
+   "image": "assets/sprites/p20_leluh_treasury_chest.png",
+   "maps": [
+    "leluh"
+   ],
+   "name": "렐루 보물 상자"
+  },
+  {
+   "defaultW": 3.5,
+   "id": "p21_pulemelei_stair_lanterns",
+   "image": "assets/sprites/p21_pulemelei_stair_lanterns.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 계단 등불"
+  },
+  {
+   "defaultW": 2.5,
+   "id": "p22_pulemelei_offering_stones",
+   "image": "assets/sprites/p22_pulemelei_offering_stones.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 공물 돌"
+  },
+  {
+   "defaultW": 2,
+   "id": "p23_pulemelei_garden_planter",
+   "image": "assets/sprites/p23_pulemelei_garden_planter.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 정원 화분"
+  },
+  {
+   "defaultW": 2,
+   "id": "p24_pulemelei_fan_stand",
+   "image": "assets/sprites/p24_pulemelei_fan_stand.png",
+   "maps": [
+    "pulemelei"
+   ],
+   "name": "풀레멜레이 부채 받침"
+  },
+  {
+   "defaultW": 10,
+   "id": "f01_plank_bridge",
+   "image": "assets/sprites/f01_plank_bridge.png",
+   "maps": [
+    "field:town>nan-madol#1"
+   ],
+   "name": "판자 다리"
+  },
+  {
+   "defaultW": 13,
+   "id": "f02_huka_falls",
+   "image": "assets/sprites/f02_huka_falls.png",
+   "maps": [
+    "field:town>nan-madol#1"
+   ],
+   "name": "후카 폭포"
+  },
+  {
+   "defaultW": 6,
+   "id": "f03_rapids_rocks",
+   "image": "assets/sprites/f03_rapids_rocks.png",
+   "maps": [
+    "field:town>nan-madol#1"
+   ],
+   "name": "급류 바위"
+  },
+  {
+   "defaultW": 5,
+   "id": "f04_mist_rock",
+   "image": "assets/sprites/f04_mist_rock.png",
+   "maps": [
+    "field:town>nan-madol#1"
+   ],
+   "name": "안개 바위"
+  },
+  {
+   "defaultW": 7,
+   "id": "f05_pass_gate_rocks",
+   "image": "assets/sprites/f05_pass_gate_rocks.png",
+   "maps": [
+    "field:nan-madol>haamonga#1"
+   ],
+   "name": "고개 문 바위"
+  },
+  {
+   "defaultW": 6,
+   "id": "f06_lookout_boulder",
+   "image": "assets/sprites/f06_lookout_boulder.png",
+   "maps": [
+    "field:nan-madol>haamonga#1"
+   ],
+   "name": "전망 바위"
+  },
+  {
+   "defaultW": 6,
+   "id": "f07_pass_steps",
+   "image": "assets/sprites/f07_pass_steps.png",
+   "maps": [
+    "field:nan-madol>haamonga#1"
+   ],
+   "name": "고개 계단"
+  },
+  {
+   "defaultW": 12,
+   "id": "f08_kepirohi_falls",
+   "image": "assets/sprites/f08_kepirohi_falls.png",
+   "maps": [
+    "field:nan-madol>haamonga#2"
+   ],
+   "name": "케피로히 폭포"
+  },
+  {
+   "defaultW": 5,
+   "id": "f09_basalt_stack",
+   "image": "assets/sprites/f09_basalt_stack.png",
+   "maps": [
+    "field:nan-madol>haamonga#2"
+   ],
+   "name": "현무암 기둥"
+  },
+  {
+   "defaultW": 4,
+   "id": "f10_grotto_path_stones",
+   "image": "assets/sprites/f10_grotto_path_stones.png",
+   "maps": [
+    "field:nan-madol>haamonga#2"
+   ],
+   "name": "동굴길 돌"
+  },
+  {
+   "defaultW": 4,
+   "id": "f11_fern_cluster",
+   "image": "assets/sprites/f11_fern_cluster.png",
+   "maps": [
+    "field:nan-madol>haamonga#2"
+   ],
+   "name": "고사리 덤불"
+  },
+  {
+   "defaultW": 34,
+   "id": "f12_taranaki",
+   "image": "assets/sprites/f12_taranaki.png",
+   "maps": [
+    "field:haamonga>taputapuatea#1"
+   ],
+   "name": "타라나키 산"
+  },
+  {
+   "defaultW": 7,
+   "id": "f13_alpine_rocks",
+   "image": "assets/sprites/f13_alpine_rocks.png",
+   "maps": [
+    "field:haamonga>taputapuatea#1"
+   ],
+   "name": "고산 바위"
+  },
+  {
+   "defaultW": 3,
+   "id": "f14_snowfield_markers",
+   "image": "assets/sprites/f14_snowfield_markers.png",
+   "maps": [
+    "field:haamonga>taputapuatea#1"
+   ],
+   "name": "설원 표지"
+  },
+  {
+   "defaultW": 14,
+   "id": "f15_gorge_cliff_left",
+   "image": "assets/sprites/f15_gorge_cliff_left.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#1"
+   ],
+   "name": "협곡 절벽 왼쪽"
+  },
+  {
+   "defaultW": 14,
+   "id": "f16_gorge_cliff_right",
+   "image": "assets/sprites/f16_gorge_cliff_right.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#1"
+   ],
+   "name": "협곡 절벽 오른쪽"
+  },
+  {
+   "defaultW": 6,
+   "id": "f17_gorge_pool_rocks",
+   "image": "assets/sprites/f17_gorge_pool_rocks.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#1"
+   ],
+   "name": "협곡 못 바위"
+  },
+  {
+   "defaultW": 4,
+   "id": "f18_ember_path_stones",
+   "image": "assets/sprites/f18_ember_path_stones.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#1"
+   ],
+   "name": "엠버 길돌"
+  },
+  {
+   "defaultW": 30,
+   "id": "f19_finkol_volcano",
+   "image": "assets/sprites/f19_finkol_volcano.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#2"
+   ],
+   "name": "핀콜 화산"
+  },
+  {
+   "defaultW": 10,
+   "id": "f20_crater_rim_rocks",
+   "image": "assets/sprites/f20_crater_rim_rocks.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#2"
+   ],
+   "name": "분화구 테두리 바위"
+  },
+  {
+   "defaultW": 6,
+   "id": "f21_ash_field_stones",
+   "image": "assets/sprites/f21_ash_field_stones.png",
+   "maps": [
+    "field:taputapuatea>ahu-tongariki#2"
+   ],
+   "name": "재밭 돌"
+  },
+  {
+   "defaultW": 4,
+   "id": "f22_raraku_head",
+   "image": "assets/sprites/f22_raraku_head.png",
+   "maps": [
+    "field:ahu-tongariki>leluh#1"
+   ],
+   "name": "라라쿠 모아이 머리"
+  },
+  {
+   "defaultW": 7,
+   "id": "f23_moai_pair",
+   "image": "assets/sprites/f23_moai_pair.png",
+   "maps": [
+    "field:ahu-tongariki>leluh#1"
+   ],
+   "name": "모아이 한 쌍"
+  },
+  {
+   "defaultW": 6,
+   "id": "f24_carving_scaffold",
+   "image": "assets/sprites/f24_carving_scaffold.png",
+   "maps": [
+    "field:ahu-tongariki>leluh#1"
+   ],
+   "name": "조각 비계"
+  },
+  {
+   "defaultW": 8,
+   "id": "f25_quarry_slope_rocks",
+   "image": "assets/sprites/f25_quarry_slope_rocks.png",
+   "maps": [
+    "field:ahu-tongariki>leluh#1"
+   ],
+   "name": "채석 비탈 바위"
+  },
+  {
+   "defaultW": 12,
+   "id": "f26_sopoaga_falls",
+   "image": "assets/sprites/f26_sopoaga_falls.png",
+   "maps": [
+    "field:leluh>pulemelei#1"
+   ],
+   "name": "소포아가 폭포"
+  },
+  {
+   "defaultW": 7,
+   "id": "f27_observation_deck",
+   "image": "assets/sprites/f27_observation_deck.png",
+   "maps": [
+    "field:leluh>pulemelei#1"
+   ],
+   "name": "전망 데크"
+  },
+  {
+   "defaultW": 5,
+   "id": "f28_lotus_pond_rocks",
+   "image": "assets/sprites/f28_lotus_pond_rocks.png",
+   "maps": [
+    "field:leluh>pulemelei#1"
+   ],
+   "name": "연꽃 못 바위"
+  },
+  {
+   "defaultW": 4,
+   "id": "f29_drowned_path_stones",
+   "image": "assets/sprites/f29_drowned_path_stones.png",
+   "maps": [
+    "field:leluh>pulemelei#1"
+   ],
+   "name": "익사 길돌"
+  },
+  {
+   "defaultW": 40,
+   "id": "f30_rano_kau_rim",
+   "image": "assets/sprites/f30_rano_kau_rim.png",
+   "maps": [
+    "field:leluh>pulemelei#2"
+   ],
+   "name": "라노 카우 테두리"
+  },
+  {
+   "defaultW": 5,
+   "id": "f31_crater_reeds",
+   "image": "assets/sprites/f31_crater_reeds.png",
+   "maps": [
+    "field:leluh>pulemelei#2"
+   ],
+   "name": "분화구 갈대"
+  },
+  {
+   "defaultW": 5,
+   "id": "f32_lake_viewing_stones",
+   "image": "assets/sprites/f32_lake_viewing_stones.png",
+   "maps": [
+    "field:leluh>pulemelei#2"
+   ],
+   "name": "호수 전망 돌"
+  },
+  {
+   "defaultW": 7,
+   "id": "d01_grotto_entrance",
+   "image": "assets/sprites/d01_grotto_entrance.png",
+   "maps": [
+    "sunken-grotto",
+    "field:nan-madol>haamonga#2"
+   ],
+   "name": "동굴 입구"
+  },
+  {
+   "defaultW": 7,
+   "id": "d02_drowned_cave_gate",
+   "image": "assets/sprites/d02_drowned_cave_gate.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "익사 동굴 문"
+  },
+  {
+   "defaultW": 8,
+   "id": "d03_water_shrine",
+   "image": "assets/sprites/d03_water_shrine.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "물의 신전 입구"
+  },
+  {
+   "defaultW": 7,
+   "id": "d04_emberdeep_entrance",
+   "image": "assets/sprites/d04_emberdeep_entrance.png",
+   "maps": [
+    "emberdeep",
+    "field:taputapuatea>ahu-tongariki#1"
+   ],
+   "name": "엠버딥 입구"
+  },
+  {
+   "defaultW": 7,
+   "id": "d05_lava_forge_gate",
+   "image": "assets/sprites/d05_lava_forge_gate.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "용암 대장간 문"
+  },
+  {
+   "defaultW": 8,
+   "id": "d06_smoking_ravine",
+   "image": "assets/sprites/d06_smoking_ravine.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "연기 협곡 입구"
+  },
+  {
+   "defaultW": 7,
+   "id": "d07_drowned_vault",
+   "image": "assets/sprites/d07_drowned_vault.png",
+   "maps": [
+    "drowned-vault",
+    "field:leluh>pulemelei#1"
+   ],
+   "name": "익사한 금고 입구"
+  },
+  {
+   "defaultW": 8,
+   "id": "d08_sunken_temple_door",
+   "image": "assets/sprites/d08_sunken_temple_door.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "가라앉은 신전 문"
+  },
+  {
+   "defaultW": 8,
+   "id": "d09_lagoon_ruin",
+   "image": "assets/sprites/d09_lagoon_ruin.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "라군 유적 입구"
+  },
+  {
+   "defaultW": 7,
+   "id": "d10_ruin_heart_gate",
+   "image": "assets/sprites/d10_ruin_heart_gate.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "유적 심장 문"
+  },
+  {
+   "defaultW": 9,
+   "id": "d11_pyramid_door",
+   "image": "assets/sprites/d11_pyramid_door.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "피라미드 문"
+  },
+  {
+   "defaultW": 8,
+   "id": "d12_canal_lock_gate",
+   "image": "assets/sprites/d12_canal_lock_gate.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "운하 수문"
+  },
+  {
+   "defaultW": 6,
+   "id": "a01_boss_door",
+   "image": "assets/sprites/a01_boss_door.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "보스 문"
+  },
+  {
+   "defaultW": 3,
+   "id": "a02_exit_portal",
+   "image": "assets/sprites/a02_exit_portal.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "출구 포털"
+  },
+  {
+   "defaultW": 2.5,
+   "id": "a03_lore_stele",
+   "image": "assets/sprites/a03_lore_stele.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "전승 비석"
+  },
+  {
+   "defaultW": 3,
+   "id": "a04_heart_pedestal",
+   "image": "assets/sprites/a04_heart_pedestal.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "심장 받침대"
+  },
+  {
+   "defaultW": 1.5,
+   "id": "a05_key_stand",
+   "image": "assets/sprites/a05_key_stand.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "열쇠 받침"
+  },
+  {
+   "defaultW": 3,
+   "id": "a06_teal_crystals",
+   "image": "assets/sprites/a06_teal_crystals.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "청록 수정"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "a07_grotto_chest",
+   "image": "assets/sprites/a07_grotto_chest.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "동굴 상자"
+  },
+  {
+   "defaultW": 6,
+   "id": "a08_waterfall_basin",
+   "image": "assets/sprites/a08_waterfall_basin.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "폭포 분지"
+  },
+  {
+   "defaultW": 5,
+   "id": "a09_stalactites",
+   "image": "assets/sprites/a09_stalactites.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "종유석"
+  },
+  {
+   "defaultW": 3,
+   "id": "a10_lava_crystals",
+   "image": "assets/sprites/a10_lava_crystals.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "용암 수정"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "a11_obsidian_chest",
+   "image": "assets/sprites/a11_obsidian_chest.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "흑요석 상자"
+  },
+  {
+   "defaultW": 2.5,
+   "id": "a12_magma_brazier",
+   "image": "assets/sprites/a12_magma_brazier.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "마그마 화로"
+  },
+  {
+   "defaultW": 8,
+   "id": "a13_rock_bridge",
+   "image": "assets/sprites/a13_rock_bridge.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "바위 다리"
+  },
+  {
+   "defaultW": 3,
+   "id": "a14_coral_crystals",
+   "image": "assets/sprites/a14_coral_crystals.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "산호 수정"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "a15_sunken_chest",
+   "image": "assets/sprites/a15_sunken_chest.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "가라앉은 상자"
+  },
+  {
+   "defaultW": 4,
+   "id": "a16_flooded_fountain",
+   "image": "assets/sprites/a16_flooded_fountain.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "침수 분수"
+  },
+  {
+   "defaultW": 2,
+   "id": "a17_ring_handle",
+   "image": "assets/sprites/a17_ring_handle.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "고리 손잡이"
+  },
+  {
+   "defaultW": 2.4,
+   "id": "a18_grotto_crab",
+   "image": "assets/sprites/a18_grotto_crab.png",
+   "maps": [
+    "sunken-grotto"
+   ],
+   "name": "동굴 게 (가디언)"
+  },
+  {
+   "defaultW": 1.6,
+   "id": "a19_ember_imp",
+   "image": "assets/sprites/a19_ember_imp.png",
+   "maps": [
+    "emberdeep"
+   ],
+   "name": "엠버 임프 (가디언)"
+  },
+  {
+   "defaultW": 2.6,
+   "id": "a20_drowned_warden",
+   "image": "assets/sprites/a20_drowned_warden.png",
+   "maps": [
+    "drowned-vault"
+   ],
+   "name": "익사한 파수꾼 (가디언)"
+  },
+  {
+   "defaultW": 1.8,
+   "id": "a21_ruin_strayer",
+   "image": "assets/sprites/a21_ruin_strayer.png",
+   "maps": [
+    "sunken-grotto",
+    "emberdeep",
+    "drowned-vault"
+   ],
+   "name": "유적 스트레이어 (가디언)"
+  },
+  {
+   "id": "wm_p19_alchemy_table",
+   "name": "연금술 테이블",
+   "file": "sprites/wm_p19_alchemy_table.png",
+   "defaultW": 2.2,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "portal_city",
+   "name": "도시 포털",
+   "file": "sprites/portal_city.png",
+   "defaultW": 5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x05_apple_tree",
+   "name": "사과나무",
+   "image": "assets/sprites/wm_x05_apple_tree.png",
+   "defaultW": 7,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x06_willow_tree",
+   "name": "버드나무",
+   "image": "assets/sprites/wm_x06_willow_tree.png",
+   "defaultW": 8,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x07_blossom_tree",
+   "name": "벚꽃나무",
+   "image": "assets/sprites/wm_x07_blossom_tree.png",
+   "defaultW": 7,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x08_autumn_tree",
+   "name": "단풍나무",
+   "image": "assets/sprites/wm_x08_autumn_tree.png",
+   "defaultW": 7,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x09_berry_bush",
+   "name": "베리 덤불",
+   "image": "assets/sprites/wm_x09_berry_bush.png",
+   "defaultW": 2.5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x10_flower_patch",
+   "name": "꽃밭",
+   "image": "assets/sprites/wm_x10_flower_patch.png",
+   "defaultW": 3,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x11_grass_tufts",
+   "name": "풀 무더기",
+   "image": "assets/sprites/wm_x11_grass_tufts.png",
+   "defaultW": 2.5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x12_crop_plot",
+   "name": "작물 밭",
+   "image": "assets/sprites/wm_x12_crop_plot.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x13_wheat_patch",
+   "name": "밀밭",
+   "image": "assets/sprites/wm_x13_wheat_patch.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x14_vegetable_rows",
+   "name": "채소 밭",
+   "image": "assets/sprites/wm_x14_vegetable_rows.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x15_pumpkin_patch",
+   "name": "호박 밭",
+   "image": "assets/sprites/wm_x15_pumpkin_patch.png",
+   "defaultW": 5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x16_scarecrow",
+   "name": "허수아비",
+   "image": "assets/sprites/wm_x16_scarecrow.png",
+   "defaultW": 1.2,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x17_hay_bales",
+   "name": "건초 더미",
+   "image": "assets/sprites/wm_x17_hay_bales.png",
+   "defaultW": 3,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x18_corn_patch",
+   "name": "옥수수 밭",
+   "image": "assets/sprites/wm_x18_corn_patch.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x19_basalt_rocks",
+   "name": "현무암 바위",
+   "image": "assets/sprites/wm_x19_basalt_rocks.png",
+   "defaultW": 4.5
+  },
+  {
+   "id": "wm_x20_obsidian_shards",
+   "name": "흑요석 조각",
+   "image": "assets/sprites/wm_x20_obsidian_shards.png",
+   "defaultW": 3
+  },
+  {
+   "id": "wm_x21_lava_boulder",
+   "name": "용암 바위",
+   "image": "assets/sprites/wm_x21_lava_boulder.png",
+   "defaultW": 4,
+   "maps": [
+    "emberdeep",
+    "field:taputapuatea>ahu-tongariki#1",
+    "field:taputapuatea>ahu-tongariki#2"
+   ]
+  },
+  {
+   "id": "wm_x22_scoria_boulders",
+   "name": "스코리아 바위",
+   "image": "assets/sprites/wm_x22_scoria_boulders.png",
+   "defaultW": 5
+  },
+  {
+   "id": "wm_x23_sulfur_rocks",
+   "name": "유황 바위",
+   "image": "assets/sprites/wm_x23_sulfur_rocks.png",
+   "defaultW": 3.5,
+   "maps": [
+    "emberdeep",
+    "drowned-vault",
+    "sunken-grotto"
+   ]
+  },
+  {
+   "id": "wm_x24_mini_vent",
+   "name": "작은 분기공",
+   "image": "assets/sprites/wm_x24_mini_vent.png",
+   "defaultW": 2.5,
+   "maps": [
+    "emberdeep",
+    "field:taputapuatea>ahu-tongariki#1"
+   ]
+  },
+  {
+   "id": "wm_c01_traveller_m",
+   "name": "여행자 (남)",
+   "image": "assets/sprites/wm_c01_traveller_m.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c02_traveller_f",
+   "name": "여행자 (여)",
+   "image": "assets/sprites/wm_c02_traveller_f.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c03_traveller_fire",
+   "name": "여행자 (불)",
+   "image": "assets/sprites/wm_c03_traveller_fire.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c04_traveller_ice",
+   "name": "여행자 (얼음)",
+   "image": "assets/sprites/wm_c04_traveller_ice.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c05_chief_elder",
+   "name": "촌장",
+   "image": "assets/sprites/wm_c05_chief_elder.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c06_fisherwoman",
+   "name": "어부",
+   "image": "assets/sprites/wm_c06_fisherwoman.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c07_farmer_boy",
+   "name": "농부 소년",
+   "image": "assets/sprites/wm_c07_farmer_boy.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c08_blacksmith",
+   "name": "대장장이",
+   "image": "assets/sprites/wm_c08_blacksmith.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c09_cook",
+   "name": "요리사 할머니",
+   "image": "assets/sprites/wm_c09_cook.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c10_merchant",
+   "name": "상인",
+   "image": "assets/sprites/wm_c10_merchant.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c11_healer",
+   "name": "치유사",
+   "image": "assets/sprites/wm_c11_healer.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c12_guard",
+   "name": "경비병",
+   "image": "assets/sprites/wm_c12_guard.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c13_child_girl",
+   "name": "아이 (여)",
+   "image": "assets/sprites/wm_c13_child_girl.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c14_child_boy",
+   "name": "아이 (남)",
+   "image": "assets/sprites/wm_c14_child_boy.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c15_carpenter",
+   "name": "목수",
+   "image": "assets/sprites/wm_c15_carpenter.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c16_innkeeper",
+   "name": "여관 주인",
+   "image": "assets/sprites/wm_c16_innkeeper.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  }
+ ]
+}
