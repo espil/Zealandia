@@ -161,16 +161,16 @@
   }
 
   /* ---------- build the world ------------------------------------- */
-  /* Waitemata theme (BGM room delivery, 2026-10-24; playback rule
-     changed by Han the same day): the theme plays ONCE on entry
-     (fade in over 4 s to 0.5, no loop); when it ends, a quiet track
-     takes over as the looping town BGM (track TBD by Han - set
-     QUIET.src when the BGM room delivers it). The engine's own
-     city-theme slot is cancelled at build (it was armed for the
-     borrowed city during entry), and the engine's music toggle is
-     mirrored via currentTrack(). */
-  var THEME = { audio: null, started: false, fadeTimer: null };
-  var QUIET = { audio: null, started: false, src: null };
+  /* Town music (BGM room delivery, 2026-10-24; Han's final rule the
+     same day): ALL of Han's music loops as a SET at volume 0.3 -
+     tracks play in order and the set repeats; no one-shot rule, no
+     separate quiet track. Fades (4 s) and the music toggle behave as
+     in the engine (the toggle is mirrored via currentTrack()). The
+     engine's own city-theme slot is cancelled at build - it was
+     armed for the borrowed city during entry. The Auckland track
+     joins SET when its capture is delivered. */
+  var SET = ['assets/zealandia/bgm/waitemata.mp3'];
+  var MUSIC = { audio: null, idx: -1, started: false };
   function fadeAudio(a, target, done) {
     if (!a) return;
     if (a.__zfade) clearInterval(a.__zfade);
@@ -196,41 +196,30 @@
     });
     if (after) after();
   }
-  function quietStart() {
-    if (!QUIET.src || QUIET.started) return;
-    QUIET.started = true;
-    var a = new Audio(QUIET.src);
-    a.loop = true; a.volume = 0;
-    QUIET.audio = a;
-    playWithGestureFallback(a, function () { fadeAudio(a, 0.5); });
-  }
-  function themeStart() {
-    if (THEME.started) return;
-    THEME.started = true;
-    var a = new Audio('assets/zealandia/bgm/waitemata.mp3');
+  function musicNext() {
+    if (!SET.length) return;
+    MUSIC.idx = (MUSIC.idx + 1) % SET.length;
+    var a = new Audio(SET[MUSIC.idx]);
     a.loop = false; a.volume = 0;
-    THEME.audio = a;
-    a.addEventListener('ended', function () { quietStart(); });
-    playWithGestureFallback(a, function () { fadeAudio(a, 0.5); });
+    MUSIC.audio = a;
+    a.addEventListener('ended', function () { musicNext(); });
+    playWithGestureFallback(a, function () { fadeAudio(a, 0.3); });
   }
   function themeArm() {
     try { if (window.EspilAudio && window.EspilAudio.onMapExit) window.EspilAudio.onMapExit(); } catch (e) {}
-    themeStart();
-    Z.theme = THEME;
-    Z.quiet = QUIET;
+    if (!MUSIC.started) { MUSIC.started = true; musicNext(); }
+    Z.music = MUSIC;
   }
   function themeMirrorToggle() {
-    if (!window.EspilAudio || !window.EspilAudio.currentTrack) return;
+    if (!MUSIC.audio || !window.EspilAudio || !window.EspilAudio.currentTrack) return;
     var muted = false;
     try { muted = !!window.EspilAudio.currentTrack().muted; } catch (e) { return; }
-    [THEME, QUIET].forEach(function (T) {
-      if (!T.audio) return;
-      if (muted && !T.audio.paused) { try { T.audio.pause(); } catch (e) {} }
-      else if (!muted && T.started && T.audio.paused && !T.audio.ended) {
-        var pr = T.audio.play(); if (pr && pr.catch) pr.catch(function () {});
-        if (T.audio.volume < 0.49) fadeAudio(T.audio, 0.5);
-      }
-    });
+    var a = MUSIC.audio;
+    if (muted && !a.paused) { try { a.pause(); } catch (e) {} }
+    else if (!muted && MUSIC.started && a.paused && !a.ended) {
+      var pr = a.play(); if (pr && pr.catch) pr.catch(function () {});
+      if (a.volume < 0.29) fadeAudio(a, 0.3);
+    }
   }
 
   /* the host page warns that no Mapbox token is configured - true
