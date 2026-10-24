@@ -1,11 +1,13 @@
-/* Zealandia party invites (Han, 2026-10-23).
-   Zealandia is a SINGLE-PLAYER world: your instance is yours alone.
-   A party lets you INVITE members into it. This module is the client:
-   party state, invite codes, roster UI and the join flow.
+/* Zealandia party play (Han, 2026-10-23).
+   Zealandia is a SINGLE-PLAYER world, and its users can party up and
+   play TOGETHER: any user can create a party, any user can join one,
+   and members are peers (a party leader keeps the code, nobody owns
+   anyone's world). This module is the client: party state, party
+   codes, roster UI and the join flow.
 
    Transport note: real-time co-presence rides the thin server relay
    (login/session + presence) from the client-carried distribution
-   principle. Until that server opens, party state and invite codes are
+   principle. Until that server opens, party state and party codes are
    created and saved on this device, and the panel says so plainly.
    The seam is window.__zpartyTransport: 'local' now, the relay later
    slots in behind the same state shape. */
@@ -20,7 +22,13 @@
   function load(){
     try{
       var raw=localStorage.getItem(LS_KEY);
-      if(raw){ var s=JSON.parse(raw); if(s&&s.mode)return s; }
+      if(raw){ var s=JSON.parse(raw); if(s&&s.mode){
+        /* normalize the first build's host/guest wording to peers */
+        if(s.mode==='host')s.mode='leader';
+        if(s.mode==='guest')s.mode='member';
+        (s.members||[]).forEach(function(m){ if(m.role==='host')m.role='leader'; if(m.role==='guest')m.role='member'; });
+        return s;
+      } }
     }catch(e){}
     return { mode:'solo', code:null, members:[], ts:0 };
   }
@@ -39,15 +47,15 @@
     state: load(),
     transport: 'local',
     create: function(){
-      var s={ mode:'host', code:genCode(), members:[{ name:username(), role:'host', status:'here' }], ts:0 };
+      var s={ mode:'leader', code:genCode(), members:[{ name:username(), role:'leader', status:'here' }], ts:0 };
       save(s); P.state=s; return s;
     },
     join: function(code){
       code=String(code||'').toUpperCase().replace(/\s+/g,'');
       if(!/^ZL-[A-Z0-9]{6}$/.test(code))return null;
-      var s={ mode:'guest', code:code, members:[
-        { name:'Party host', role:'host', status:'link pending' },
-        { name:username(), role:'guest', status:'here' }
+      var s={ mode:'member', code:code, members:[
+        { name:'Party leader', role:'leader', status:'link pending' },
+        { name:username(), role:'member', status:'here' }
       ], ts:0 };
       save(s); P.state=s; return s;
     },
@@ -103,25 +111,25 @@
   function render(){
     if(!chipEl)return;
     var s=P.state;
-    chipEl.textContent = s.mode==='solo' ? 'Party · Solo' : 'Party · '+(s.mode==='host'?'Hosting ':'Joined ')+s.members.length;
+    chipEl.textContent = s.mode==='solo' ? 'Party · Solo' : 'Party · '+s.members.length+' in party';
     chipEl.style.display = inZealandia() ? 'block' : 'none';
     panelEl.style.display = (open&&inZealandia()) ? 'block' : 'none';
     if(!open)return;
     var h='<h4>Party</h4>';
-    h+='<div class="zp-dim">Zealandia is a single-player world. Your party is the guests you invite into it.</div>';
+    h+='<div class="zp-dim">Zealandia is a single-player world, and users can party up and play together. Create a party and share its code with friends, or join theirs.</div>';
     if(s.mode==='solo'){
-      h+='<div class="zp-row" style="margin-top:8px"><button id="zp-create" type="button">Create party &amp; invite</button></div>';
+      h+='<div class="zp-row" style="margin-top:8px"><button id="zp-create" type="button">Create party</button></div>';
       h+='<div class="zp-row"><input id="zp-code-in" maxlength="9" placeholder="ZL-XXXXXX"><button id="zp-join" type="button">Join</button></div>';
     } else {
-      h+='<div class="zp-row"><span>Invite code</span><span class="zp-code">'+s.code+'</span></div>';
+      h+='<div class="zp-row"><span>Party code</span><span class="zp-code">'+s.code+'</span></div>';
       s.members.forEach(function(m){
-        h+='<div class="zp-row"><span>'+m.name+(m.role==='host'?' (host)':'')+'</span><span class="zp-dim">'+m.status+'</span></div>';
+        h+='<div class="zp-row"><span>'+m.name+(m.role==='leader'?' (leader)':'')+'</span><span class="zp-dim">'+m.status+'</span></div>';
       });
       h+='<div class="zp-row" style="margin-top:6px">'
-        +(s.mode==='host'?'<button id="zp-copy" type="button">Copy invite</button>':'')
-        +'<button id="zp-leave" type="button">'+(s.mode==='host'?'Disband':'Leave party')+'</button></div>';
+        +'<button id="zp-copy" type="button">Copy party code</button>'
+        +'<button id="zp-leave" type="button">'+(s.mode==='leader'?'Disband party':'Leave party')+'</button></div>';
     }
-    h+='<div class="zp-dim" style="margin-top:8px">Server link: pending. Invite codes are saved on this device and activate for live co-play when the game server opens.</div>';
+    h+='<div class="zp-dim" style="margin-top:8px">Server link: pending. Party codes are saved on this device and parties link up live when the game server opens.</div>';
     panelEl.innerHTML=h;
     var b;
     if((b=document.getElementById('zp-create')))b.addEventListener('click',function(){ P.create(); });
@@ -130,9 +138,9 @@
       if(inp&&!P.join(inp.value))inp.style.borderColor='#ff9a9a';
     });
     if((b=document.getElementById('zp-copy')))b.addEventListener('click',function(){
-      var text='Join my Zealandia party - invite code '+P.state.code;
+      var text='Party up with me in Zealandia - party code '+P.state.code;
       if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text);
-      else window.prompt('Copy your invite code', text);
+      else window.prompt('Copy your party code', text);
     });
     if((b=document.getElementById('zp-leave')))b.addEventListener('click',function(){ P.leave(); });
   }
