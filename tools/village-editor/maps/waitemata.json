@@ -1,0 +1,975 @@
+{
+ "village": "waitemata",
+ "tileSizeM": 10,
+ "tiles": {
+  "1,-3": "paved-road",
+  "1,-2": "village-road",
+  "1,-1": "paved-road",
+  "2,-3": "paved-road",
+  "2,-2": "village-road",
+  "2,-1": "paved-road",
+  "3,-4": "village-road",
+  "3,-3": "village-road",
+  "3,-2": "village-road",
+  "3,-1": "village-road",
+  "3,0": "village-road",
+  "4,-3": "paved-road",
+  "4,-2": "village-road",
+  "4,-1": "paved-road",
+  "-7,-2": "village-road",
+  "-6,-2": "village-road",
+  "-5,-2": "village-road",
+  "-4,-2": "village-road",
+  "-3,-2": "village-road",
+  "-2,-2": "village-road",
+  "-1,-2": "village-road",
+  "0,-2": "village-road",
+  "5,-2": "village-road",
+  "6,-2": "village-road",
+  "7,-2": "village-road",
+  "8,-2": "village-road",
+  "9,-2": "village-road",
+  "10,-2": "village-road",
+  "11,-2": "village-road",
+  "12,-2": "village-road",
+  "13,-2": "village-road",
+  "3,-12": "village-road",
+  "3,-11": "village-road",
+  "3,-10": "village-road",
+  "3,-9": "village-road",
+  "3,-8": "village-road",
+  "3,-7": "village-road",
+  "3,-6": "village-road",
+  "3,-5": "village-road",
+  "3,1": "village-road",
+  "3,2": "village-road",
+  "3,3": "village-road",
+  "3,4": "village-road",
+  "3,5": "village-road",
+  "3,6": "village-road",
+  "3,7": "grass-road",
+  "3,8": "grass-road",
+  "8,-1": "village-road",
+  "8,0": "village-road",
+  "8,1": "village-road",
+  "7,1": "grass-road",
+  "7,2": "village-road",
+  "6,2": "village-road",
+  "6,3": "village-road",
+  "5,3": "village-road",
+  "4,3": "village-road",
+  "4,4": "village-road",
+  "2,4": "village-road",
+  "1,3": "village-road",
+  "0,3": "village-road",
+  "-1,2": "grass-road",
+  "-2,1": "village-road",
+  "-2,0": "village-road",
+  "-3,0": "village-road",
+  "-3,-1": "village-road",
+  "-3,-3": "village-road",
+  "-3,-4": "village-road",
+  "-2,-4": "village-road",
+  "-2,-5": "village-road",
+  "-1,-6": "village-road",
+  "0,-7": "village-road",
+  "1,-7": "village-road",
+  "2,-8": "village-road",
+  "4,-8": "village-road",
+  "4,-7": "village-road",
+  "5,-7": "village-road",
+  "6,-7": "village-road",
+  "6,-6": "village-road",
+  "7,-6": "village-road",
+  "7,-5": "village-road",
+  "8,-5": "village-road",
+  "8,-4": "village-road",
+  "8,-3": "village-road",
+  "3,9": "grass-road",
+  "3,10": "grass-road",
+  "3,11": "grass-road",
+  "3,12": "grass-road",
+  "3,13": "grass-road",
+  "3,14": "grass-road",
+  "3,15": "grass-road",
+  "3,16": "grass-road",
+  "3,17": "grass-road",
+  "3,18": "grass-road",
+  "3,19": "grass-road",
+  "3,20": "grass-road",
+  "3,21": "grass-road",
+  "3,22": "grass-road",
+  "3,23": "grass-road",
+  "3,24": "grass-road",
+  "3,25": "grass-road",
+  "3,26": "grass-road",
+  "3,27": "grass-road",
+  "-2,2": "grass-road",
+  "-2,3": "grass-road",
+  "-3,3": "grass-road",
+  "-4,4": "grass-road",
+  "8,2": "grass-road",
+  "9,3": "grass-road",
+  "5,-3": "paved-road"
+ },
+ "placements": [
+  {
+   "asset": "wm_b09_chief_hall",
+   "x": 33,
+   "y": -69,
+   "w": 12
+  },
+  {
+   "asset": "wm_b01_espil_house",
+   "x": 79,
+   "y": -57,
+   "w": 10
+  },
+  {
+   "asset": "wm_b10_inn_tavern",
+   "x": -15,
+   "y": -55,
+   "w": 11
+  },
+  {
+   "asset": "wm_b11_market_hall",
+   "x": 87,
+   "y": -11,
+   "w": 11
+  },
+  {
+   "asset": "wm_b13_kitchen_hall",
+   "x": 65,
+   "y": 31,
+   "w": 10
+  },
+  {
+   "asset": "wm_b14_healer_house",
+   "x": -3,
+   "y": 27,
+   "w": 10
+  },
+  {
+   "asset": "wm_b12_workshop",
+   "x": -21,
+   "y": -19,
+   "w": 9
+  },
+  {
+   "asset": "wm_b17_storage_barn",
+   "x": 7,
+   "y": 51,
+   "w": 9
+  },
+  {
+   "asset": "wm_b18_harbor_storehouse",
+   "x": 99,
+   "y": 39,
+   "w": 10
+  },
+  {
+   "asset": "wm_b16_watchtower",
+   "x": -33,
+   "y": -73,
+   "w": 7
+  },
+  {
+   "asset": "wm_b15_south_gate",
+   "x": 33,
+   "y": 73,
+   "w": 10
+  },
+  {
+   "asset": "wm_b02_storyteller_cottage",
+   "x": -27,
+   "y": 17,
+   "w": 8
+  },
+  {
+   "asset": "wm_b08_elder_cottage",
+   "x": 93,
+   "y": -51,
+   "w": 8
+  },
+  {
+   "asset": "wm_b04_family_house",
+   "x": 53,
+   "y": -81,
+   "w": 9
+  },
+  {
+   "asset": "wm_b06_fisherman_cottage",
+   "x": 109,
+   "y": 17,
+   "w": 8
+  },
+  {
+   "asset": "wm_b07_farmer_house",
+   "x": -39,
+   "y": 39,
+   "w": 9
+  },
+  {
+   "asset": "wm_b05_house_honey",
+   "x": 99,
+   "y": -75,
+   "w": 9
+  },
+  {
+   "asset": "wm_b03_cottage_blue",
+   "x": 15,
+   "y": -87,
+   "w": 8
+  },
+  {
+   "asset": "house_a",
+   "x": 119,
+   "y": -25,
+   "w": 7.5
+  },
+  {
+   "asset": "house_b",
+   "x": -53,
+   "y": -41,
+   "w": 7.5
+  },
+  {
+   "asset": "wm_b04_family_house",
+   "x": -63,
+   "y": 1,
+   "w": 9
+  },
+  {
+   "asset": "wm_p01_well",
+   "x": 33,
+   "y": -15,
+   "w": 3.2
+  },
+  {
+   "asset": "portal_city",
+   "x": 60,
+   "y": -32,
+   "w": 5
+  },
+  {
+   "asset": "wm_p02_notice_board",
+   "x": 44,
+   "y": -4,
+   "w": 2
+  },
+  {
+   "asset": "wm_p17_bunting_arch",
+   "x": 33,
+   "y": 11,
+   "w": 6
+  },
+  {
+   "asset": "wm_p11_signpost",
+   "x": 38,
+   "y": 17,
+   "w": 1.6
+  },
+  {
+   "asset": "wm_p10_mailbox",
+   "x": 40,
+   "y": -24,
+   "w": 1.2
+  },
+  {
+   "asset": "wm_p16_water_pump",
+   "x": 24,
+   "y": -5,
+   "w": 1.6
+  },
+  {
+   "asset": "wm_p15_bench",
+   "x": 20,
+   "y": -21,
+   "w": 2.2
+  },
+  {
+   "asset": "wm_p15_bench",
+   "x": 47,
+   "y": -19,
+   "w": 2.2
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 15,
+   "y": -33,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 51,
+   "y": -33,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 15,
+   "y": 3,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 51,
+   "y": 3,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 33,
+   "y": -45,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 33,
+   "y": 29,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": -1,
+   "y": -15,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p04_lantern_post",
+   "x": 67,
+   "y": -15,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_p03_market_stall",
+   "x": 78,
+   "y": 2,
+   "w": 3.5
+  },
+  {
+   "asset": "wm_p03_market_stall",
+   "x": 92,
+   "y": 2,
+   "w": 3.5
+  },
+  {
+   "asset": "wm_p18_coin_stand",
+   "x": 82,
+   "y": 10,
+   "w": 2
+  },
+  {
+   "asset": "wm_p13_flower_cart",
+   "x": 50,
+   "y": 6,
+   "w": 2.6
+  },
+  {
+   "asset": "wm_p07_anvil_station",
+   "x": -16,
+   "y": -12,
+   "w": 2.4
+  },
+  {
+   "asset": "wm_p08_cooking_table",
+   "x": 60,
+   "y": 24,
+   "w": 2.6
+  },
+  {
+   "asset": "wm_p19_alchemy_table",
+   "x": 0,
+   "y": 20,
+   "w": 2.2
+  },
+  {
+   "asset": "wm_p09_herb_rack",
+   "x": -7,
+   "y": 21,
+   "w": 2
+  },
+  {
+   "asset": "wm_p12_dock_crates",
+   "x": 104,
+   "y": 46,
+   "w": 3.2
+  },
+  {
+   "asset": "wm_p12_dock_crates",
+   "x": 93,
+   "y": 47,
+   "w": 3.2
+  },
+  {
+   "asset": "wm_p14_training_dummy",
+   "x": -26,
+   "y": -28,
+   "w": 1.6
+  },
+  {
+   "asset": "wm_p06_gate_lanterns",
+   "x": 27,
+   "y": 67,
+   "w": 2.4
+  },
+  {
+   "asset": "wm_p06_gate_lanterns",
+   "x": 39,
+   "y": 67,
+   "w": 2.4
+  },
+  {
+   "asset": "wm_x12_crop_plot",
+   "x": -53,
+   "y": 51,
+   "w": 6
+  },
+  {
+   "asset": "wm_x13_wheat_patch",
+   "x": -38,
+   "y": 59,
+   "w": 6
+  },
+  {
+   "asset": "wm_x14_vegetable_rows",
+   "x": -24,
+   "y": 53,
+   "w": 6
+  },
+  {
+   "asset": "wm_x15_pumpkin_patch",
+   "x": -57,
+   "y": 31,
+   "w": 5
+  },
+  {
+   "asset": "wm_x18_corn_patch",
+   "x": -29,
+   "y": 71,
+   "w": 6
+  },
+  {
+   "asset": "wm_x16_scarecrow",
+   "x": -38,
+   "y": 47,
+   "w": 1.2
+  },
+  {
+   "asset": "wm_x17_hay_bales",
+   "x": -17,
+   "y": 43,
+   "w": 3
+  },
+  {
+   "asset": "wm_x17_hay_bales",
+   "x": -47,
+   "y": 65,
+   "w": 3
+  },
+  {
+   "asset": "wm_x05_apple_tree",
+   "x": 1,
+   "y": -47,
+   "w": 7
+  },
+  {
+   "asset": "wm_x05_apple_tree",
+   "x": 125,
+   "y": -57,
+   "w": 7
+  },
+  {
+   "asset": "wm_x05_apple_tree",
+   "x": -64,
+   "y": -27,
+   "w": 7
+  },
+  {
+   "asset": "wm_x07_blossom_tree",
+   "x": 55,
+   "y": 47,
+   "w": 7
+  },
+  {
+   "asset": "wm_x07_blossom_tree",
+   "x": 11,
+   "y": 7,
+   "w": 7
+  },
+  {
+   "asset": "wm_x06_willow_tree",
+   "x": 151,
+   "y": 73,
+   "w": 8
+  },
+  {
+   "asset": "wm_x08_autumn_tree",
+   "x": 135,
+   "y": -3,
+   "w": 7
+  },
+  {
+   "asset": "wm_x08_autumn_tree",
+   "x": -77,
+   "y": -63,
+   "w": 7
+  },
+  {
+   "asset": "tree_round",
+   "x": 129,
+   "y": 81,
+   "w": 6
+  },
+  {
+   "asset": "tree_pine",
+   "x": -85,
+   "y": 15,
+   "w": 6
+  },
+  {
+   "asset": "tree_pine",
+   "x": 157,
+   "y": -45,
+   "w": 6
+  },
+  {
+   "asset": "wm_x19_basalt_rocks",
+   "x": -91,
+   "y": -85,
+   "w": 4.5
+  },
+  {
+   "asset": "wm_x22_scoria_boulders",
+   "x": 161,
+   "y": 45,
+   "w": 5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": -11,
+   "y": -79,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 71,
+   "y": -91,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 117,
+   "y": 29,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": -69,
+   "y": 73,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 45,
+   "y": 81,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 19,
+   "y": -111,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 137,
+   "y": -91,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": 63,
+   "y": -43,
+   "w": 3
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": 5,
+   "y": 37,
+   "w": 3
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": 91,
+   "y": 25,
+   "w": 3
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": -31,
+   "y": -51,
+   "w": 3
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": 41,
+   "y": -59,
+   "w": 3
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 14,
+   "y": 22,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 14,
+   "y": -42,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 101,
+   "y": 1,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 65,
+   "y": 0,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -65,
+   "y": 35,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 68,
+   "y": 19,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -52,
+   "y": -103,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 68,
+   "y": -58,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 56,
+   "y": 15,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -6,
+   "y": 87,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 69,
+   "y": 62,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -8,
+   "y": -64,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 2,
+   "y": -25,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 4,
+   "y": -78,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -1,
+   "y": 64,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -21,
+   "y": 1,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 60,
+   "y": -109,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -81,
+   "y": -33,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 26,
+   "y": -70,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 77,
+   "y": 47,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 124,
+   "y": 8,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 41,
+   "y": -99,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 4,
+   "y": -97,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 99,
+   "y": -118,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 124,
+   "y": 21,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -44,
+   "y": -117,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": -59,
+   "y": 79,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": -51,
+   "y": 79,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": -43,
+   "y": 79,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": -35,
+   "y": 79,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": -27,
+   "y": 79,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": -19,
+   "y": 79,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -85,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -77,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -69,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -61,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -53,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -45,
+   "w": 4
+  },
+  {
+   "asset": "wm_p05_fence",
+   "x": 129,
+   "y": -37,
+   "w": 4
+  },
+  {
+   "asset": "wm_c05_chief_elder",
+   "x": 35,
+   "y": -60,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c10_merchant",
+   "x": 79,
+   "y": -4,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c08_blacksmith",
+   "x": -14,
+   "y": -7,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c09_cook",
+   "x": 62,
+   "y": 27,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c11_healer",
+   "x": -1,
+   "y": 23,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c16_innkeeper",
+   "x": -11,
+   "y": -48,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c06_fisherwoman",
+   "x": 102,
+   "y": 34,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c07_farmer_boy",
+   "x": -34,
+   "y": 44,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c12_guard",
+   "x": 34,
+   "y": 64,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c13_child_girl",
+   "x": 41,
+   "y": -9,
+   "w": 1.0
+  },
+  {
+   "asset": "wm_c14_child_boy",
+   "x": 27,
+   "y": 0,
+   "w": 1.0
+  },
+  {
+   "asset": "wm_c15_carpenter",
+   "x": 10,
+   "y": 44,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c01_traveller_m",
+   "x": 56,
+   "y": -28,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c02_traveller_f",
+   "x": 64,
+   "y": -36,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c15_carpenter",
+   "x": 83,
+   "y": -50,
+   "w": 1.1
+  }
+ ],
+ "zones": [
+  {
+   "type": "player",
+   "x": 28,
+   "y": -20,
+   "w": 10,
+   "h": 10
+  },
+  {
+   "type": "npc",
+   "x": 27,
+   "y": -65,
+   "w": 12,
+   "h": 8
+  },
+  {
+   "type": "npc",
+   "x": 71,
+   "y": -13,
+   "w": 16,
+   "h": 12
+  },
+  {
+   "type": "npc",
+   "x": 13,
+   "y": -35,
+   "w": 40,
+   "h": 40
+  }
+ ]
+}

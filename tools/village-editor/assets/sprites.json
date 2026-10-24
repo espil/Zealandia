@@ -1662,6 +1662,506 @@
     "leluh",
     "pulemelei"
    ]
+  },
+  {
+   "id": "wm_x05_apple_tree",
+   "name": "사과나무",
+   "image": "assets/sprites/wm_x05_apple_tree.png",
+   "defaultW": 7,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x06_willow_tree",
+   "name": "버드나무",
+   "image": "assets/sprites/wm_x06_willow_tree.png",
+   "defaultW": 8,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x07_blossom_tree",
+   "name": "벚꽃나무",
+   "image": "assets/sprites/wm_x07_blossom_tree.png",
+   "defaultW": 7,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x08_autumn_tree",
+   "name": "단풍나무",
+   "image": "assets/sprites/wm_x08_autumn_tree.png",
+   "defaultW": 7,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x09_berry_bush",
+   "name": "베리 덤불",
+   "image": "assets/sprites/wm_x09_berry_bush.png",
+   "defaultW": 2.5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x10_flower_patch",
+   "name": "꽃밭",
+   "image": "assets/sprites/wm_x10_flower_patch.png",
+   "defaultW": 3,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x11_grass_tufts",
+   "name": "풀 무더기",
+   "image": "assets/sprites/wm_x11_grass_tufts.png",
+   "defaultW": 2.5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x12_crop_plot",
+   "name": "작물 밭",
+   "image": "assets/sprites/wm_x12_crop_plot.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x13_wheat_patch",
+   "name": "밀밭",
+   "image": "assets/sprites/wm_x13_wheat_patch.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x14_vegetable_rows",
+   "name": "채소 밭",
+   "image": "assets/sprites/wm_x14_vegetable_rows.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x15_pumpkin_patch",
+   "name": "호박 밭",
+   "image": "assets/sprites/wm_x15_pumpkin_patch.png",
+   "defaultW": 5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x16_scarecrow",
+   "name": "허수아비",
+   "image": "assets/sprites/wm_x16_scarecrow.png",
+   "defaultW": 1.2,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x17_hay_bales",
+   "name": "건초 더미",
+   "image": "assets/sprites/wm_x17_hay_bales.png",
+   "defaultW": 3,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x18_corn_patch",
+   "name": "옥수수 밭",
+   "image": "assets/sprites/wm_x18_corn_patch.png",
+   "defaultW": 6,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_x19_basalt_rocks",
+   "name": "현무암 바위",
+   "image": "assets/sprites/wm_x19_basalt_rocks.png",
+   "defaultW": 4.5
+  },
+  {
+   "id": "wm_x20_obsidian_shards",
+   "name": "흑요석 조각",
+   "image": "assets/sprites/wm_x20_obsidian_shards.png",
+   "defaultW": 3
+  },
+  {
+   "id": "wm_x21_lava_boulder",
+   "name": "용암 바위",
+   "image": "assets/sprites/wm_x21_lava_boulder.png",
+   "defaultW": 4,
+   "maps": [
+    "emberdeep",
+    "field:taputapuatea>ahu-tongariki#1",
+    "field:taputapuatea>ahu-tongariki#2"
+   ]
+  },
+  {
+   "id": "wm_x22_scoria_boulders",
+   "name": "스코리아 바위",
+   "image": "assets/sprites/wm_x22_scoria_boulders.png",
+   "defaultW": 5
+  },
+  {
+   "id": "wm_x23_sulfur_rocks",
+   "name": "유황 바위",
+   "image": "assets/sprites/wm_x23_sulfur_rocks.png",
+   "defaultW": 3.5,
+   "maps": [
+    "emberdeep",
+    "drowned-vault",
+    "sunken-grotto"
+   ]
+  },
+  {
+   "id": "wm_x24_mini_vent",
+   "name": "작은 분기공",
+   "image": "assets/sprites/wm_x24_mini_vent.png",
+   "defaultW": 2.5,
+   "maps": [
+    "emberdeep",
+    "field:taputapuatea>ahu-tongariki#1"
+   ]
+  },
+  {
+   "id": "wm_c01_traveller_m",
+   "name": "여행자 (남)",
+   "image": "assets/sprites/wm_c01_traveller_m.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c02_traveller_f",
+   "name": "여행자 (여)",
+   "image": "assets/sprites/wm_c02_traveller_f.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c03_traveller_fire",
+   "name": "여행자 (불)",
+   "image": "assets/sprites/wm_c03_traveller_fire.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c04_traveller_ice",
+   "name": "여행자 (얼음)",
+   "image": "assets/sprites/wm_c04_traveller_ice.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c05_chief_elder",
+   "name": "촌장",
+   "image": "assets/sprites/wm_c05_chief_elder.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c06_fisherwoman",
+   "name": "어부",
+   "image": "assets/sprites/wm_c06_fisherwoman.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c07_farmer_boy",
+   "name": "농부 소년",
+   "image": "assets/sprites/wm_c07_farmer_boy.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c08_blacksmith",
+   "name": "대장장이",
+   "image": "assets/sprites/wm_c08_blacksmith.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c09_cook",
+   "name": "요리사 할머니",
+   "image": "assets/sprites/wm_c09_cook.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c10_merchant",
+   "name": "상인",
+   "image": "assets/sprites/wm_c10_merchant.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c11_healer",
+   "name": "치유사",
+   "image": "assets/sprites/wm_c11_healer.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c12_guard",
+   "name": "경비병",
+   "image": "assets/sprites/wm_c12_guard.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c13_child_girl",
+   "name": "아이 (여)",
+   "image": "assets/sprites/wm_c13_child_girl.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c14_child_boy",
+   "name": "아이 (남)",
+   "image": "assets/sprites/wm_c14_child_boy.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c15_carpenter",
+   "name": "목수",
+   "image": "assets/sprites/wm_c15_carpenter.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "wm_c16_innkeeper",
+   "name": "여관 주인",
+   "image": "assets/sprites/wm_c16_innkeeper.png",
+   "defaultW": 1.1,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
   }
  ]
 }
