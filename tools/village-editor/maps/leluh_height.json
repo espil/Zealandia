@@ -1,0 +1,9 @@
+{
+ "spanM": 600,
+ "mPerPx": 2.0,
+ "offsetM": -20.0,
+ "unitsPerMetre": 100.0,
+ "minM": -7.94,
+ "maxM": 2.57,
+ "decode": "height_m = offsetM + pixelValue / unitsPerMetre; image row 0 = north edge (y=-span/2), col 0 = west edge"
+}
