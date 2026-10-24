@@ -498,6 +498,12 @@ function computeCollisions() {
       R(px + 0.16 * w, py - fd, 0.30 * w, fd);
       continue;
     }
+    if (a.startsWith('v31')) {
+      const fd = 0.34 * w;
+      R(px - 0.46 * w, py - fd, 0.39 * w, fd);
+      R(px + 0.10 * w, py - fd, 0.37 * w, fd);
+      continue;
+    }
     let fw, fd;
     if (a.startsWith('wm_b') || a.startsWith('house_') || a.startsWith('v')) { fw = 0.92 * w; fd = 0.34 * w; }
     else if (['wm_x05', 'wm_x06', 'wm_x07', 'wm_x08'].some(t => a.startsWith(t)) || a.startsWith('tree_')) { fw = Math.max(0.9, 0.16 * w); fd = 0.6; }

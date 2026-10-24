@@ -596,6 +596,15 @@
    "name": "하아몽가 삼석문"
   },
   {
+   "defaultW": 12,
+   "id": "v31_haamonga_trilithon_gate",
+   "image": "assets/sprites/v31_haamonga_trilithon_gate.png",
+   "maps": [
+    "haamonga"
+   ],
+   "name": "하아몽가 삼석문 관문"
+  },
+  {
    "defaultW": 8,
    "id": "v07_haamonga_season_shrine",
    "image": "assets/sprites/v07_haamonga_season_shrine.png",

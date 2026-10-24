@@ -183,8 +183,8 @@
  },
  "placements": [
   {
-   "asset": "v06_haamonga_trilithon",
-   "x": 30,
+   "asset": "v31_haamonga_trilithon_gate",
+   "x": 0,
    "y": -95,
    "w": 12
   },
@@ -588,9 +588,15 @@
  ],
  "collisions": [
   {
-   "x": 24.5,
+   "x": -5.5,
    "y": -99.1,
-   "w": 11.0,
+   "w": 4.7,
+   "h": 4.1
+  },
+  {
+   "x": 1.2,
+   "y": -99.1,
+   "w": 4.4,
    "h": 4.1
   },
   {
