@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Espil Online - Zealandia</title>
+<script>
+/* App entry (Zealandia build): seed a character only if none exists,
+   arm the Zealandia swap, and enter through Auckland - the engine's
+   own pending-city path - exactly as the Time Stone crossing does.
+   The world module swaps Auckland's scenery for the Zealandia world
+   once the map is live. The plain index.html (no entry page) remains
+   the espil.online flow untouched. */
+try {
+  if (!localStorage.getItem('espil_character'))
+    localStorage.setItem('espil_character', JSON.stringify({ gender: 'male', ts: Date.now() }));
+  if (!localStorage.getItem('espil_username'))
+    localStorage.setItem('espil_username', 'Tester');
+  /* The web journey's Auckland-entry cinematic pins the player to the
+     entry spot while it "plays" (a 100 ms interval) - in the app
+     build the entry is the app's own, so the cinematic counts as
+     already seen and never arms. */
+  localStorage.setItem('espil_timemachine_done', '1');
+  sessionStorage.setItem('espil_pending_city', 'Auckland');
+  sessionStorage.setItem('espil_zswap', '1');
+} catch (e) {}
+location.replace('index.html');
+</script>
+</head>
+<body></body>
+</html>
