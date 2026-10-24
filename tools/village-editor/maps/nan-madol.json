@@ -1,0 +1,9984 @@
+{
+ "village": "nan-madol",
+ "tileSizeM": 10,
+ "tiles": {
+  "-14,-15": "water",
+  "8,9": "water",
+  "0,5": "paved-road",
+  "-8,1": "paved-road",
+  "11,14": "water",
+  "-11,-5": "water",
+  "-19,-9": "water",
+  "16,-15": "water",
+  "3,15": "water",
+  "-18,-8": "water",
+  "-5,11": "water",
+  "15,-11": "water",
+  "-15,-3": "water",
+  "18,-6": "water",
+  "-16,1": "water",
+  "-4,12": "water",
+  "-12,8": "water",
+  "8,-14": "water",
+  "0,-18": "water",
+  "19,-5": "water",
+  "11,-9": "water",
+  "-20,3": "water",
+  "-8,14": "water",
+  "12,-8": "water",
+  "4,-12": "water",
+  "-9,18": "water",
+  "-19,4": "water",
+  "22,5": "water",
+  "14,1": "water",
+  "-7,-22": "water",
+  "-4,-11": "water",
+  "15,2": "water",
+  "-12,-15": "water",
+  "7,-2": "paved-road",
+  "7,-1": "paved-road",
+  "18,7": "water",
+  "0,-5": "paved-road",
+  "-8,-9": "water",
+  "11,4": "water",
+  "10,8": "paved-road",
+  "-11,-15": "water",
+  "3,5": "paved-road",
+  "-5,1": "paved-road",
+  "14,14": "water",
+  "-16,-9": "paved-road",
+  "-4,2": "paved-road",
+  "-12,-2": "water",
+  "-12,-1": "water",
+  "7,11": "water",
+  "6,15": "water",
+  "11,-19": "water",
+  "-20,-7": "water",
+  "-9,8": "water",
+  "-17,4": "water",
+  "2,17": "water",
+  "3,-18": "water",
+  "22,-5": "water",
+  "14,-9": "water",
+  "3,18": "water",
+  "-5,14": "water",
+  "-4,-21": "water",
+  "15,-8": "water",
+  "7,-12": "water",
+  "18,-3": "water",
+  "-16,4": "water",
+  "21,8": "water",
+  "-13,15": "water",
+  "-8,-19": "water",
+  "10,-2": "paved-road",
+  "10,-1": "paved-road",
+  "2,-6": "paved-road",
+  "3,-5": "paved-road",
+  "-5,-9": "water",
+  "14,4": "water",
+  "9,11": "water",
+  "-12,-12": "paved-road",
+  "6,5": "paved-road",
+  "-2,1": "paved-road",
+  "-1,1": "paved-road",
+  "-9,-2": "water",
+  "-9,-1": "paved-road",
+  "10,11": "paved-road",
+  "-17,-6": "water",
+  "2,7": "water",
+  "14,-19": "water",
+  "7,-22": "water",
+  "-6,8": "water",
+  "5,17": "water",
+  "6,-18": "water",
+  "-3,13": "water",
+  "21,-2": "water",
+  "21,-1": "water",
+  "-13,5": "water",
+  "6,18": "water",
+  "-21,1": "water",
+  "-2,14": "water",
+  "-1,14": "water",
+  "-10,10": "water",
+  "10,-12": "water",
+  "2,-16": "water",
+  "-17,7": "water",
+  "3,-15": "water",
+  "-5,-19": "water",
+  "-7,20": "water",
+  "17,5": "water",
+  "9,1": "paved-road",
+  "-13,-18": "water",
+  "6,-5": "paved-road",
+  "-2,-9": "water",
+  "-1,-9": "water",
+  "-10,-13": "water",
+  "-9,-12": "water",
+  "2,-3": "paved-road",
+  "13,12": "water",
+  "9,-22": "water",
+  "-6,-2": "paved-road",
+  "-6,-1": "paved-road",
+  "-14,-6": "water",
+  "5,7": "water",
+  "-3,3": "paved-road",
+  "9,14": "water",
+  "-13,-5": "water",
+  "-2,4": "paved-road",
+  "-1,4": "paved-road",
+  "-10,0": "water",
+  "13,-11": "water",
+  "4,20": "water",
+  "16,-6": "water",
+  "-18,1": "water",
+  "1,14": "water",
+  "-7,10": "water",
+  "-15,6": "water",
+  "5,-16": "water",
+  "-3,-20": "water",
+  "17,-5": "water",
+  "9,-9": "water",
+  "-6,11": "water",
+  "-14,7": "water",
+  "6,-15": "water",
+  "-3,16": "water",
+  "-2,-19": "water",
+  "-1,-19": "water",
+  "20,5": "water",
+  "12,1": "water",
+  "4,-3": "paved-road",
+  "-11,17": "water",
+  "1,-9": "water",
+  "-7,-13": "water",
+  "13,2": "water",
+  "16,7": "water",
+  "-6,-12": "water",
+  "-14,-16": "water",
+  "5,-3": "paved-road",
+  "-3,-7": "paved-road",
+  "8,8": "water",
+  "-13,-15": "water",
+  "0,4": "paved-road",
+  "11,13": "water",
+  "-10,-10": "paved-road",
+  "-11,-6": "water",
+  "12,14": "water",
+  "4,10": "water",
+  "16,-16": "water",
+  "-18,-9": "water",
+  "1,4": "paved-road",
+  "-7,0": "paved-road",
+  "-15,-4": "water",
+  "17,-15": "water",
+  "9,-19": "water",
+  "-4,11": "water",
+  "7,20": "water",
+  "-14,-3": "water",
+  "19,-6": "water",
+  "0,17": "water",
+  "-8,13": "water",
+  "20,-5": "water",
+  "12,-9": "water",
+  "4,-13": "water",
+  "23,0": "water",
+  "-11,7": "water",
+  "-19,3": "water",
+  "1,-19": "water",
+  "13,-8": "water",
+  "16,-3": "water",
+  "-18,4": "water",
+  "15,1": "water",
+  "-6,-22": "water",
+  "-15,9": "water",
+  "5,-13": "water",
+  "18,6": "water",
+  "-3,-17": "water",
+  "-16,13": "water",
+  "8,-2": "paved-road",
+  "8,-1": "paved-road",
+  "0,-6": "paved-road",
+  "19,7": "water",
+  "-8,-10": "water",
+  "11,3": "water",
+  "-11,-16": "water",
+  "12,4": "water",
+  "4,0": "paved-road",
+  "1,-6": "paved-road",
+  "14,13": "water",
+  "-7,-10": "water",
+  "-15,-14": "water",
+  "-4,1": "paved-road",
+  "15,14": "water",
+  "-12,-3": "water",
+  "7,10": "water",
+  "11,-20": "water",
+  "8,11": "water",
+  "-20,-8": "water",
+  "0,7": "water",
+  "-8,3": "water",
+  "11,16": "water",
+  "12,-19": "water",
+  "4,-23": "water",
+  "-11,-3": "water",
+  "-19,-7": "water",
+  "3,17": "water",
+  "-5,13": "water",
+  "15,-9": "water",
+  "7,-13": "water",
+  "18,-4": "water",
+  "-16,3": "water",
+  "-4,14": "water",
+  "-12,10": "water",
+  "8,-12": "water",
+  "0,-16": "water",
+  "19,-3": "water",
+  "-8,-20": "water",
+  "11,-7": "water",
+  "-20,5": "water",
+  "4,-10": "water",
+  "3,-6": "paved-road",
+  "22,7": "water",
+  "14,3": "water",
+  "-7,-20": "water",
+  "-4,-9": "water",
+  "15,4": "water",
+  "-12,-13": "water",
+  "7,0": "paved-road",
+  "18,9": "water",
+  "0,-3": "paved-road",
+  "-8,-7": "water",
+  "10,10": "paved-road",
+  "-11,-13": "water",
+  "2,6": "paved-road",
+  "3,7": "water",
+  "-5,3": "paved-road",
+  "14,16": "water",
+  "18,-14": "water",
+  "-16,-7": "water",
+  "-4,4": "paved-road",
+  "-12,0": "water",
+  "8,-22": "water",
+  "6,17": "water",
+  "11,-17": "water",
+  "-2,13": "water",
+  "-1,13": "water",
+  "-20,-5": "water",
+  "-9,10": "water",
+  "-17,6": "water",
+  "2,19": "water",
+  "3,-16": "water",
+  "22,-3": "water",
+  "-5,-20": "water",
+  "14,-7": "water",
+  "-5,16": "water",
+  "-4,-19": "water",
+  "15,-6": "water",
+  "7,-10": "water",
+  "-6,20": "water",
+  "-16,6": "water",
+  "-9,-13": "water",
+  "10,0": "paved-road",
+  "2,-4": "paved-road",
+  "3,-3": "paved-road",
+  "-5,-7": "water",
+  "14,6": "paved-road",
+  "9,13": "water",
+  "-13,-6": "water",
+  "6,7": "water",
+  "-2,3": "paved-road",
+  "-1,3": "paved-road",
+  "-9,0": "water",
+  "10,13": "water",
+  "-17,-4": "water",
+  "2,9": "water",
+  "14,-17": "water",
+  "17,-6": "water",
+  "-6,10": "water",
+  "-14,6": "water",
+  "5,19": "water",
+  "6,-16": "water",
+  "-3,15": "water",
+  "21,0": "water",
+  "-13,7": "water",
+  "6,20": "water",
+  "-21,3": "water",
+  "-2,16": "water",
+  "-1,16": "water",
+  "-10,12": "water",
+  "10,-10": "water",
+  "2,-14": "water",
+  "13,1": "water",
+  "-17,9": "water",
+  "16,6": "water",
+  "-5,-17": "water",
+  "5,-4": "paved-road",
+  "17,7": "water",
+  "9,3": "paved-road",
+  "-13,-16": "water",
+  "6,-3": "paved-road",
+  "-2,-7": "paved-road",
+  "-1,-7": "paved-road",
+  "-10,-11": "paved-road",
+  "12,13": "water",
+  "-9,-10": "paved-road",
+  "-17,-14": "water",
+  "1,3": "paved-road",
+  "13,14": "water",
+  "17,-16": "water",
+  "9,-20": "water",
+  "-6,0": "paved-road",
+  "-14,-4": "water",
+  "5,9": "water",
+  "-3,5": "paved-road",
+  "9,16": "water",
+  "21,-10": "water",
+  "8,20": "water",
+  "-13,-3": "water",
+  "20,-6": "water",
+  "-10,2": "water",
+  "10,-20": "water",
+  "13,-9": "water",
+  "16,-4": "water",
+  "-18,3": "water",
+  "1,16": "water",
+  "-7,12": "water",
+  "-15,8": "water",
+  "5,-14": "water",
+  "-3,-18": "water",
+  "17,-3": "water",
+  "9,-7": "water",
+  "-14,9": "water",
+  "6,-13": "water",
+  "-3,18": "water",
+  "-2,-17": "water",
+  "-1,-17": "water",
+  "20,7": "water",
+  "12,3": "water",
+  "1,-7": "paved-road",
+  "-7,-11": "water",
+  "13,4": "water",
+  "-15,-15": "water",
+  "16,9": "paved-road",
+  "-6,-10": "water",
+  "-14,-14": "water",
+  "-3,-5": "paved-road",
+  "8,10": "water",
+  "0,6": "paved-road",
+  "11,15": "water",
+  "12,-20": "water",
+  "-11,-4": "water",
+  "-19,-8": "water",
+  "12,16": "water",
+  "13,-19": "water",
+  "4,12": "water",
+  "16,-14": "water",
+  "-18,-7": "water",
+  "1,6": "paved-road",
+  "-7,2": "paved-road",
+  "-15,-2": "water",
+  "-15,-1": "water",
+  "9,-17": "water",
+  "-4,13": "water",
+  "8,-13": "water",
+  "19,-4": "water",
+  "11,-8": "water",
+  "0,19": "water",
+  "-8,15": "water",
+  "20,-3": "water",
+  "12,-7": "water",
+  "4,-11": "water",
+  "23,2": "water",
+  "-11,9": "water",
+  "-19,5": "water",
+  "1,-17": "water",
+  "-7,-21": "water",
+  "15,3": "water",
+  "-6,-20": "water",
+  "18,8": "water",
+  "-3,-15": "water",
+  "8,0": "paved-road",
+  "0,-4": "paved-road",
+  "19,9": "water",
+  "-8,-8": "water",
+  "11,5": "water",
+  "-11,-14": "water",
+  "4,2": "paved-road",
+  "3,6": "paved-road",
+  "14,15": "water",
+  "-7,-8": "water",
+  "-15,-12": "water",
+  "-4,3": "paved-road",
+  "15,16": "water",
+  "7,12": "water",
+  "19,-14": "water",
+  "11,-18": "water",
+  "-20,-6": "water",
+  "0,9": "water",
+  "-8,5": "water",
+  "20,-13": "water",
+  "12,-17": "water",
+  "4,-21": "water",
+  "-19,-5": "water",
+  "22,-4": "water",
+  "3,19": "water",
+  "-5,15": "water",
+  "-4,-20": "water",
+  "15,-7": "water",
+  "7,-11": "water",
+  "18,-2": "water",
+  "18,-1": "water",
+  "-16,5": "water",
+  "-4,16": "water",
+  "-12,12": "water",
+  "8,-10": "water",
+  "0,-14": "water",
+  "-8,-18": "water",
+  "11,-5": "water",
+  "-20,7": "water",
+  "3,-4": "paved-road",
+  "-5,-8": "water",
+  "14,5": "water",
+  "-4,-7": "paved-road",
+  "15,6": "water",
+  "-12,-11": "paved-road",
+  "7,2": "paved-road",
+  "18,11": "water",
+  "-8,-5": "water",
+  "10,12": "water",
+  "2,8": "water",
+  "14,-18": "water",
+  "3,9": "water",
+  "-5,5": "water",
+  "15,-17": "water",
+  "7,-21": "water",
+  "18,-12": "water",
+  "-16,-5": "water",
+  "-12,2": "water",
+  "-13,6": "water",
+  "6,19": "water",
+  "11,-15": "water",
+  "-2,15": "water",
+  "-1,15": "water",
+  "-10,11": "water",
+  "10,-11": "water",
+  "-20,-3": "water",
+  "-9,12": "water",
+  "-17,8": "water",
+  "2,21": "water",
+  "3,-14": "water",
+  "-5,-18": "water",
+  "14,-5": "water",
+  "17,6": "water",
+  "-4,-17": "water",
+  "7,-8": "water",
+  "6,-4": "paved-road",
+  "-9,-11": "paved-road",
+  "10,2": "paved-road",
+  "2,-2": "paved-road",
+  "2,-1": "paved-road",
+  "13,13": "water",
+  "-5,-5": "paved-road",
+  "5,8": "water",
+  "-16,-15": "water",
+  "9,15": "water",
+  "21,-11": "water",
+  "-13,-4": "water",
+  "6,9": "water",
+  "-2,5": "paved-road",
+  "-1,5": "paved-road",
+  "-10,1": "water",
+  "10,-21": "water",
+  "-9,2": "water",
+  "-17,-2": "water",
+  "-17,-1": "water",
+  "2,11": "water",
+  "14,-15": "water",
+  "1,15": "water",
+  "17,-4": "water",
+  "9,-8": "water",
+  "-6,12": "water",
+  "-14,8": "water",
+  "5,21": "water",
+  "6,-14": "water",
+  "-3,17": "water",
+  "-2,-18": "water",
+  "-1,-18": "water",
+  "21,2": "water",
+  "-13,9": "water",
+  "-2,18": "water",
+  "-1,18": "water",
+  "-10,14": "water",
+  "-9,-21": "water",
+  "10,-8": "water",
+  "2,-12": "water",
+  "13,3": "water",
+  "16,8": "paved-road",
+  "-6,-11": "water",
+  "5,-2": "paved-road",
+  "5,-1": "paved-road",
+  "-3,-6": "paved-road",
+  "17,9": "water",
+  "9,5": "water",
+  "-13,-14": "water",
+  "-2,-5": "paved-road",
+  "-1,-5": "paved-road",
+  "-10,-9": "paved-road",
+  "12,15": "water",
+  "13,-20": "water",
+  "4,11": "water",
+  "-17,-12": "water",
+  "1,5": "paved-road",
+  "-7,1": "paved-road",
+  "13,16": "water",
+  "17,-14": "water",
+  "9,-18": "water",
+  "-6,2": "paved-road",
+  "-14,-2": "water",
+  "-14,-1": "water",
+  "5,11": "water",
+  "-3,7": "water",
+  "0,18": "water",
+  "-21,-5": "water",
+  "20,-4": "water",
+  "-10,4": "water",
+  "23,1": "water",
+  "2,-22": "water",
+  "-11,8": "water",
+  "1,-18": "water",
+  "13,-7": "water",
+  "16,-2": "water",
+  "16,-1": "water",
+  "-18,5": "water",
+  "1,18": "water",
+  "-7,14": "water",
+  "-6,-21": "water",
+  "-15,10": "water",
+  "5,-12": "water",
+  "-3,-16": "water",
+  "9,-5": "paved-road",
+  "-14,11": "water",
+  "19,8": "water",
+  "-2,-15": "water",
+  "-1,-15": "water",
+  "-10,-19": "water",
+  "20,9": "water",
+  "12,5": "water",
+  "4,1": "paved-road",
+  "1,-5": "paved-road",
+  "-7,-9": "water",
+  "-15,-13": "water",
+  "15,15": "water",
+  "-6,-8": "water",
+  "-14,-12": "paved-road",
+  "-3,-3": "paved-road",
+  "8,12": "water",
+  "0,8": "water",
+  "-8,4": "water",
+  "11,17": "water",
+  "12,-18": "water",
+  "4,-22": "water",
+  "-11,-2": "water",
+  "-11,-1": "water",
+  "-19,-6": "water",
+  "13,-17": "water",
+  "4,14": "water",
+  "16,-12": "water",
+  "-18,-5": "water",
+  "-7,4": "water",
+  "-15,0": "water",
+  "5,-22": "water",
+  "-4,15": "water",
+  "-12,11": "water",
+  "8,-11": "water",
+  "0,-15": "water",
+  "19,-2": "water",
+  "19,-1": "water",
+  "11,-6": "water",
+  "-20,6": "water",
+  "0,21": "water",
+  "-8,17": "water",
+  "12,-5": "water",
+  "4,-9": "water",
+  "-11,11": "water",
+  "-19,7": "water",
+  "1,-15": "water",
+  "-7,-19": "water",
+  "-4,-8": "water",
+  "15,5": "water",
+  "7,1": "paved-road",
+  "18,10": "water",
+  "8,2": "paved-road",
+  "0,-2": "paved-road",
+  "0,-1": "paved-road",
+  "19,11": "water",
+  "-8,-6": "water",
+  "11,7": "paved-road",
+  "-11,-12": "paved-road",
+  "3,8": "water",
+  "-5,4": "paved-road",
+  "14,17": "water",
+  "15,-18": "water",
+  "-15,-10": "paved-road",
+  "18,-13": "water",
+  "-16,-6": "water",
+  "-4,5": "paved-road",
+  "-12,1": "water",
+  "7,14": "water",
+  "8,-21": "water",
+  "19,-12": "water",
+  "11,-16": "water",
+  "-20,-4": "water",
+  "-8,7": "water",
+  "12,-15": "water",
+  "4,-19": "water",
+  "-9,11": "water",
+  "2,20": "water",
+  "-19,-3": "water",
+  "22,-2": "water",
+  "22,-1": "water",
+  "14,-6": "water",
+  "3,21": "water",
+  "-5,17": "water",
+  "-4,-18": "water",
+  "15,-5": "water",
+  "7,-9": "water",
+  "18,0": "water",
+  "-16,7": "water",
+  "-12,14": "water",
+  "8,-8": "water",
+  "0,-12": "water",
+  "-8,-16": "water",
+  "11,-3": "water",
+  "10,1": "paved-road",
+  "3,-2": "paved-road",
+  "3,-1": "paved-road",
+  "-5,-6": "paved-road",
+  "14,7": "paved-road",
+  "-4,-5": "paved-road",
+  "-12,-9": "paved-road",
+  "7,4": "paved-road",
+  "6,8": "water",
+  "-9,1": "water",
+  "10,14": "water",
+  "-17,-3": "water",
+  "2,10": "water",
+  "14,-16": "water",
+  "3,11": "water",
+  "-5,7": "water",
+  "15,-15": "water",
+  "7,-19": "water",
+  "18,-10": "water",
+  "5,20": "water",
+  "-16,-3": "water",
+  "21,1": "water",
+  "0,-22": "water",
+  "-13,8": "water",
+  "-2,17": "water",
+  "-1,17": "water",
+  "-10,13": "water",
+  "10,-9": "water",
+  "2,-13": "water",
+  "-9,14": "water",
+  "-17,10": "water",
+  "3,-12": "water",
+  "22,1": "water",
+  "-5,-16": "water",
+  "14,-3": "water",
+  "17,8": "water",
+  "-4,-15": "water",
+  "9,4": "water",
+  "-12,-19": "water",
+  "6,-2": "paved-road",
+  "6,-1": "paved-road",
+  "-2,-6": "paved-road",
+  "-1,-6": "paved-road",
+  "-9,-9": "paved-road",
+  "10,4": "water",
+  "-17,-13": "water",
+  "2,0": "paved-road",
+  "13,15": "water",
+  "-5,-3": "paved-road",
+  "-6,1": "paved-road",
+  "5,10": "water",
+  "-16,-13": "water",
+  "-3,6": "water",
+  "9,17": "water",
+  "21,-9": "water",
+  "-13,-2": "water",
+  "-13,-1": "water",
+  "6,11": "water",
+  "-2,7": "water",
+  "-1,7": "water",
+  "-10,3": "water",
+  "10,-19": "water",
+  "2,-23": "water",
+  "-9,4": "water",
+  "-17,0": "water",
+  "3,-22": "water",
+  "14,-13": "water",
+  "1,17": "water",
+  "-7,13": "water",
+  "17,-2": "water",
+  "17,-1": "water",
+  "9,-6": "water",
+  "-6,14": "water",
+  "-14,10": "water",
+  "6,-12": "water",
+  "-3,19": "water",
+  "-2,-16": "water",
+  "-1,-16": "water",
+  "-10,-20": "water",
+  "21,4": "water",
+  "-13,11": "water",
+  "20,8": "water",
+  "-10,16": "water",
+  "-9,-19": "water",
+  "10,-6": "water",
+  "2,-10": "water",
+  "13,5": "water",
+  "16,10": "water",
+  "-6,-9": "water",
+  "-14,-13": "water",
+  "5,0": "paved-road",
+  "-3,-4": "paved-road",
+  "17,11": "water",
+  "9,7": "water",
+  "-13,-12": "paved-road",
+  "6,1": "paved-road",
+  "-2,-3": "paved-road",
+  "-1,-3": "paved-road",
+  "-10,-7": "paved-road",
+  "12,17": "water",
+  "13,-18": "water",
+  "4,13": "water",
+  "16,-13": "water",
+  "-18,-6": "water",
+  "1,7": "water",
+  "-7,3": "paved-road",
+  "13,18": "water",
+  "5,-23": "water",
+  "17,-12": "water",
+  "9,-16": "water",
+  "-6,4": "paved-road",
+  "-14,0": "water",
+  "5,13": "water",
+  "6,-22": "water",
+  "-3,9": "water",
+  "0,20": "water",
+  "-8,16": "water",
+  "20,-2": "water",
+  "20,-1": "water",
+  "12,-6": "water",
+  "23,3": "water",
+  "-11,10": "water",
+  "-19,6": "water",
+  "1,-16": "water",
+  "13,-5": "water",
+  "16,0": "water",
+  "-18,7": "water",
+  "1,20": "water",
+  "-7,16": "water",
+  "-6,-19": "water",
+  "-15,12": "water",
+  "5,-10": "water",
+  "-3,-14": "water",
+  "8,1": "paved-road",
+  "19,10": "water",
+  "11,6": "paved-road",
+  "-10,-17": "water",
+  "20,11": "water",
+  "12,7": "paved-road",
+  "4,3": "paved-road",
+  "1,-3": "paved-road",
+  "-7,-7": "water",
+  "-15,-11": "paved-road",
+  "7,13": "water",
+  "-14,-10": "paved-road",
+  "19,-13": "water",
+  "8,14": "water",
+  "0,10": "water",
+  "-8,6": "water",
+  "20,-12": "water",
+  "11,19": "water",
+  "12,-16": "water",
+  "4,-20": "water",
+  "-11,0": "water",
+  "-19,-4": "water",
+  "13,-15": "water",
+  "4,16": "water",
+  "16,-10": "water",
+  "3,20": "water",
+  "-18,-3": "water",
+  "-15,2": "water",
+  "5,-20": "water",
+  "-4,17": "water",
+  "-12,13": "water",
+  "8,-9": "water",
+  "0,-13": "water",
+  "19,0": "water",
+  "-8,-17": "water",
+  "11,-4": "water",
+  "-8,19": "water",
+  "12,-3": "water",
+  "4,-7": "paved-road",
+  "-19,9": "water",
+  "1,-13": "water",
+  "-7,-17": "water",
+  "-4,-6": "paved-road",
+  "15,7": "paved-road",
+  "-12,-10": "paved-road",
+  "7,3": "paved-road",
+  "18,12": "water",
+  "8,4": "paved-road",
+  "0,0": "paved-road",
+  "-8,-4": "paved-road",
+  "11,9": "paved-road",
+  "-11,-10": "paved-road",
+  "3,10": "water",
+  "-5,6": "water",
+  "15,-16": "water",
+  "7,-20": "water",
+  "18,-11": "water",
+  "-16,-4": "water",
+  "-4,7": "water",
+  "-12,3": "water",
+  "7,16": "water",
+  "8,-19": "water",
+  "0,-23": "water",
+  "19,-10": "water",
+  "11,-14": "water",
+  "-20,-2": "water",
+  "-20,-1": "water",
+  "4,-17": "water",
+  "-9,13": "water",
+  "3,-13": "water",
+  "22,0": "water",
+  "14,-4": "water",
+  "-5,19": "water",
+  "-4,-16": "water",
+  "15,-3": "water",
+  "7,-7": "water",
+  "18,2": "water",
+  "-16,9": "water",
+  "0,-10": "water",
+  "-8,-14": "water",
+  "10,3": "water",
+  "-11,-20": "water",
+  "3,0": "paved-road",
+  "-5,-4": "paved-road",
+  "14,9": "paved-road",
+  "-16,-14": "water",
+  "-4,-3": "paved-road",
+  "-12,-7": "paved-road",
+  "6,10": "water",
+  "-2,6": "water",
+  "-1,6": "paved-road",
+  "-9,3": "water",
+  "10,16": "water",
+  "2,12": "water",
+  "3,-23": "water",
+  "14,-14": "water",
+  "-5,9": "water",
+  "15,-13": "water",
+  "7,-17": "water",
+  "-6,13": "water",
+  "18,-8": "water",
+  "21,3": "water",
+  "-13,10": "water",
+  "-2,19": "water",
+  "-1,19": "water",
+  "-10,15": "water",
+  "-9,-20": "water",
+  "10,-7": "water",
+  "2,-11": "water",
+  "-9,16": "water",
+  "-17,12": "water",
+  "3,-10": "water",
+  "-5,-14": "water",
+  "17,10": "water",
+  "9,6": "water",
+  "-12,-17": "water",
+  "-13,-13": "water",
+  "6,0": "paved-road",
+  "-2,-4": "paved-road",
+  "-1,-4": "paved-road",
+  "-10,-8": "paved-road",
+  "-9,-7": "water",
+  "10,6": "water",
+  "-17,-11": "water",
+  "2,2": "paved-road",
+  "13,17": "water",
+  "17,-13": "water",
+  "-6,3": "paved-road",
+  "5,12": "water",
+  "-3,8": "water",
+  "9,19": "water",
+  "21,-7": "water",
+  "-13,0": "water",
+  "6,13": "water",
+  "-21,-4": "water",
+  "-2,9": "water",
+  "-1,9": "water",
+  "-10,5": "water",
+  "10,-17": "water",
+  "2,-21": "water",
+  "13,-6": "water",
+  "-17,2": "water",
+  "3,-20": "water",
+  "-18,6": "water",
+  "1,19": "water",
+  "-7,15": "water",
+  "-15,11": "water",
+  "5,-11": "water",
+  "17,0": "water",
+  "9,-4": "paved-road",
+  "-6,16": "water",
+  "-14,12": "water",
+  "6,-10": "water",
+  "-3,21": "water",
+  "-2,-14": "water",
+  "-1,-14": "water",
+  "-10,-18": "water",
+  "20,10": "water",
+  "12,6": "paved-road",
+  "-9,-17": "water",
+  "2,-8": "paved-road",
+  "1,-4": "paved-road",
+  "13,7": "paved-road",
+  "16,12": "water",
+  "-6,-7": "water",
+  "-14,-11": "paved-road",
+  "5,2": "paved-road",
+  "-3,-2": "paved-road",
+  "-3,-1": "paved-road",
+  "9,9": "paved-road",
+  "8,13": "water",
+  "-13,-10": "paved-road",
+  "11,18": "water",
+  "-10,-5": "water",
+  "13,-16": "water",
+  "4,15": "water",
+  "16,-11": "water",
+  "-18,-4": "water",
+  "1,9": "water",
+  "-7,5": "water",
+  "-15,1": "water",
+  "5,-21": "water",
+  "17,-10": "water",
+  "9,-14": "water",
+  "-6,6": "water",
+  "-14,2": "water",
+  "6,-20": "water",
+  "-3,11": "water",
+  "-8,18": "water",
+  "20,0": "water",
+  "12,-4": "water",
+  "4,-8": "water",
+  "-11,12": "water",
+  "-19,8": "water",
+  "1,-14": "water",
+  "-7,-18": "water",
+  "13,-3": "water",
+  "16,2": "water",
+  "-18,9": "water",
+  "-7,18": "water",
+  "-6,-17": "water",
+  "-15,14": "water",
+  "5,-8": "water",
+  "-3,-12": "water",
+  "8,3": "paved-road",
+  "19,12": "water",
+  "11,8": "paved-road",
+  "-11,-11": "paved-road",
+  "12,9": "paved-road",
+  "4,5": "paved-road",
+  "-7,-5": "paved-road",
+  "-15,-9": "paved-road",
+  "-4,6": "water",
+  "7,15": "water",
+  "8,-20": "water",
+  "19,-11": "water",
+  "8,16": "water",
+  "0,12": "water",
+  "-8,8": "water",
+  "20,-10": "water",
+  "12,-14": "water",
+  "4,-18": "water",
+  "23,-5": "water",
+  "-11,2": "water",
+  "-19,-2": "water",
+  "-19,-1": "water",
+  "-5,18": "water",
+  "15,-4": "water",
+  "-15,4": "water",
+  "18,1": "water",
+  "-3,-22": "water",
+  "-16,8": "water",
+  "-4,19": "water",
+  "-12,15": "water",
+  "8,-7": "water",
+  "0,-11": "water",
+  "19,2": "water",
+  "-8,-15": "water",
+  "11,-2": "water",
+  "11,-1": "paved-road",
+  "4,-5": "paved-road",
+  "14,8": "paved-road",
+  "-7,-15": "water",
+  "-4,-4": "paved-road",
+  "15,9": "paved-road",
+  "-12,-8": "paved-road",
+  "7,5": "water",
+  "0,2": "paved-road",
+  "-8,-2": "paved-road",
+  "-8,-1": "paved-road",
+  "10,15": "water",
+  "-11,-8": "paved-road",
+  "3,12": "water",
+  "-5,8": "water",
+  "15,-14": "water",
+  "7,-18": "water",
+  "18,-9": "water",
+  "-16,-2": "water",
+  "-16,-1": "water",
+  "-4,9": "water",
+  "-12,5": "water",
+  "8,-17": "water",
+  "0,-21": "water",
+  "19,-8": "water",
+  "11,-12": "water",
+  "-20,0": "water",
+  "-9,15": "water",
+  "-17,11": "water",
+  "3,-11": "water",
+  "22,2": "water",
+  "-5,-15": "water",
+  "14,-2": "water",
+  "14,-1": "water",
+  "-4,-14": "water",
+  "-12,-18": "water",
+  "7,-5": "paved-road",
+  "18,4": "water",
+  "-16,11": "water",
+  "-8,-12": "water",
+  "-9,-8": "paved-road",
+  "10,5": "water",
+  "2,1": "paved-road",
+  "3,2": "paved-road",
+  "-5,-2": "paved-road",
+  "-5,-1": "paved-road",
+  "14,11": "paved-road",
+  "-16,-12": "water",
+  "9,18": "water",
+  "-12,-5": "water",
+  "21,-8": "water",
+  "6,12": "water",
+  "-2,8": "water",
+  "-1,8": "water",
+  "10,-18": "water",
+  "-9,5": "water",
+  "10,18": "water",
+  "-17,1": "water",
+  "2,14": "water",
+  "3,-21": "water",
+  "22,-8": "water",
+  "14,-12": "water",
+  "7,-15": "water",
+  "-6,15": "water",
+  "6,-11": "water",
+  "-3,20": "water",
+  "21,5": "water",
+  "-13,12": "water",
+  "-2,21": "water",
+  "-1,21": "water",
+  "-10,17": "water",
+  "-9,-18": "water",
+  "10,-5": "water",
+  "2,-9": "water",
+  "13,6": "paved-road",
+  "3,-8": "paved-road",
+  "16,11": "water",
+  "-5,-12": "water",
+  "5,1": "paved-road",
+  "17,12": "water",
+  "9,8": "paved-road",
+  "-13,-11": "paved-road",
+  "6,2": "paved-road",
+  "-1,-1": "paved-road",
+  "-2,-2": "paved-road",
+  "-2,-1": "paved-road",
+  "-10,-6": "water",
+  "-1,-2": "paved-road",
+  "12,18": "water",
+  "-9,-5": "water",
+  "-17,-9": "water",
+  "2,4": "paved-road",
+  "1,8": "water",
+  "17,-11": "water",
+  "9,-15": "water",
+  "-6,5": "water",
+  "-14,1": "water",
+  "5,14": "water",
+  "6,-21": "water",
+  "-3,10": "water",
+  "21,-5": "water",
+  "-13,2": "water",
+  "-21,-1": "water",
+  "-21,-2": "water",
+  "-2,11": "water",
+  "-1,11": "water",
+  "-10,7": "water",
+  "10,-15": "water",
+  "2,-19": "water",
+  "13,-4": "water",
+  "16,1": "water",
+  "-5,-22": "water",
+  "-18,8": "water",
+  "1,21": "water",
+  "-7,17": "water",
+  "-6,-18": "water",
+  "-15,13": "water",
+  "5,-9": "water",
+  "-3,-13": "water",
+  "17,2": "water",
+  "9,-1": "paved-road",
+  "9,-2": "paved-road",
+  "-6,18": "water",
+  "-14,14": "water",
+  "6,-8": "water",
+  "-2,-12": "water",
+  "-1,-12": "water",
+  "-10,-16": "water",
+  "12,8": "paved-road",
+  "-9,-15": "water",
+  "4,4": "paved-road",
+  "1,-2": "paved-road",
+  "1,-1": "paved-road",
+  "-7,-6": "water",
+  "13,9": "paved-road",
+  "16,14": "water",
+  "-6,-5": "paved-road",
+  "-14,-9": "paved-road",
+  "5,4": "paved-road",
+  "-3,0": "paved-road",
+  "8,15": "water",
+  "-13,-8": "paved-road",
+  "0,11": "water",
+  "20,-11": "water",
+  "-10,-3": "water",
+  "-11,1": "water",
+  "13,-14": "water",
+  "4,17": "water",
+  "16,-9": "water",
+  "-18,-2": "water",
+  "-18,-1": "water",
+  "1,11": "water",
+  "-7,7": "water",
+  "-15,3": "water",
+  "5,-19": "water",
+  "-3,-23": "water",
+  "17,-8": "water",
+  "9,-12": "water",
+  "-4,18": "water",
+  "-14,4": "water",
+  "19,1": "water",
+  "-2,-22": "water",
+  "-1,-22": "water",
+  "20,2": "water",
+  "12,-2": "water",
+  "12,-1": "water",
+  "4,-6": "paved-road",
+  "-11,14": "water",
+  "1,-12": "water",
+  "-7,-16": "water",
+  "16,4": "water",
+  "-18,11": "water",
+  "15,8": "paved-road",
+  "-6,-15": "water",
+  "5,-6": "paved-road",
+  "18,13": "water",
+  "-3,-10": "water",
+  "8,5": "water",
+  "0,1": "paved-road",
+  "-8,-3": "paved-road",
+  "11,10": "paved-road",
+  "-11,-9": "paved-road",
+  "12,11": "paved-road",
+  "4,7": "water",
+  "-18,-12": "water",
+  "1,1": "paved-road",
+  "-7,-3": "paved-road",
+  "-15,-7": "paved-road",
+  "-4,8": "water",
+  "-12,4": "water",
+  "7,17": "water",
+  "8,-18": "water",
+  "19,-9": "water",
+  "11,-13": "water",
+  "8,18": "water",
+  "0,14": "water",
+  "-8,10": "water",
+  "20,-8": "water",
+  "12,-12": "water",
+  "4,-16": "water",
+  "23,-3": "water",
+  "-11,4": "water",
+  "-19,0": "water",
+  "1,-22": "water",
+  "-5,20": "water",
+  "15,-2": "water",
+  "15,-1": "water",
+  "7,-6": "paved-road",
+  "18,3": "water",
+  "-16,10": "water",
+  "-12,17": "water",
+  "8,-5": "paved-road",
+  "0,-9": "water",
+  "19,4": "water",
+  "-8,-13": "water",
+  "11,0": "water",
+  "-11,-19": "water",
+  "3,1": "paved-road",
+  "14,10": "paved-road",
+  "-4,-2": "paved-road",
+  "-4,-1": "paved-road",
+  "15,11": "water",
+  "-12,-6": "water",
+  "7,7": "water",
+  "-8,0": "paved-road",
+  "10,17": "water",
+  "2,13": "water",
+  "-19,-10": "water",
+  "22,-9": "water",
+  "3,14": "water",
+  "-5,10": "water",
+  "15,-12": "water",
+  "7,-16": "water",
+  "18,-7": "water",
+  "-16,0": "water",
+  "-12,7": "water",
+  "8,-15": "water",
+  "0,-19": "water",
+  "11,-10": "water",
+  "-2,20": "water",
+  "-1,20": "water",
+  "-20,2": "water",
+  "-9,17": "water",
+  "3,-9": "water",
+  "22,4": "water",
+  "-5,-13": "water",
+  "14,0": "water",
+  "-4,-12": "water",
+  "-12,-16": "water",
+  "7,-3": "paved-road",
+  "-9,-6": "water",
+  "10,7": "paved-road",
+  "-17,-10": "water",
+  "2,3": "paved-road",
+  "3,4": "paved-road",
+  "-5,0": "paved-road",
+  "-16,-10": "paved-road",
+  "9,20": "water",
+  "21,-6": "water",
+  "-13,1": "water",
+  "6,14": "water",
+  "-21,-3": "water",
+  "-2,10": "water",
+  "-1,10": "water",
+  "-10,6": "water",
+  "10,-16": "water",
+  "2,-20": "water",
+  "-9,7": "water",
+  "-17,3": "water",
+  "2,16": "water",
+  "3,-19": "water",
+  "22,-6": "water",
+  "14,-10": "water",
+  "17,1": "water",
+  "-4,-22": "water",
+  "9,-3": "paved-road",
+  "-6,17": "water",
+  "-14,13": "water",
+  "6,-9": "water",
+  "-2,-13": "water",
+  "-1,-13": "water",
+  "21,7": "water",
+  "-13,14": "water",
+  "-9,-16": "water",
+  "10,-3": "paved-road",
+  "2,-7": "paved-road",
+  "13,8": "paved-road",
+  "16,13": "water",
+  "-5,-10": "water",
+  "-6,-6": "paved-road",
+  "5,3": "paved-road",
+  "17,14": "water",
+  "9,10": "paved-road",
+  "-13,-9": "paved-road",
+  "6,4": "paved-road",
+  "-2,0": "paved-road",
+  "-1,0": "paved-road",
+  "-10,-4": "water",
+  "-9,-3": "water",
+  "-17,-7": "water",
+  "1,10": "water",
+  "-7,6": "water",
+  "17,-9": "water",
+  "9,-13": "water",
+  "-6,7": "water",
+  "-14,3": "water",
+  "5,16": "water",
+  "6,-19": "water",
+  "-3,12": "water",
+  "-2,-23": "water",
+  "-1,-23": "water",
+  "21,-3": "water",
+  "-13,4": "water",
+  "-21,0": "water",
+  "20,1": "water",
+  "-10,9": "water",
+  "10,-13": "water",
+  "2,-17": "water",
+  "-11,13": "water",
+  "13,-2": "water",
+  "13,-1": "water",
+  "16,3": "water",
+  "-18,10": "water",
+  "-7,19": "water",
+  "-6,-16": "water",
+  "5,-7": "paved-road",
+  "-3,-11": "water",
+  "17,4": "water",
+  "9,0": "paved-road",
+  "6,-6": "paved-road",
+  "-2,-10": "water",
+  "-1,-10": "water",
+  "-10,-14": "water",
+  "12,10": "paved-road",
+  "4,6": "water",
+  "-18,-13": "water",
+  "1,0": "paved-road",
+  "-7,-4": "paved-road",
+  "13,11": "paved-road",
+  "-15,-8": "paved-road",
+  "-6,-3": "paved-road",
+  "-14,-7": "paved-road",
+  "5,6": "water",
+  "-3,2": "paved-road",
+  "8,17": "water",
+  "0,13": "water",
+  "-8,9": "water",
+  "20,-9": "water",
+  "12,-13": "water",
+  "23,-4": "water",
+  "-11,3": "water",
+  "1,-23": "water",
+  "13,-12": "water",
+  "4,19": "water",
+  "16,-7": "water",
+  "-18,0": "water",
+  "1,13": "water",
+  "-7,9": "water",
+  "-15,5": "water",
+  "5,-17": "water",
+  "-3,-21": "water",
+  "9,-10": "water",
+  "-4,20": "water",
+  "-12,16": "water",
+  "8,-6": "paved-road",
+  "19,3": "water",
+  "-2,-20": "water",
+  "-1,-20": "water",
+  "20,4": "water",
+  "12,0": "water",
+  "4,-4": "paved-road",
+  "-11,16": "water",
+  "1,-10": "water",
+  "-7,-14": "water",
+  "15,10": "paved-road",
+  "-6,-13": "water",
+  "7,6": "water",
+  "-14,-17": "water",
+  "-3,-8": "water",
+  "8,7": "water",
+  "0,3": "paved-road",
+  "11,12": "water",
+  "-11,-7": "paved-road",
+  "-19,-11": "water",
+  "4,9": "water",
+  "16,-17": "water",
+  "3,13": "water",
+  "-18,-10": "water",
+  "-15,-5": "water",
+  "-4,10": "water",
+  "-12,6": "water",
+  "7,19": "water",
+  "8,-16": "water",
+  "0,-20": "water",
+  "19,-7": "water",
+  "11,-11": "water",
+  "-20,1": "water",
+  "0,16": "water",
+  "-8,12": "water",
+  "12,-10": "water",
+  "4,-14": "water",
+  "-11,6": "water",
+  "-19,2": "water",
+  "22,3": "water",
+  "1,-20": "water",
+  "-4,-13": "water",
+  "15,0": "water",
+  "7,-4": "paved-road",
+  "18,5": "water",
+  "-16,12": "water",
+  "8,-3": "paved-road",
+  "0,-7": "paved-road",
+  "19,6": "water",
+  "-8,-11": "water",
+  "11,2": "water",
+  "-11,-17": "water",
+  "3,3": "paved-road",
+  "14,12": "water",
+  "-16,-11": "water",
+  "-4,0": "paved-road",
+  "15,13": "water",
+  "-12,-4": "water",
+  "7,9": "water",
+  "11,-21": "water",
+  "-20,-9": "water",
+  "-8,2": "paved-road",
+  "-9,6": "water",
+  "10,19": "water",
+  "2,15": "water",
+  "22,-7": "water",
+  "14,-11": "water",
+  "3,16": "water",
+  "-5,12": "water",
+  "15,-10": "water",
+  "7,-14": "water",
+  "18,-5": "water",
+  "-16,2": "water",
+  "-12,9": "water",
+  "21,6": "water",
+  "0,-17": "water",
+  "-13,13": "water",
+  "-8,-21": "water",
+  "-10,18": "water",
+  "10,-4": "paved-road",
+  "-20,4": "water",
+  "-9,19": "water",
+  "3,-7": "paved-road",
+  "22,6": "water",
+  "-5,-11": "water",
+  "14,2": "water",
+  "17,13": "water",
+  "-4,-10": "water",
+  "-12,-14": "water",
+  "6,3": "paved-road",
+  "-9,-4": "water",
+  "10,9": "paved-road",
+  "-17,-8": "water",
+  "2,5": "paved-road",
+  "-5,2": "paved-road",
+  "18,-15": "water",
+  "5,15": "water",
+  "-16,-8": "paved-road",
+  "21,-4": "water",
+  "-13,3": "water",
+  "6,16": "water",
+  "-2,12": "water",
+  "-1,12": "water",
+  "-10,8": "water",
+  "10,-14": "water",
+  "2,-18": "water",
+  "-9,9": "water",
+  "-17,5": "water",
+  "2,18": "water",
+  "3,-17": "water",
+  "-5,-21": "water",
+  "14,-8": "water",
+  "17,3": "water",
+  "-6,19": "water",
+  "-14,15": "water",
+  "6,-7": "paved-road",
+  "-2,-11": "water",
+  "-1,-11": "water",
+  "-10,-15": "water",
+  "21,9": "water",
+  "-13,16": "water",
+  "-9,-14": "water",
+  "2,-5": "paved-road",
+  "13,10": "paved-road",
+  "16,15": "water",
+  "-6,-4": "paved-road",
+  "-14,-8": "paved-road",
+  "5,5": "paved-road",
+  "-3,1": "paved-road",
+  "9,12": "water",
+  "-13,-7": "paved-road",
+  "6,6": "water",
+  "-2,2": "paved-road",
+  "-1,2": "paved-road",
+  "-10,-2": "water",
+  "-10,-1": "water",
+  "13,-13": "water",
+  "4,18": "water",
+  "-17,-5": "water",
+  "16,-8": "water",
+  "1,12": "water",
+  "-7,8": "water",
+  "5,-18": "water",
+  "17,-7": "water",
+  "9,-11": "water",
+  "-6,9": "water",
+  "-14,5": "water",
+  "5,18": "water",
+  "6,-17": "water",
+  "-3,14": "water",
+  "-2,-21": "water",
+  "-1,-21": "water",
+  "-21,2": "water",
+  "20,3": "water",
+  "2,-15": "water",
+  "-11,15": "water",
+  "1,-11": "water",
+  "13,0": "water",
+  "16,5": "water",
+  "-6,-14": "water",
+  "5,-5": "paved-road",
+  "-3,-9": "water",
+  "9,2": "paved-road",
+  "8,6": "water",
+  "-13,-17": "water",
+  "-2,-8": "water",
+  "-1,-8": "paved-road",
+  "11,11": "paved-road",
+  "-10,-12": "water",
+  "12,12": "water",
+  "4,8": "water",
+  "-18,-11": "water",
+  "1,2": "paved-road",
+  "-7,-2": "paved-road",
+  "-7,-1": "paved-road",
+  "-15,-6": "water",
+  "9,-21": "water",
+  "7,18": "water",
+  "-14,-5": "water",
+  "-3,4": "paved-road",
+  "8,19": "water",
+  "0,15": "water",
+  "-8,11": "water",
+  "20,-7": "water",
+  "12,-11": "water",
+  "4,-15": "water",
+  "23,-2": "water",
+  "23,-1": "water",
+  "-11,5": "water",
+  "-19,1": "water",
+  "1,-21": "water",
+  "13,-10": "water",
+  "4,21": "water",
+  "16,-5": "water",
+  "-18,2": "water",
+  "-7,11": "water",
+  "-15,7": "water",
+  "5,-15": "water",
+  "-3,-19": "water",
+  "8,-4": "paved-road",
+  "0,-8": "paved-road",
+  "19,5": "water",
+  "11,1": "water",
+  "-11,-18": "water",
+  "20,6": "water",
+  "12,2": "water",
+  "4,-2": "paved-road",
+  "4,-1": "paved-road",
+  "-11,18": "water",
+  "1,-8": "paved-road",
+  "-7,-12": "water",
+  "-15,-16": "water",
+  "15,12": "water",
+  "7,8": "water"
+ },
+ "placements": [
+  {
+   "asset": "v02_nanmadol_elder_hall",
+   "x": 15,
+   "y": -52,
+   "w": 11
+  },
+  {
+   "asset": "v04_nanmadol_tide_shrine",
+   "x": 88,
+   "y": -18,
+   "w": 8
+  },
+  {
+   "asset": "v03_nanmadol_canal_gate",
+   "x": 15,
+   "y": 58,
+   "w": 9
+  },
+  {
+   "asset": "v05_nanmadol_warehouse",
+   "x": -52,
+   "y": 8,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": -30,
+   "y": -38,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": 52,
+   "y": 28,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": -8,
+   "y": 30,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": -118,
+   "y": -88,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": -104,
+   "y": -70,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": 128,
+   "y": 92,
+   "w": 10
+  },
+  {
+   "asset": "v01_nanmadol_islet_house",
+   "x": 114,
+   "y": 76,
+   "w": 10
+  },
+  {
+   "asset": "tent",
+   "x": -38,
+   "y": 26,
+   "w": 4.5
+  },
+  {
+   "asset": "crates",
+   "x": -44,
+   "y": 20,
+   "w": 1.6
+  },
+  {
+   "asset": "crates",
+   "x": -33,
+   "y": 33,
+   "w": 1.6
+  },
+  {
+   "asset": "sacks",
+   "x": -28,
+   "y": 33,
+   "w": 1.4
+  },
+  {
+   "asset": "handcart",
+   "x": -48,
+   "y": 30,
+   "w": 2.4
+  },
+  {
+   "asset": "barrel",
+   "x": -36,
+   "y": 18,
+   "w": 1
+  },
+  {
+   "asset": "barrel",
+   "x": -58,
+   "y": 14,
+   "w": 1
+  },
+  {
+   "asset": "weapon_rack",
+   "x": 24,
+   "y": 50,
+   "w": 2.2
+  },
+  {
+   "asset": "wm_p19_alchemy_table",
+   "x": 26,
+   "y": -44,
+   "w": 2.2
+  },
+  {
+   "asset": "portal_city",
+   "x": 15,
+   "y": 42,
+   "w": 5
+  },
+  {
+   "asset": "p01_nanmadol_basalt_bundle",
+   "x": 95,
+   "y": 20,
+   "w": 3
+  },
+  {
+   "asset": "p01_nanmadol_basalt_bundle",
+   "x": -70,
+   "y": -30,
+   "w": 3
+  },
+  {
+   "asset": "p01_nanmadol_basalt_bundle",
+   "x": 60,
+   "y": -55,
+   "w": 3
+  },
+  {
+   "asset": "p01_nanmadol_basalt_bundle",
+   "x": -118,
+   "y": -52,
+   "w": 3
+  },
+  {
+   "asset": "p01_nanmadol_basalt_bundle",
+   "x": 150,
+   "y": 70,
+   "w": 3
+  },
+  {
+   "asset": "p01_nanmadol_basalt_bundle",
+   "x": 30,
+   "y": 66,
+   "w": 3
+  },
+  {
+   "asset": "p02_nanmadol_mooring_post",
+   "x": 105,
+   "y": -5,
+   "w": 1.2
+  },
+  {
+   "asset": "p02_nanmadol_mooring_post",
+   "x": -78,
+   "y": 10,
+   "w": 1.2
+  },
+  {
+   "asset": "p02_nanmadol_mooring_post",
+   "x": 15,
+   "y": 72,
+   "w": 1.2
+  },
+  {
+   "asset": "p02_nanmadol_mooring_post",
+   "x": -95,
+   "y": -70,
+   "w": 1.2
+  },
+  {
+   "asset": "p02_nanmadol_mooring_post",
+   "x": 150,
+   "y": 105,
+   "w": 1.2
+  },
+  {
+   "asset": "p02_nanmadol_mooring_post",
+   "x": 100,
+   "y": 45,
+   "w": 1.2
+  },
+  {
+   "asset": "p04_nanmadol_fish_trap",
+   "x": 120,
+   "y": -30,
+   "w": 3
+  },
+  {
+   "asset": "p04_nanmadol_fish_trap",
+   "x": -95,
+   "y": 30,
+   "w": 3
+  },
+  {
+   "asset": "p04_nanmadol_fish_trap",
+   "x": 60,
+   "y": 95,
+   "w": 3
+  },
+  {
+   "asset": "p03_nanmadol_offering_bowl",
+   "x": 80,
+   "y": -26,
+   "w": 1.5
+  },
+  {
+   "asset": "p03_nanmadol_offering_bowl",
+   "x": 96,
+   "y": -10,
+   "w": 1.5
+  },
+  {
+   "asset": "wm_x06_willow_tree",
+   "x": -60,
+   "y": -48,
+   "w": 8
+  },
+  {
+   "asset": "wm_x07_blossom_tree",
+   "x": 40,
+   "y": -62,
+   "w": 7
+  },
+  {
+   "asset": "wm_x05_apple_tree",
+   "x": -100,
+   "y": -95,
+   "w": 7
+  },
+  {
+   "asset": "tree_round",
+   "x": 135,
+   "y": 80,
+   "w": 6
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": -20,
+   "y": -58,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 70,
+   "y": 40,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": -108,
+   "y": -74,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": 30,
+   "y": -30,
+   "w": 3
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": -45,
+   "y": -15,
+   "w": 3
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": 120,
+   "y": 84,
+   "w": 3
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 0,
+   "y": 0,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 45,
+   "y": 5,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -70,
+   "y": 40,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 122,
+   "y": 100,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_c05_chief_elder",
+   "x": 15,
+   "y": -40,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c11_healer",
+   "x": 80,
+   "y": -12,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c06_fisherwoman",
+   "x": -66,
+   "y": 16,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c10_merchant",
+   "x": -38,
+   "y": 31,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c15_carpenter",
+   "x": -52,
+   "y": 16,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c12_guard",
+   "x": 10,
+   "y": 52,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c12_guard",
+   "x": 20,
+   "y": 52,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c01_traveller_m",
+   "x": 11,
+   "y": 38,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c02_traveller_f",
+   "x": 19,
+   "y": 38,
+   "w": 1.1
+  },
+  {
+   "asset": "wm_c13_child_girl",
+   "x": -112,
+   "y": -80,
+   "w": 1.1
+  }
+ ],
+ "zones": [
+  {
+   "type": "player",
+   "x": 10,
+   "y": 36,
+   "w": 10,
+   "h": 10
+  },
+  {
+   "type": "npc",
+   "x": 8,
+   "y": -48,
+   "w": 14,
+   "h": 12
+  },
+  {
+   "type": "npc",
+   "x": -45,
+   "y": 15,
+   "w": 25,
+   "h": 20
+  },
+  {
+   "type": "monster",
+   "x": -160,
+   "y": -40,
+   "w": 45,
+   "h": 60
+  },
+  {
+   "type": "monster",
+   "x": 100,
+   "y": 55,
+   "w": 55,
+   "h": 50
+  }
+ ],
+ "collisions": [
+  {
+   "x": -140.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -220.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -230.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": 100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -200.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -160.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -200.0,
+   "y": 40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 220.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -40.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -120.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 180.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": -40.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 100.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 30.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -50.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 140.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 210.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": 160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -90.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -130.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -170.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 170.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 60.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": 140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -210.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 20.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -60.0,
+   "y": -140.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -130.0,
+   "y": -170.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -100.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 90.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -140.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 80.0,
+   "y": 190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -80.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": -70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": -110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 230.0,
+   "y": -10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -190.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 10.0,
+   "y": -210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 130.0,
+   "y": -100.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 40.0,
+   "y": 210.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 160.0,
+   "y": -50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -180.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": 110.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 50.0,
+   "y": -150.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -30.0,
+   "y": -190.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 190.0,
+   "y": 50.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 110.0,
+   "y": 10.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": -180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 200.0,
+   "y": 60.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 120.0,
+   "y": 20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -110.0,
+   "y": 180.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -70.0,
+   "y": -120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -150.0,
+   "y": -160.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 150.0,
+   "y": 120.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 70.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 9.9,
+   "y": -55.7,
+   "w": 10.1,
+   "h": 3.7
+  },
+  {
+   "x": 84.3,
+   "y": -20.7,
+   "w": 7.4,
+   "h": 2.7
+  },
+  {
+   "x": 10.9,
+   "y": 54.9,
+   "w": 8.3,
+   "h": 3.1
+  },
+  {
+   "x": -56.6,
+   "y": 4.6,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": -34.6,
+   "y": -41.4,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": 47.4,
+   "y": 24.6,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": -12.6,
+   "y": 26.6,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": -122.6,
+   "y": -91.4,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": -108.6,
+   "y": -73.4,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": 123.4,
+   "y": 88.6,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": 109.4,
+   "y": 72.6,
+   "w": 9.2,
+   "h": 3.4
+  },
+  {
+   "x": -39.8,
+   "y": 24.0,
+   "w": 3.6,
+   "h": 2.0
+  },
+  {
+   "x": -44.6,
+   "y": 19.3,
+   "w": 1.3,
+   "h": 0.7
+  },
+  {
+   "x": -33.6,
+   "y": 32.3,
+   "w": 1.3,
+   "h": 0.7
+  },
+  {
+   "x": -28.6,
+   "y": 32.4,
+   "w": 1.1,
+   "h": 0.6
+  },
+  {
+   "x": -49.0,
+   "y": 28.9,
+   "w": 1.9,
+   "h": 1.1
+  },
+  {
+   "x": -36.4,
+   "y": 17.6,
+   "w": 0.8,
+   "h": 0.5
+  },
+  {
+   "x": -58.4,
+   "y": 13.6,
+   "w": 0.8,
+   "h": 0.5
+  },
+  {
+   "x": 23.1,
+   "y": 49.0,
+   "w": 1.8,
+   "h": 1.0
+  },
+  {
+   "x": 25.1,
+   "y": -45.0,
+   "w": 1.8,
+   "h": 1.0
+  },
+  {
+   "x": 93.8,
+   "y": 18.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": -71.2,
+   "y": -31.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 58.8,
+   "y": -56.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": -119.2,
+   "y": -53.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 148.8,
+   "y": 68.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 28.8,
+   "y": 64.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 104.5,
+   "y": -5.5,
+   "w": 1.0,
+   "h": 0.5
+  },
+  {
+   "x": -78.5,
+   "y": 9.5,
+   "w": 1.0,
+   "h": 0.5
+  },
+  {
+   "x": 14.5,
+   "y": 71.5,
+   "w": 1.0,
+   "h": 0.5
+  },
+  {
+   "x": -95.5,
+   "y": -70.5,
+   "w": 1.0,
+   "h": 0.5
+  },
+  {
+   "x": 149.5,
+   "y": 104.5,
+   "w": 1.0,
+   "h": 0.5
+  },
+  {
+   "x": 99.5,
+   "y": 44.5,
+   "w": 1.0,
+   "h": 0.5
+  },
+  {
+   "x": 118.8,
+   "y": -31.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": -96.2,
+   "y": 28.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 58.8,
+   "y": 93.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 79.4,
+   "y": -26.7,
+   "w": 1.2,
+   "h": 0.7
+  },
+  {
+   "x": 95.4,
+   "y": -10.7,
+   "w": 1.2,
+   "h": 0.7
+  },
+  {
+   "x": -60.6,
+   "y": -48.6,
+   "w": 1.3,
+   "h": 0.6
+  },
+  {
+   "x": 39.4,
+   "y": -62.6,
+   "w": 1.1,
+   "h": 0.6
+  },
+  {
+   "x": -100.6,
+   "y": -95.6,
+   "w": 1.1,
+   "h": 0.6
+  },
+  {
+   "x": 134.5,
+   "y": 79.4,
+   "w": 1.0,
+   "h": 0.6
+  }
+ ]
+}
