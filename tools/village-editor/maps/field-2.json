@@ -1,0 +1,375 @@
+{
+ "village": "field:nan-madol>haamonga#1",
+ "tileSizeM": 10,
+ "tiles": {
+  "-3,10": "grass-road",
+  "-3,11": "grass-road",
+  "-2,-5": "paved-road",
+  "-2,-4": "paved-road",
+  "-2,8": "grass-road",
+  "-2,9": "grass-road",
+  "-2,10": "grass-road",
+  "-2,11": "grass-road",
+  "-2,12": "grass-road",
+  "-2,13": "grass-road",
+  "-2,14": "grass-road",
+  "-2,15": "grass-road",
+  "-1,-20": "grass-road",
+  "-1,-7": "grass-road",
+  "-1,-6": "grass-road",
+  "-1,-5": "grass-road",
+  "-1,-4": "grass-road",
+  "-1,-3": "grass-road",
+  "-1,-2": "grass-road",
+  "-1,-1": "grass-road",
+  "-1,6": "grass-road",
+  "-1,7": "grass-road",
+  "-1,8": "grass-road",
+  "-1,9": "grass-road",
+  "-1,14": "grass-road",
+  "-1,15": "grass-road",
+  "-1,16": "grass-road",
+  "-1,17": "grass-road",
+  "-1,18": "grass-road",
+  "-1,19": "grass-road",
+  "0,-20": "grass-road",
+  "0,-19": "grass-road",
+  "0,-18": "grass-road",
+  "0,-17": "grass-road",
+  "0,-16": "grass-road",
+  "0,-10": "grass-road",
+  "0,-9": "grass-road",
+  "0,-8": "grass-road",
+  "0,-7": "grass-road",
+  "0,-2": "grass-road",
+  "0,-1": "grass-road",
+  "0,0": "grass-road",
+  "0,1": "grass-road",
+  "0,2": "grass-road",
+  "0,4": "grass-road",
+  "0,5": "grass-road",
+  "0,6": "grass-road",
+  "0,7": "grass-road",
+  "0,19": "grass-road",
+  "1,-17": "grass-road",
+  "1,-16": "grass-road",
+  "1,-15": "grass-road",
+  "1,-14": "grass-road",
+  "1,-13": "grass-road",
+  "1,-12": "grass-road",
+  "1,-11": "grass-road",
+  "1,-10": "grass-road",
+  "1,2": "grass-road",
+  "1,3": "grass-road",
+  "1,4": "grass-road",
+  "1,5": "grass-road",
+  "2,-13": "grass-road",
+  "2,-12": "grass-road",
+  "-11,-9": "paved-road",
+  "-11,-8": "paved-road",
+  "-11,-7": "paved-road",
+  "-11,-6": "paved-road",
+  "-11,-5": "paved-road",
+  "-11,-4": "paved-road",
+  "-10,-10": "paved-road",
+  "-10,-9": "paved-road",
+  "-10,-8": "paved-road",
+  "-10,-7": "paved-road",
+  "-10,-6": "paved-road",
+  "-10,-5": "paved-road",
+  "-10,-4": "paved-road",
+  "-10,-3": "paved-road",
+  "-9,-11": "paved-road",
+  "-9,-10": "paved-road",
+  "-9,-9": "paved-road",
+  "-9,-8": "paved-road",
+  "-9,-7": "paved-road",
+  "-9,-6": "paved-road",
+  "-9,-5": "paved-road",
+  "-9,-4": "paved-road",
+  "-9,-3": "paved-road",
+  "-9,-2": "paved-road",
+  "-8,-11": "paved-road",
+  "-8,-10": "paved-road",
+  "-8,-9": "paved-road",
+  "-8,-8": "paved-road",
+  "-8,-7": "paved-road",
+  "-8,-6": "paved-road",
+  "-8,-5": "paved-road",
+  "-8,-4": "paved-road",
+  "-8,-3": "paved-road",
+  "-8,-2": "paved-road",
+  "-7,-11": "paved-road",
+  "-7,-10": "paved-road",
+  "-7,-9": "paved-road",
+  "-7,-8": "paved-road",
+  "-7,-7": "paved-road",
+  "-7,-6": "paved-road",
+  "-7,-5": "paved-road",
+  "-7,-4": "paved-road",
+  "-7,-3": "paved-road",
+  "-7,-2": "paved-road",
+  "-6,-11": "paved-road",
+  "-6,-10": "paved-road",
+  "-6,-9": "paved-road",
+  "-6,-8": "paved-road",
+  "-6,-7": "paved-road",
+  "-6,-6": "paved-road",
+  "-6,-5": "paved-road",
+  "-6,-4": "paved-road",
+  "-6,-3": "paved-road",
+  "-6,-2": "paved-road",
+  "-5,-11": "paved-road",
+  "-5,-10": "paved-road",
+  "-5,-9": "paved-road",
+  "-5,-8": "paved-road",
+  "-5,-7": "paved-road",
+  "-5,-6": "paved-road",
+  "-5,-5": "paved-road",
+  "-5,-4": "paved-road",
+  "-5,-3": "paved-road",
+  "-5,-2": "paved-road",
+  "-4,-11": "paved-road",
+  "-4,-10": "paved-road",
+  "-4,-9": "paved-road",
+  "-4,-8": "paved-road",
+  "-4,-7": "paved-road",
+  "-4,-6": "paved-road",
+  "-4,-5": "paved-road",
+  "-4,-4": "paved-road",
+  "-4,-3": "paved-road",
+  "-4,-2": "paved-road",
+  "-3,-10": "paved-road",
+  "-3,-9": "paved-road",
+  "-3,-8": "paved-road",
+  "-3,-7": "paved-road",
+  "-3,-6": "paved-road",
+  "-3,-5": "paved-road",
+  "-3,-4": "paved-road",
+  "-3,-3": "paved-road",
+  "-2,-9": "paved-road",
+  "-2,-8": "paved-road",
+  "-2,-7": "paved-road",
+  "-2,-6": "paved-road"
+ },
+ "placements": [
+  {
+   "asset": "f05_pass_gate_rocks",
+   "x": 18,
+   "y": -118,
+   "w": 7
+  },
+  {
+   "asset": "f07_pass_steps",
+   "x": 12,
+   "y": -96,
+   "w": 6
+  },
+  {
+   "asset": "f06_lookout_boulder",
+   "x": -58,
+   "y": -64,
+   "w": 6
+  },
+  {
+   "asset": "wm_x19_basalt_rocks",
+   "x": -84,
+   "y": -30,
+   "w": 4.5
+  },
+  {
+   "asset": "wm_x19_basalt_rocks",
+   "x": -36,
+   "y": -92,
+   "w": 4.5
+  },
+  {
+   "asset": "rock",
+   "x": 70,
+   "y": 20,
+   "w": 3
+  },
+  {
+   "asset": "rock",
+   "x": -44,
+   "y": 130,
+   "w": 3
+  },
+  {
+   "asset": "f03_rapids_rocks",
+   "x": 88,
+   "y": -140,
+   "w": 6
+  },
+  {
+   "asset": "tree_pine",
+   "x": 60,
+   "y": 90,
+   "w": 5
+  },
+  {
+   "asset": "tree_pine",
+   "x": -80,
+   "y": 60,
+   "w": 5
+  },
+  {
+   "asset": "tree_round",
+   "x": 110,
+   "y": -30,
+   "w": 6
+  },
+  {
+   "asset": "wm_x08_autumn_tree",
+   "x": -110,
+   "y": -140,
+   "w": 7
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": 30,
+   "y": 150,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x09_berry_bush",
+   "x": -30,
+   "y": -160,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x10_flower_patch",
+   "x": -70,
+   "y": 160,
+   "w": 3
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 44,
+   "y": 44,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -18,
+   "y": 76,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": 96,
+   "y": 140,
+   "w": 2.5
+  },
+  {
+   "asset": "wm_x11_grass_tufts",
+   "x": -130,
+   "y": -20,
+   "w": 2.5
+  }
+ ],
+ "zones": [
+  {
+   "type": "player",
+   "x": -6,
+   "y": 182,
+   "w": 12,
+   "h": 12
+  },
+  {
+   "type": "monster",
+   "x": -95,
+   "y": -95,
+   "w": 70,
+   "h": 70
+  },
+  {
+   "type": "monster",
+   "x": 55,
+   "y": 30,
+   "w": 85,
+   "h": 90
+  },
+  {
+   "type": "monster",
+   "x": -140,
+   "y": 90,
+   "w": 70,
+   "h": 70
+  }
+ ],
+ "collisions": [
+  {
+   "x": 15.2,
+   "y": -121.1,
+   "w": 5.6,
+   "h": 3.2
+  },
+  {
+   "x": 9.6,
+   "y": -98.7,
+   "w": 4.8,
+   "h": 2.7
+  },
+  {
+   "x": -60.4,
+   "y": -66.7,
+   "w": 4.8,
+   "h": 2.7
+  },
+  {
+   "x": -85.9,
+   "y": -32.2,
+   "w": 3.8,
+   "h": 2.3
+  },
+  {
+   "x": -37.9,
+   "y": -94.2,
+   "w": 3.8,
+   "h": 2.3
+  },
+  {
+   "x": 68.8,
+   "y": 18.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": -45.2,
+   "y": 128.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 85.6,
+   "y": -142.7,
+   "w": 4.8,
+   "h": 2.7
+  },
+  {
+   "x": 59.6,
+   "y": 89.4,
+   "w": 0.9,
+   "h": 0.6
+  },
+  {
+   "x": -80.4,
+   "y": 59.4,
+   "w": 0.9,
+   "h": 0.6
+  },
+  {
+   "x": 109.5,
+   "y": -30.6,
+   "w": 1.0,
+   "h": 0.6
+  },
+  {
+   "x": -110.6,
+   "y": -140.6,
+   "w": 1.1,
+   "h": 0.6
+  }
+ ]
+}

@@ -1,0 +1,498 @@
+{
+ "village": "drowned-vault",
+ "tileSizeM": 10,
+ "tiles": {
+  "-3,8": "paved-road",
+  "-3,9": "paved-road",
+  "-3,10": "paved-road",
+  "-2,7": "paved-road",
+  "-2,8": "paved-road",
+  "-2,9": "paved-road",
+  "-2,10": "paved-road",
+  "-2,11": "paved-road",
+  "-1,6": "paved-road",
+  "-1,7": "water",
+  "-1,8": "water",
+  "-1,9": "water",
+  "-1,10": "paved-road",
+  "-1,11": "paved-road",
+  "-1,12": "paved-road",
+  "0,6": "paved-road",
+  "0,7": "water",
+  "0,8": "water",
+  "0,9": "water",
+  "0,10": "paved-road",
+  "0,11": "paved-road",
+  "0,12": "paved-road",
+  "1,7": "paved-road",
+  "1,8": "paved-road",
+  "1,9": "paved-road",
+  "1,10": "paved-road",
+  "1,11": "paved-road",
+  "2,8": "paved-road",
+  "2,9": "paved-road",
+  "2,10": "paved-road",
+  "-4,-2": "paved-road",
+  "-4,-1": "paved-road",
+  "-4,0": "paved-road",
+  "-3,-3": "paved-road",
+  "-3,-2": "paved-road",
+  "-3,-1": "paved-road",
+  "-3,0": "paved-road",
+  "-3,1": "paved-road",
+  "-2,-4": "paved-road",
+  "-2,-3": "water",
+  "-2,-2": "water",
+  "-2,-1": "paved-road",
+  "-2,0": "paved-road",
+  "-2,1": "paved-road",
+  "-2,2": "paved-road",
+  "-1,-4": "paved-road",
+  "-1,-3": "water",
+  "-1,-2": "water",
+  "-1,-1": "paved-road",
+  "-1,0": "paved-road",
+  "-1,1": "paved-road",
+  "-1,2": "paved-road",
+  "0,-4": "paved-road",
+  "0,-3": "paved-road",
+  "0,-2": "paved-road",
+  "0,-1": "paved-road",
+  "0,0": "paved-road",
+  "0,1": "paved-road",
+  "0,2": "paved-road",
+  "1,-4": "paved-road",
+  "1,-3": "paved-road",
+  "1,-2": "paved-road",
+  "1,-1": "paved-road",
+  "1,0": "paved-road",
+  "1,1": "paved-road",
+  "1,2": "paved-road",
+  "2,-3": "paved-road",
+  "2,-2": "paved-road",
+  "2,-1": "paved-road",
+  "2,0": "paved-road",
+  "2,1": "paved-road",
+  "3,-2": "paved-road",
+  "3,-1": "paved-road",
+  "3,0": "paved-road",
+  "-3,-12": "paved-road",
+  "-3,-11": "paved-road",
+  "-3,-10": "paved-road",
+  "-3,-9": "paved-road",
+  "-3,-8": "paved-road",
+  "-2,-13": "paved-road",
+  "-2,-12": "paved-road",
+  "-2,-11": "paved-road",
+  "-2,-10": "paved-road",
+  "-2,-9": "paved-road",
+  "-2,-8": "paved-road",
+  "-2,-7": "paved-road",
+  "-1,-13": "paved-road",
+  "-1,-12": "paved-road",
+  "-1,-11": "paved-road",
+  "-1,-10": "paved-road",
+  "-1,-9": "paved-road",
+  "-1,-8": "paved-road",
+  "-1,-7": "paved-road",
+  "0,-13": "paved-road",
+  "0,-12": "paved-road",
+  "0,-11": "paved-road",
+  "0,-10": "paved-road",
+  "0,-9": "paved-road",
+  "0,-8": "paved-road",
+  "0,-7": "paved-road",
+  "1,-13": "paved-road",
+  "1,-12": "paved-road",
+  "1,-11": "paved-road",
+  "1,-10": "paved-road",
+  "1,-9": "paved-road",
+  "1,-8": "paved-road",
+  "1,-7": "paved-road",
+  "2,-12": "paved-road",
+  "2,-11": "paved-road",
+  "2,-10": "paved-road",
+  "2,-9": "paved-road",
+  "2,-8": "paved-road",
+  "-1,-6": "paved-road",
+  "0,-6": "paved-road",
+  "-1,-5": "paved-road",
+  "0,-5": "paved-road",
+  "-1,3": "paved-road",
+  "0,3": "paved-road",
+  "-1,4": "paved-road",
+  "0,4": "paved-road",
+  "-1,5": "paved-road",
+  "0,5": "paved-road"
+ },
+ "placements": [
+  {
+   "asset": "d07_drowned_vault",
+   "x": 0,
+   "y": 122,
+   "w": 7
+  },
+  {
+   "asset": "a03_lore_stele",
+   "x": -12,
+   "y": 104,
+   "w": 2.5
+  },
+  {
+   "asset": "a02_exit_portal",
+   "x": 14,
+   "y": 108,
+   "w": 3
+  },
+  {
+   "asset": "a05_key_stand",
+   "x": 10,
+   "y": 6,
+   "w": 1.5
+  },
+  {
+   "asset": "a01_boss_door",
+   "x": 0,
+   "y": -126,
+   "w": 6
+  },
+  {
+   "asset": "a04_heart_pedestal",
+   "x": 0,
+   "y": -110,
+   "w": 3
+  },
+  {
+   "asset": "a02_exit_portal",
+   "x": -14,
+   "y": -104,
+   "w": 3
+  },
+  {
+   "asset": "a20_drowned_warden",
+   "x": 6,
+   "y": -12,
+   "w": 2.6
+  },
+  {
+   "asset": "a21_ruin_strayer",
+   "x": -10,
+   "y": 2,
+   "w": 1.8
+  },
+  {
+   "asset": "a21_ruin_strayer",
+   "x": 4,
+   "y": -96,
+   "w": 1.8
+  },
+  {
+   "asset": "a15_sunken_chest",
+   "x": -18,
+   "y": -18,
+   "w": 1.8
+  },
+  {
+   "asset": "a15_sunken_chest",
+   "x": 16,
+   "y": 84,
+   "w": 1.8
+  },
+  {
+   "asset": "a14_coral_crystals",
+   "x": -22,
+   "y": 88,
+   "w": 3
+  },
+  {
+   "asset": "a14_coral_crystals",
+   "x": 24,
+   "y": -30,
+   "w": 3
+  },
+  {
+   "asset": "a14_coral_crystals",
+   "x": -20,
+   "y": -116,
+   "w": 3
+  },
+  {
+   "asset": "a14_coral_crystals",
+   "x": 26,
+   "y": 20,
+   "w": 3
+  },
+  {
+   "asset": "a16_flooded_fountain",
+   "x": 12,
+   "y": 44,
+   "w": 4
+  },
+  {
+   "asset": "a17_ring_handle",
+   "x": -8,
+   "y": 58,
+   "w": 2
+  },
+  {
+   "asset": "a17_ring_handle",
+   "x": 18,
+   "y": -58,
+   "w": 2
+  },
+  {
+   "asset": "d08_sunken_temple_door",
+   "x": -26,
+   "y": -64,
+   "w": 8
+  },
+  {
+   "asset": "d09_lagoon_ruin",
+   "x": 26,
+   "y": 96,
+   "w": 8
+  },
+  {
+   "asset": "rock",
+   "x": -22,
+   "y": 116,
+   "w": 3
+  },
+  {
+   "asset": "wm_x23_sulfur_rocks",
+   "x": 24,
+   "y": -84,
+   "w": 3.5
+  }
+ ],
+ "zones": [
+  {
+   "type": "player",
+   "x": -6,
+   "y": 104,
+   "w": 12,
+   "h": 12
+  },
+  {
+   "type": "monster",
+   "x": -26,
+   "y": -32,
+   "w": 52,
+   "h": 46
+  },
+  {
+   "type": "monster",
+   "x": -24,
+   "y": -122,
+   "w": 48,
+   "h": 44
+  },
+  {
+   "type": "monster",
+   "x": -12,
+   "y": 34,
+   "w": 24,
+   "h": 30
+  }
+ ],
+ "collisions": [
+  {
+   "x": -10.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 70.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 80.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": 0.0,
+   "y": 90.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -20.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -30.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -10.0,
+   "y": -20.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "x": -2.8,
+   "y": 118.9,
+   "w": 5.6,
+   "h": 3.2
+  },
+  {
+   "x": -13.0,
+   "y": 102.9,
+   "w": 2.0,
+   "h": 1.1
+  },
+  {
+   "x": 12.8,
+   "y": 106.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 9.4,
+   "y": 5.3,
+   "w": 1.2,
+   "h": 0.7
+  },
+  {
+   "x": -2.4,
+   "y": -128.7,
+   "w": 4.8,
+   "h": 2.7
+  },
+  {
+   "x": -1.2,
+   "y": -111.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": -15.2,
+   "y": -105.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 5.0,
+   "y": -13.2,
+   "w": 2.1,
+   "h": 1.2
+  },
+  {
+   "x": -10.7,
+   "y": 1.2,
+   "w": 1.4,
+   "h": 0.8
+  },
+  {
+   "x": 3.3,
+   "y": -96.8,
+   "w": 1.4,
+   "h": 0.8
+  },
+  {
+   "x": -18.7,
+   "y": -18.8,
+   "w": 1.4,
+   "h": 0.8
+  },
+  {
+   "x": 15.3,
+   "y": 83.2,
+   "w": 1.4,
+   "h": 0.8
+  },
+  {
+   "x": -23.2,
+   "y": 86.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 22.8,
+   "y": -31.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": -21.2,
+   "y": -117.3,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 24.8,
+   "y": 18.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 10.4,
+   "y": 42.2,
+   "w": 3.2,
+   "h": 1.8
+  },
+  {
+   "x": -8.8,
+   "y": 57.1,
+   "w": 1.6,
+   "h": 0.9
+  },
+  {
+   "x": 17.2,
+   "y": -58.9,
+   "w": 1.6,
+   "h": 0.9
+  },
+  {
+   "x": -29.2,
+   "y": -67.6,
+   "w": 6.4,
+   "h": 3.6
+  },
+  {
+   "x": 22.8,
+   "y": 92.4,
+   "w": 6.4,
+   "h": 3.6
+  },
+  {
+   "x": -23.2,
+   "y": 114.7,
+   "w": 2.4,
+   "h": 1.4
+  },
+  {
+   "x": 22.5,
+   "y": -85.7,
+   "w": 3.0,
+   "h": 1.8
+  }
+ ]
+}
