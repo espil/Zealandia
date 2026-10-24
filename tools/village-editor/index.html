@@ -107,6 +107,7 @@
   <button id="btn100">100%</button>
   <label>배경 투명도 <input type="range" id="bgOpacity" min="0" max="1" step="0.05" value="1" style="width:90px"></label>
   <label><input type="checkbox" id="showGrid" checked> 격자</label>
+    <label><input type="checkbox" id="showColl" checked> 충돌 표시</label>
   <div class="spacer"></div>
   <label class="hint" for="importFile" style="cursor:pointer">
     <span style="border:1px solid #3f424c;border-radius:6px;padding:5px 9px;background:#2c2e35;color:#e8e9eb">가져오기</span>
@@ -256,6 +257,7 @@ let armed = null;                        // 배치 대기 중인 팔레트 항�
 let selected = -1;                       // 선택된 placement 인덱스
 let bgOpacity = 1;
 let showGrid = true;
+let showColl = true;
 let mouse = { wx: 0, wy: 0, sx: 0, sy: 0, inside: false };
 
 // ---------------- 이미지 ----------------
@@ -365,6 +367,17 @@ function draw() {
     }
   });
 
+  // 충돌 오버레이 (에버플래닛 방식: 배치 밑면 + 물 타일에서 자동 산출)
+  if (showColl) {
+    ctx.fillStyle = 'rgba(255,70,60,0.30)';
+    ctx.strokeStyle = 'rgba(255,70,60,0.85)';
+    ctx.lineWidth = 1.5 / cam.z;
+    for (const c of computeCollisions()) {
+      ctx.fillRect(c.x, c.y, c.w, c.h);
+      ctx.strokeRect(c.x, c.y, c.w, c.h);
+    }
+  }
+
   // 팔레트 배치 미리보기
   if (armed && mouse.inside && tool === 'place') {
     const img = spriteImgs[armed.id];
@@ -463,10 +476,45 @@ function removePlacement(i) {
 }
 
 // ---------------- 저장 / 내보내기 / 가져오기 ----------------
+// 충돌 자동 산출 (qa-rig/collision.py와 같은 표): (x,y)=북서 모서리, m 단위
+const COLL_NO_SOLID = ['wm_x09_', 'wm_x10_', 'wm_x11_', 'wm_x12_', 'wm_x13_', 'wm_x14_', 'wm_x15_', 'wm_x18_'];
+const COLL_THIN = ['wm_p04_', 'wm_p11_', 'wm_p06_', 'wm_x16_'];
+function computeCollisions() {
+  const out = [];
+  const R = (x, y, w, h) => out.push({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, w: Math.round(w * 10) / 10, h: Math.round(h * 10) / 10 });
+  const ts = state.tileSizeM;
+  for (const k in state.tiles) {
+    if (state.tiles[k] !== 'water') continue;
+    const [gx, gz] = k.split(',').map(Number);
+    R(gx * ts, gz * ts, ts, ts);
+  }
+  for (const p of state.placements) {
+    const a = p.asset, px = p.x, py = p.y, w = p.w;
+    if (a === 'portal_city' || a.startsWith('wm_c') || COLL_NO_SOLID.some(t => a.startsWith(t))) continue;
+    if (a === 'strayer' || a === 'spitter' || a === 'brute') continue;
+    if (a.startsWith('wm_b15')) {
+      const fd = 0.34 * w;
+      R(px - 0.46 * w, py - fd, 0.30 * w, fd);
+      R(px + 0.16 * w, py - fd, 0.30 * w, fd);
+      continue;
+    }
+    let fw, fd;
+    if (a.startsWith('wm_b') || a.startsWith('house_') || a.startsWith('v')) { fw = 0.92 * w; fd = 0.34 * w; }
+    else if (['wm_x05', 'wm_x06', 'wm_x07', 'wm_x08'].some(t => a.startsWith(t)) || a.startsWith('tree_')) { fw = Math.max(0.9, 0.16 * w); fd = 0.6; }
+    else if (['wm_x19', 'wm_x20', 'wm_x21', 'wm_x22', 'wm_x23', 'wm_x24'].some(t => a.startsWith(t))) { fw = 0.85 * w; fd = 0.5 * w; }
+    else if (a.startsWith('wm_p01')) { fw = 0.9 * w; fd = 0.55 * w; }
+    else if (a.startsWith('wm_p05')) { fw = w; fd = 0.35; }
+    else if (COLL_THIN.some(t => a.startsWith(t))) { fw = Math.max(0.5, 0.3 * w); fd = 0.4; }
+    else { fw = 0.8 * w; fd = 0.45 * w; }
+    R(px - fw / 2, py - fd, fw, fd);
+  }
+  return out;
+}
 function exportObj() {
   return {
     village: state.village, tileSizeM: state.tileSizeM,
-    tiles: state.tiles, placements: state.placements, zones: state.zones
+    tiles: state.tiles, placements: state.placements, zones: state.zones,
+    collisions: computeCollisions()
   };
 }
 function changed() {
@@ -652,6 +700,7 @@ document.getElementById('tileSize').addEventListener('change', e => {
 document.getElementById('villageName').addEventListener('input', e => { state.village = e.target.value; changed(); });
 document.getElementById('bgOpacity').addEventListener('input', e => { bgOpacity = Number(e.target.value); draw(); });
 document.getElementById('showGrid').addEventListener('change', e => { showGrid = e.target.checked; draw(); });
+document.getElementById('showColl').addEventListener('change', e => { showColl = e.target.checked; draw(); });
 document.getElementById('selW').addEventListener('input', e => {
   if (selected < 0) return;
   state.placements[selected].w = Number(e.target.value);
