@@ -3,7 +3,7 @@
  "mPerPx": 2.0,
  "offsetM": -20.0,
  "unitsPerMetre": 100.0,
- "minM": -4.01,
- "maxM": 6.46,
+ "minM": -6.62,
+ "maxM": 5.16,
  "decode": "height_m = offsetM + pixelValue / unitsPerMetre; image row 0 = north edge (y=-span/2), col 0 = west edge"
 }
