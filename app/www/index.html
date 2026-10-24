@@ -3345,6 +3345,11 @@ html, body { height:100dvh; }
     window.__espilCurveK=curveStrength.x/120000;
     window.__espilCurveProbe=function(x,z){ return curveDropAt(x,z); };
     window.__espilCurveAnchor=function(){ return {x:curvePlayer.x,z:curvePlayer.y}; };
+    /* Zealandia Globe View (Han 2026-10-24): zglobe.js drives the ONE
+       curve constant while a Zealandia instance is active and restores
+       the map world's own constant on exit. The constant's home stays
+       curveStrength itself - this hook only writes it. */
+    window.__espilSetCurveK=function(k){ curveStrength.set(k*120000,k*120000); window.__espilCurveK=k; };
     /* ==== ESPIL TILES BRIDGE (isolated tiles module interface) ====
        The Google 3D Tiles layer lives in tiles/tiles-module.js (ES
        module, own three@0.186, own canvas UNDER the game canvas).
@@ -9043,7 +9048,8 @@ html, body { height:100dvh; }
       p.av.shadow.position.set(p.pos.x,.03,p.pos.z);
       p.av.shadow.material.opacity=Math.max(.08,.26-Math.max(0,p.pos.y-.05)*.05);
       /* --- follow camera --- */
-      var cp=Math.cos(walkCamPitch),sp=Math.sin(walkCamPitch);
+      var __gPitch=walkCamPitch+(window.__zglobeCamComp||0); /* Zealandia Globe View: horizon-keeping pitch compensation supplied by zglobe.js (NDC2011 deck, 70% rule); 0 outside Zealandia */
+      var cp=Math.cos(__gPitch),sp=Math.sin(__gPitch);
       var want=new THREE.Vector3(
         p.pos.x+Math.sin(walkCamYaw)*cp*walkCamDist,
         p.pos.y+sp*walkCamDist+1.2,
@@ -10862,5 +10868,6 @@ tx.fillStyle=grad; ctx.fill();
 <script src="assets/zealandia/aquest.js"></script>
   <script src="assets/zealandia/zvillages.js"></script>
 <script src="assets/zealandia/zparty.js"></script>
+<script src="assets/zealandia/zglobe.js"></script>
 </body>
 </html>
