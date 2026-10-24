@@ -11192,6 +11192,8 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
     }
     function play(){
       if(!audio||muted||userPaused)return;
+      /* Never layer the main element over a sounding city theme (Han, 2026-10-24). */
+      if(cityAudio&&!cityAudio.paused)return;
       var p=audio.play();
       if(p&&p.catch)p.catch(function(){});
     }
@@ -11257,6 +11259,7 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
        landing theme via the error handler above. */
     function playTheme(theme){
       if(!audio)return;
+      fadeOutCityAudio();
       pendingThemeUrl=theme.src;
       fadeTo(0,function(){
         try{audio.src=theme.src;audio.loop=true;}catch(e){}
@@ -11300,6 +11303,13 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
         if(v===target){clearInterval(cityFadeTimer);cityFadeTimer=null;if(done)done();}
       },60);
     }
+    /* Han's rule (2026-10-24): when two songs would play at once, fade the
+       previous one out. Every start path fades the other element out first. */
+    function fadeOutCityAudio(){
+      if(cityAudio&&!cityAudio.paused){
+        cityFadeTo(0,function(){ try{cityAudio.pause();}catch(e){} });
+      }
+    }
     function startCityTheme(){
       if(muted||userPaused||!mapCity)return;
       var theme=CITY_THEMES[mapCity];
@@ -11307,6 +11317,9 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
       /* The entry sequence already switched the main BGM to this city theme:
          don't layer a second copy of the same song. */
       if(currentTheme&&currentTheme.src===theme.src&&audio&&!audio.paused)return;
+      /* A different song is sounding on the main element (e.g. the landing
+         theme): fade it out before the city theme comes in. */
+      if(audio&&!audio.paused)fadeTo(0,function(){ try{audio.pause();}catch(e){} });
       var a=ensureCityAudio();
       if(a.getAttribute('src')!==theme.src){
         cityThemeFailed=false;
@@ -11334,6 +11347,7 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
         if(theme)playTheme(theme);
       },
       onReturnToOrbit:function(){
+        fadeOutCityAudio();
         if(currentTheme!==LANDING_THEME&&audio){
           try{audio.src=LANDING_THEME.src;audio.loop=true;}catch(e){}
           currentTheme=LANDING_THEME;paintBgmCard();
