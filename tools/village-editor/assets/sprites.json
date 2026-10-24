@@ -1632,6 +1632,36 @@
     "drowned-vault"
    ],
    "name": "유적 스트레이어 (가디언)"
+  },
+  {
+   "id": "wm_p19_alchemy_table",
+   "name": "연금술 테이블",
+   "file": "sprites/wm_p19_alchemy_table.png",
+   "defaultW": 2.2,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
+  },
+  {
+   "id": "portal_city",
+   "name": "도시 포털",
+   "file": "sprites/portal_city.png",
+   "defaultW": 5,
+   "maps": [
+    "waitemata",
+    "nan-madol",
+    "haamonga",
+    "taputapuatea",
+    "ahu-tongariki",
+    "leluh",
+    "pulemelei"
+   ]
   }
  ]
 }
