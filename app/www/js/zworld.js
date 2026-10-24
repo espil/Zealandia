@@ -254,7 +254,8 @@
   function hideTokenBanner() {
     var ds = document.body ? document.body.querySelectorAll('div') : [];
     for (var i = 0; i < ds.length; i++) {
-      if (ds[i].textContent && ds[i].textContent.indexOf('No Mapbox token') === 0) ds[i].style.display = 'none';
+      var t = ds[i].textContent || '';
+      if (t.indexOf('No Mapbox token') === 0 || t.indexOf('Could not load the Mapbox') === 0) ds[i].style.display = 'none';
     }
   }
 
