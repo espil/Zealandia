@@ -344,7 +344,15 @@
     aqStyles();
     var f=aqEl('aquest-fade'); f.style.opacity='1';
     setTimeout(function(){
-      try{ sessionStorage.setItem('espil_pending_city','Waitematā'); }catch(e){}
+      try{
+        sessionStorage.setItem('espil_pending_city','Waitematā');
+        /* Dedicated crossing flag: the boot poll treats this (not the
+           city name alone) as the stone gate, retries the stone hook
+           until it exists, and raises a visible gate button if the
+           automatic crossing ever stalls (Han report, 2026-10-23:
+           touching the stone did not progress on his PC). */
+        sessionStorage.setItem('espil_stone_crossing','1');
+      }catch(e){}
       location.reload();
     }, 620);
   }

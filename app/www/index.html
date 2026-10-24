@@ -10143,9 +10143,41 @@ html, body { height:100dvh; }
        requests, re-select the pending city and click through its
        ENTER button so the switch lands back at the entry sequence. */
     (function(){
-      var name=null;
-      try{ name=sessionStorage.getItem('espil_pending_city'); if(name)sessionStorage.removeItem('espil_pending_city'); }catch(e){}
-      if(!name)return;
+      var name=null, stoneGate=false;
+      try{
+        name=sessionStorage.getItem('espil_pending_city'); if(name)sessionStorage.removeItem('espil_pending_city');
+        stoneGate=sessionStorage.getItem('espil_stone_crossing')==='1'; if(stoneGate)sessionStorage.removeItem('espil_stone_crossing');
+      }catch(e){}
+      /* Time Stone gate fallback (Han, 2026-10-23): touching the stone
+         must OPEN the gate to Zealandia. The automatic chain below is
+         silent when a link stalls on a given machine, so if the stone
+         crossing has not begun within ~25 s, raise a visible gate
+         panel whose button calls the stone hook on a real user
+         gesture. The panel removes itself once entry begins. */
+      var gateWatchdog=null;
+      function showStoneGatePanel(){
+        if(document.getElementById('stone-gate-panel'))return;
+        var d=document.createElement('div');
+        d.id='stone-gate-panel';
+        d.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(2,10,16,0.72);font-family:inherit;';
+        d.innerHTML='<div style="max-width:420px;width:88%;text-align:center;background:linear-gradient(180deg,rgba(10,34,44,.97),rgba(4,16,22,.97));border:1px solid rgba(134,238,228,.55);border-radius:14px;padding:26px 22px;color:#dff7f2;box-shadow:0 12px 44px rgba(0,0,0,.6)">'
+          +'<div style="font-size:19px;letter-spacing:.04em;margin-bottom:8px">The Time Stone gate is open</div>'
+          +'<div style="font-size:13px;opacity:.85;line-height:1.55;margin-bottom:18px">The stone has opened the way to the hidden land.<br>Step through when you are ready.</div>'
+          +'<button id="stone-gate-enter" type="button" style="font-size:15px;padding:11px 26px;border-radius:9px;border:1px solid rgba(134,238,228,.8);background:linear-gradient(180deg,rgba(14,48,56,.95),rgba(4,20,26,.95));color:#bff3ea;cursor:pointer">Enter Zealandia</button></div>';
+        document.body.appendChild(d);
+        document.getElementById('stone-gate-enter').addEventListener('click',function(){
+          if(window.__espilEnterZealandiaViaStone)window.__espilEnterZealandiaViaStone();
+        });
+        var iv=setInterval(function(){
+          if(window.__espilCityKey){ var p=document.getElementById('stone-gate-panel'); if(p)p.parentNode.removeChild(p); clearInterval(iv); }
+        },400);
+      }
+      window.__espilShowStoneGatePanel=showStoneGatePanel;
+      if(!name&&!stoneGate)return;
+      if(stoneGate)name='Waitematā';
+      if(stoneGate){
+        gateWatchdog=setTimeout(function(){ if(!window.__espilCityKey)showStoneGatePanel(); },25000);
+      }
       var tries=0;
       (function poll(){
         /* Budgets are generous on purpose: on a slow device or
@@ -10160,7 +10192,7 @@ html, body { height:100dvh; }
            fired on any machine). */
         if(++tries>2400)return;
         if(window.__espilCityKey)return; // an entry already began (manual or ours); stop.
-        if(name==='Waitematā'&&window.__espilEnterZealandiaViaStone){ if(window.__espilEnterZealandiaViaStone())return; setTimeout(poll,250); return; } /* hidden land: the Time Stone token routes through the stone hook, never a marker */
+        if(name==='Waitematā'){ if(window.__espilEnterZealandiaViaStone&&window.__espilEnterZealandiaViaStone())return; setTimeout(poll,250); return; } /* hidden land: the Time Stone token routes through the stone hook, never a marker - and if the hook is not defined yet, RETRY this branch (never fall through to marker selection, which cannot find a hidden land) */
         if(!window.__espilSelectCityByName||!window.__espilSelectCityByName(name)){ setTimeout(poll,250); return; }
         var et=0;
         (function clickEnter(){
@@ -10829,5 +10861,6 @@ tx.fillStyle=grad; ctx.fill();
 <script src="assets/zealandia/ztown.js"></script>
 <script src="assets/zealandia/aquest.js"></script>
   <script src="assets/zealandia/zvillages.js"></script>
+<script src="assets/zealandia/zparty.js"></script>
 </body>
 </html>
