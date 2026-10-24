@@ -100,7 +100,8 @@
 
 <div id="topbar">
   <span class="title">🏘️ 마을 맵 에디터</span>
-  <label>마을 이름 <input type="text" id="villageName" value="waitemata"></label>
+  <label>맵 <select id="mapSelect"></select></label>
+  <label>맵 이름 (id) <input type="text" id="villageName" value="waitemata"></label>
   <div class="sep"></div>
   <button id="btnFit">전체 보기</button>
   <button id="btn100">100%</button>
@@ -193,14 +194,39 @@
 <script>
 'use strict';
 /* ================================================================
-   마을 맵 에디터 v2
-   좌표계: 지형 배경(1024px = 600m x 600m) 중심이 원점(0,0).
+   마을 맵 에디터 v3 (전 맵 사전 제작: 마을 7 + 사이맵 9 + 던전 3)
+   좌표계: 지형 배경(1024px) 중심이 원점(0,0). 맵 크기는 맵마다
+   다르다 (마을 600m, 사이맵 400m, 던전 300m).
    x = 동쪽(+), y = 남쪽(+) [화면 아래]. 셀 인덱스 (cx, cy)는
    월드좌표를 셀 크기로 나눈 floor 값.
    ================================================================ */
-const WORLD_M = 600;
-const HALF = WORLD_M / 2;
-const Z100 = 1024 / WORLD_M; // 100% 배율: 화면 1px = 이미지 1px -> 600m가 1024px로 그려지는 z값
+const MAPS = [
+  { id: 'waitemata', name: 'Waitematā - 첫 마을', kind: '마을', size: 600, bg: 'assets/terrain.jpg' },
+  { id: 'nan-madol', name: 'Nan Madol - 난 마돌', kind: '마을', size: 600, bg: 'assets/backdrops/nan-madol.jpg' },
+  { id: 'haamonga', name: "Ha'amonga - 하아몽가", kind: '마을', size: 600, bg: 'assets/backdrops/haamonga.jpg' },
+  { id: 'taputapuatea', name: 'Taputapuatea - 타푸타푸아테아', kind: '마을', size: 600, bg: 'assets/backdrops/taputapuatea.jpg' },
+  { id: 'ahu-tongariki', name: 'Ahu Tongariki - 아후 통가리키', kind: '마을', size: 600, bg: 'assets/backdrops/ahu-tongariki.jpg' },
+  { id: 'leluh', name: 'Leluh - 렐루', kind: '마을', size: 600, bg: 'assets/backdrops/leluh.jpg' },
+  { id: 'pulemelei', name: 'Pulemelei - 풀레멜레이', kind: '마을', size: 600, bg: 'assets/backdrops/pulemelei.jpg' },
+  { id: 'field:town>nan-madol#1', name: '사이맵 1 - 후카 폭포와 와이카토 강', kind: '사이맵', size: 400, bg: 'assets/backdrops/f1-huka.jpg' },
+  { id: 'field:nan-madol>haamonga#1', name: '사이맵 2 - 소케스 능선', kind: '사이맵', size: 400, bg: 'assets/backdrops/f2-sokehs.jpg' },
+  { id: 'field:nan-madol>haamonga#2', name: '사이맵 3 - 케피로히 폭포', kind: '사이맵', size: 400, bg: 'assets/backdrops/f3-kepirohi.jpg' },
+  { id: 'field:haamonga>taputapuatea#1', name: '사이맵 4 - 타라나키 산', kind: '사이맵', size: 400, bg: 'assets/backdrops/f4-taranaki.jpg' },
+  { id: 'field:taputapuatea>ahu-tongariki#1', name: '사이맵 5 - 파우타우아 협곡', kind: '사이맵', size: 400, bg: 'assets/backdrops/f5-fautaua.jpg' },
+  { id: 'field:taputapuatea>ahu-tongariki#2', name: '사이맵 6 - 핀콜 산', kind: '사이맵', size: 400, bg: 'assets/backdrops/f6-finkol.jpg' },
+  { id: 'field:ahu-tongariki>leluh#1', name: '사이맵 7 - 라노 라라쿠 채석장', kind: '사이맵', size: 400, bg: 'assets/backdrops/f7-raraku.jpg' },
+  { id: 'field:leluh>pulemelei#1', name: '사이맵 8 - 소포아가 폭포', kind: '사이맵', size: 400, bg: 'assets/backdrops/f8-sopoaga.jpg' },
+  { id: 'field:leluh>pulemelei#2', name: '사이맵 9 - 라노 카우 분화구 호수', kind: '사이맵', size: 400, bg: 'assets/backdrops/f9-ranokau.jpg' },
+  { id: 'sunken-grotto', name: '던전 - 가라앉은 동굴 (Sunken Grotto)', kind: '던전', size: 300, bg: 'assets/backdrops/d-grotto.jpg' },
+  { id: 'emberdeep', name: '던전 - 엠버딥 (Emberdeep)', kind: '던전', size: 300, bg: 'assets/backdrops/d-emberdeep.jpg' },
+  { id: 'drowned-vault', name: '던전 - 익사한 금고 (Drowned Vault)', kind: '던전', size: 300, bg: 'assets/backdrops/d-vault.jpg' }
+];
+const MAP_BY_ID = {};
+MAPS.forEach(m => { MAP_BY_ID[m.id] = m; });
+let currentMap = MAPS[0];
+let WORLD_M = currentMap.size;
+let HALF = WORLD_M / 2;
+let Z100 = 1024 / WORLD_M; // 100% 배율: 화면 1px = 배경 이미지 1px
 
 const TILE_TYPES = {
   'village-road': { label: '마을길', src: 'assets/tiles/village-road.png' },
@@ -213,7 +239,8 @@ const ZONE_TYPES = {
   'npc':     { label: 'NPC 스폰',      fill: 'rgba(0,150,136,0.28)',  line: '#009688' },
   'monster': { label: '몬스터 스폰',   fill: 'rgba(244,67,54,0.28)',  line: '#f44336' }
 };
-const LS_KEY = 'villageEditorAutosave.v1';
+const LS_BASE = 'villageEditorAutosave.v1';
+let LS_KEY = LS_BASE + '.waitemata'; // 맵마다 별도 자동 저장
 
 // ---------------- 상태 ----------------
 let state = freshState();
@@ -233,7 +260,11 @@ let mouse = { wx: 0, wy: 0, sx: 0, sy: 0, inside: false };
 
 // ---------------- 이미지 ----------------
 function loadImg(src) { const i = new Image(); i.src = src; i.onload = draw; return i; }
-const bgImg = loadImg('assets/terrain.jpg');
+const bgImgs = {}; // 맵 id -> 배경 Image
+function bgFor(map) {
+  if (!bgImgs[map.id]) bgImgs[map.id] = loadImg(map.bg);
+  return bgImgs[map.id];
+}
 const tileImgs = {};
 for (const k in TILE_TYPES) tileImgs[k] = loadImg(TILE_TYPES[k].src);
 const spriteImgs = {}; // id -> Image
@@ -273,6 +304,7 @@ function draw() {
   const v = viewRect();
 
   // 지형 배경
+  const bgImg = bgFor(currentMap);
   if (bgImg.complete && bgImg.naturalWidth) {
     ctx.globalAlpha = bgOpacity;
     ctx.imageSmoothingEnabled = true;
@@ -457,6 +489,7 @@ function applyData(d) {
       .map(z => ({ type: z.type, x: +z.x || 0, y: +z.y || 0, w: Math.abs(+z.w || 0), h: Math.abs(+z.h || 0) }));
   }
   selected = -1; armed = null; setTool('select');
+  if (MAP_BY_ID[state.village] && state.village !== currentMap.id) setMapContext(state.village);
   document.getElementById('villageName').value = state.village;
   document.getElementById('tileSize').value = String(state.tileSizeM);
   document.querySelectorAll('.palItem').forEach(el => el.classList.remove('on'));
@@ -673,6 +706,7 @@ fetch('assets/sprites.json')
       spriteImgs[def.id] = loadImg(def.image);
       const b = document.createElement('button');
       b.className = 'palItem';
+      b._def = def;
       b.innerHTML = '<img alt=""><span><span class="pn"></span><small></small></span>';
       b.querySelector('img').src = def.image;
       b.querySelector('.pn').textContent = def.name;
@@ -684,6 +718,7 @@ fetch('assets/sprites.json')
       });
       pal.appendChild(b);
     });
+    applyPaletteFilter();
     draw();
   })
   .catch(err => {
@@ -691,22 +726,64 @@ fetch('assets/sprites.json')
       '<div class="empty">팔레트를 불러오지 못했습니다. 로컬 서버(http://localhost)로 열어 주세요.<br>(' + err.message + ')</div>';
   });
 
-// ---------------- 시작 ----------------
-(function init() {
+// ---------------- 맵 전환 ----------------
+function applyPaletteFilter() {
+  document.querySelectorAll('.palItem').forEach(el => {
+    const def = el._def;
+    el.style.display = (!def || !def.maps || def.maps.includes(currentMap.id)) ? '' : 'none';
+  });
+}
+function setMapContext(id) { // 배경/크기/저장 키만 전환 (state는 건드리지 않음)
+  const m = MAP_BY_ID[id]; if (!m) return;
+  currentMap = m;
+  LS_KEY = LS_BASE + '.' + id;
+  WORLD_M = m.size; HALF = WORLD_M / 2; Z100 = 1024 / WORLD_M;
+  document.getElementById('mapSelect').value = id;
+  applyPaletteFilter();
+}
+function loadAutosaveSilent() {
   try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (raw) { const d = JSON.parse(raw); if (d) { applyDataSilent(d); } }
-  } catch (e) { /* 무시 */ }
-  function applyDataSilent(d) {
-    // applyData와 같지만 confirm/알림 없이 복원
+    let raw = localStorage.getItem(LS_KEY);
+    if (!raw && currentMap.id === 'waitemata') raw = localStorage.getItem(LS_BASE); // v2까지의 저장 승계
+    if (!raw) return;
+    const d = JSON.parse(raw); if (!d) return;
     if (typeof d.village === 'string') state.village = d.village;
     if ([5, 10, 20].includes(d.tileSizeM)) state.tileSizeM = d.tileSizeM;
-    if (d.tiles) state.tiles = d.tiles;
+    if (d.tiles && typeof d.tiles === 'object') state.tiles = d.tiles;
     if (Array.isArray(d.placements)) state.placements = d.placements;
     if (Array.isArray(d.zones)) state.zones = d.zones;
-    document.getElementById('villageName').value = state.village;
-    document.getElementById('tileSize').value = String(state.tileSizeM);
-  }
+  } catch (e) { /* 무시 */ }
+}
+function setMap(id) {
+  if (!MAP_BY_ID[id]) return;
+  state = freshState();
+  state.village = id;
+  setMapContext(id);
+  loadAutosaveSilent();
+  selected = -1; armed = null; setTool('select');
+  document.getElementById('villageName').value = state.village;
+  document.getElementById('tileSize').value = String(state.tileSizeM);
+  syncSelPanel(); draw(); renderLists();
+}
+
+// ---------------- 시작 ----------------
+(function init() {
+  const sel = document.getElementById('mapSelect');
+  const groups = {};
+  MAPS.forEach(m => {
+    if (!groups[m.kind]) {
+      const g = document.createElement('optgroup');
+      g.label = m.kind;
+      groups[m.kind] = g;
+      sel.appendChild(g);
+    }
+    const o = document.createElement('option');
+    o.value = m.id;
+    o.textContent = m.name;
+    groups[m.kind].appendChild(o);
+  });
+  sel.addEventListener('change', () => { setMap(sel.value); fitView(); });
+  setMap('waitemata');
   resize();
   fitView();
   syncSelPanel();
