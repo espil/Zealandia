@@ -398,9 +398,18 @@
   }
   function scanPrompts(pp){
     if(A.dialog||A.cinePlaying){ hidePrompt(); return; }
-    var L=A.lunaris, best=null, bd=1e9;
-    if(L&&L.obj){ var dl=Math.hypot(pp.x-L.obj.position.x, pp.z-L.obj.position.z); if(dl<4.5){ best='lunaris'; bd=dl; } }
-    var ds=Math.hypot(pp.x-STONE.x, pp.z-STONE.z); if(ds<4.2&&ds<bd){ best='stone'; bd=ds; }
+    var L=A.lunaris, best=null;
+    /* The stone is the gate: inside its ring it ALWAYS wins the prompt.
+       Lunaris stands ~4.7 m from the stone with a wider ring (4.5 m vs
+       the stone's 4.2 m), so the old nearest-wins rule let her prompt
+       steal the touch across the whole southern approach - the player
+       pressed Space at the stone and only ever got her dialogue, and
+       the gate never opened (Han report, 2026-10-23; root-caused by
+       probe after two harness runs disagreed). She stays talkable
+       everywhere in her ring outside the stone's ring. */
+    var ds=Math.hypot(pp.x-STONE.x, pp.z-STONE.z);
+    if(ds<4.2){ best='stone'; }
+    else if(L&&L.obj){ var dl=Math.hypot(pp.x-L.obj.position.x, pp.z-L.obj.position.z); if(dl<4.5)best='lunaris'; }
     if(best==='lunaris')showPrompt('lunaris', '<b>Space</b> &nbsp;Talk — Lunaris');
     else if(best==='stone')showPrompt('stone', '<b>Space</b> &nbsp;Touch the Time Stone');
     else hidePrompt();
