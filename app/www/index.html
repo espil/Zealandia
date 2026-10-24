@@ -3,6 +3,19 @@
 <head>
   <script>window.__ESPIL_APP__=true;window.__ESPIL_API_BASE__='https://espil.online';</script>
   <script>
+  /* TEST-ONLY direct entry cover (Han, 2026-10-24): when test-direct.html
+     set the espil_test_direct session flag, the landing must never be
+     visible - not even for a frame during loading. This runs before
+     first paint: it flags <html>, the style below covers the page with
+     a plain dark screen, and the test hook at the end of the body
+     removes the flag the moment the player is in-map. */
+  try{ if(sessionStorage.getItem('espil_test_direct')==='1') document.documentElement.classList.add('espil-test-direct'); }catch(e){}
+  </script>
+  <style>
+  html.espil-test-direct body{ visibility:hidden; }
+  html.espil-test-direct::before{ content:'Entering the game - test entry'; position:fixed; inset:0; z-index:2147483000; background:#04141c; color:#dff7f2; display:flex; align-items:center; justify-content:center; font:15px system-ui,sans-serif; letter-spacing:.05em; }
+  </style>
+  <script>
 /* 2026-10-13: ALL API keys live in /.env (gitignored, keys only). See .env.example.
    Loaded here so window.__ESPIL_ENV__ is ready before any key is used at runtime. */
 window.__ESPIL_ENV__={};
@@ -5720,7 +5733,7 @@ html, body { height:100dvh; }
         side:THREE.BackSide,depthWrite:false,fog:false,uniforms:mapSkyU,
         vertexShader:'varying vec3 vWorld;void main(){vec4 world=modelMatrix*vec4(position,1.0);vWorld=world.xyz;gl_Position=projectionMatrix*viewMatrix*world;}',
         fragmentShader:'uniform vec3 sunDirection;uniform vec3 moonDirection;uniform vec3 upDirection;uniform float daylight;varying vec3 vWorld;float hash13(vec3 p){p=fract(p*.3183099+.1);p*=17.0;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}void main(){vec3 ray=normalize(vWorld-cameraPosition);float h=clamp(dot(ray,normalize(upDirection)),0.0,1.0);vec3 nightH=vec3(.018,.045,.09);vec3 nightT=vec3(.004,.009,.025);vec3 dayH=vec3(.42,.68,.82);vec3 dayT=vec3(.035,.22,.48);vec3 base=mix(mix(nightH,nightT,pow(h,.55)),mix(dayH,dayT,pow(h,.48)),daylight);float sun=max(dot(ray,normalize(sunDirection)),0.0);base+=vec3(1.0,.56,.28)*pow(sun,56.0)*(1.0-daylight*.35);base+=vec3(1.0,.92,.7)*pow(sun,420.0);float nightF=1.0-daylight;'
-        +'vec3 sc=ray*220.0;vec3 cellId=floor(sc);float sh=hash13(cellId);float star=smoothstep(.992,1.0,sh);vec3 cellPos=fract(sc)-.5;star*=smoothstep(.35,.08,length(cellPos));float tw=.75+.25*sin(sh*91.7);base+=vec3(.88,.93,1.0)*star*tw*nightF*smoothstep(.02,.25,h);'
+        +'vec3 sc=ray*220.0;vec3 cellId=floor(sc);float sh=hash13(cellId);float star=smoothstep(.992,1.0,sh);vec3 cellPos=fract(sc)-.5;star*=smoothstep(.35,.08,length(cellPos));float tw=.75+.25*sin(sh*91.7);base+=vec3(.88,.93,1.0)*star*tw*mix(.30,1.,nightF)*smoothstep(.05,.3,h);'
         +'vec3 moonDir=normalize(moonDirection);float moonCos=dot(ray,moonDir);float moonAng=.032;float disk=smoothstep(cos(moonAng),cos(moonAng*.82),moonCos);vec3 mUp=abs(moonDir.y)>.9?vec3(1.,0.,0.):vec3(0.,1.,0.);vec3 mRight=normalize(cross(moonDir,mUp));vec3 mUp2=cross(mRight,moonDir);vec2 mUV=vec2(dot(ray,mRight),dot(ray,mUp2))/moonAng;float maria=hash13(vec3(floor(mUV*7.0),3.7));float maria2=hash13(vec3(floor(mUV*13.0),9.1));vec3 moonCol=vec3(.93,.95,.98)*(.82+.18*smoothstep(.25,.75,maria));moonCol*= .9+.1*smoothstep(.3,.7,maria2);float limb=smoothstep(1.0,.55,length(mUV));moonCol*=.75+.25*limb;base=mix(base,moonCol,disk*nightF);base+=vec3(.75,.82,.95)*pow(max(moonCos,0.0),900.0)*.55*nightF;'
         +'gl_FragColor=vec4(base,1.0);}'
       }));
@@ -7050,7 +7063,7 @@ html, body { height:100dvh; }
       status.textContent=(selected?selected.userData.name:espilCityDisplayName())+' \u2014 walk around';
       startDnaImprint(); /* the Cauldron sticks its DNA on the city: it evolves */
       if(window.EspilAudio&&window.EspilAudio.onCitySelect)window.EspilAudio.onCitySelect();
-      if(window.EspilAudio&&window.EspilAudio.onMapEnter)window.EspilAudio.onMapEnter('vancouver');
+      if(window.EspilAudio&&window.EspilAudio.onMapEnter)window.EspilAudio.onMapEnter(window.__espilCityKey||'vancouver'); /* Han 2026-10-24: was hardcoded 'vancouver', so Vancouver's theme (Citrus Tree) faded in over EVERY map after the 60 s dwell - including Zealandia. The dwell now follows the real city key; cities without a theme stay silent. */
       /* #17 (Han 2nd QA): Store deep link — /vancouver/store/{placeId}.
          Teleport to store location and open info panel. */
       try{
@@ -10139,6 +10152,16 @@ html, body { height:100dvh; }
       if(continued||!done||!intro)return;continued=true;
       window.__espilIntroActive=false;
       if(window.EspilAudio&&window.EspilAudio.pop)window.EspilAudio.pop();
+      /* Han 2026-10-24 (BGM leak): a document-level keydown listener
+         keeps this armed until the first continue. Programmatic entries
+         (stone crossing, test entry, city-switch reload) never spend
+         it on the landing, so the player's first in-game keypress fired
+         it and restarted the LANDING song via onReturnToOrbit. Inside a
+         map the continue is meaningless: dismiss the intro shell only. */
+      if(document.body&&document.body.classList.contains('in-map')){
+        if(intro.parentNode)intro.parentNode.removeChild(intro);
+        return;
+      }
       /* Slide-up (2026-10-06, per Han): the sign slides up and stays visible
          while the camera descends — Earth rises from the bottom. No fade-out. */
       beginEarth();
@@ -10389,7 +10412,14 @@ html, body { height:100dvh; }
       },60);
     }
     function unlock(){
-      if(started)return; started=true; play();
+      if(started)return; started=true;
+      /* Han 2026-10-24: inside a walkable map whose city has no main
+         theme (Zealandia, Auckland), the first click/keypress used to
+         start the LANDING song in-game. The unlock is consumed, but
+         the landing theme only plays on the landing/orbit - a city
+         theme set by onCityEnter (e.g. Vancouver) still plays. */
+      if(document.body&&document.body.classList.contains('in-map')&&currentTheme===LANDING_THEME)return;
+      play();
     }
     document.addEventListener('pointerdown',unlock);
     document.addEventListener('keydown',unlock);
@@ -10882,7 +10912,7 @@ tx.fillStyle=grad; ctx.fill();
   if(!on)return;
   var started=Date.now();
   var iv=setInterval(function(){
-    function stop(){ try{sessionStorage.removeItem('espil_test_direct');}catch(e){} clearInterval(iv); }
+    function stop(){ try{sessionStorage.removeItem('espil_test_direct');}catch(e){} try{document.documentElement.classList.remove('espil-test-direct');}catch(e){} clearInterval(iv); }
     if(document.body&&document.body.classList.contains('in-map')){ stop(); return; }
     if(Date.now()-started>600000){ stop(); return; }
     if(window.__espilLoginBypass){ try{ window.__espilLoginBypass(); }catch(e){} }

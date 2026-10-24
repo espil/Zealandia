@@ -94,15 +94,51 @@
     if(r<255){ var town=new THREE.Color(0x86aa58); A.lerp(town,(1-smoothstep(225,255,r))*.55); }
     out.push(A.r,A.g,A.b);
   }
+  /* Procedural ground texture (Han, 2026-10-24: the ground must read
+     as game ground, not a bare coloured plane). A speckled grass/dirt
+     canvas, near-neutral in luminance so the vertex-colour bands keep
+     carrying the place's palette; world-scale UV repeats (28 m fine,
+     56 m coarse) tile it without a visible grid. Generated once. */
+  var _groundTex=null;
+  function groundTexture(){
+    if(_groundTex)return _groundTex;
+    var cv=document.createElement('canvas'); cv.width=cv.height=256;
+    var g=cv.getContext('2d');
+    g.fillStyle='#c9cfba'; g.fillRect(0,0,256,256);
+    var R=rng(777);
+    for(var i=0;i<5200;i++){
+      var x=R()*256, y=R()*256, l=2+R()*5, gr=R();
+      g.strokeStyle=gr<.55?'rgba(96,116,62,.35)':(gr<.85?'rgba(140,150,96,.30)':'rgba(168,152,104,.28)');
+      g.lineWidth=1;
+      g.beginPath(); g.moveTo(x,y); g.lineTo(x+(R()*2-1), y-l); g.stroke();
+    }
+    for(var j=0;j<260;j++){
+      var dx=R()*256, dy=R()*256, dr=3+R()*11;
+      var rg=g.createRadialGradient(dx,dy,0,dx,dy,dr);
+      rg.addColorStop(0,'rgba(146,124,84,.13)'); rg.addColorStop(1,'rgba(146,124,84,0)');
+      g.fillStyle=rg; g.beginPath(); g.arc(dx,dy,dr,0,7); g.fill();
+    }
+    var tex=new THREE.CanvasTexture(cv);
+    tex.wrapS=tex.wrapT=THREE.RepeatWrapping;
+    tex.anisotropy=4;
+    _groundTex=tex;
+    return tex;
+  }
   function buildTerrain(){
     var N=100, size=10000, pos=[], col=[], idx=[], uv=[];
     for(var r=0;r<=N;r++)for(var c=0;c<=N;c++){
       var lx=-5000+c*100, lz=-5000+r*100;
       pos.push(CX+lx, groundLocal(lx,lz), CZ+lz);
-      uv.push((lx+5000)/10000, (5000-lz)/10000);
+      uv.push((lx+5000)/56, (5000-lz)/56);
       bandColor(groundLocal(lx,lz), Math.sqrt(lx*lx+lz*lz), col);
     }
     for(var r2=0;r2<N;r2++)for(var c2=0;c2<N;c2++){
+      /* The inner +/-1200 m is cut out: buildTerrainFine lays a 10 m
+         mesh there (Han, 2026-10-24). On this 100 m grid the Globe
+         bend's chord error reached ~8 m, so buildings bent by the
+         true curve floated or sank against the chorded ground. */
+      var fcx=-5000+c2*100+50, fcz=-5000+r2*100+50;
+      if(Math.abs(fcx)<1200&&Math.abs(fcz)<1200)continue;
       var a=r2*101+c2, b=a+1, d=a+101, e=d+1;
       idx.push(a,d,b, b,d,e);
     }
@@ -111,15 +147,52 @@
     g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));
     g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
     g.setIndex(idx); g.computeVertexNormals();
-    var m=new THREE.MeshLambertMaterial({vertexColors:true});
+    var m=new THREE.MeshLambertMaterial({vertexColors:true, map:groundTexture()});
     applyCurve(m);
     var mesh=new THREE.Mesh(g,m);
     mesh.receiveShadow=true; mesh.frustumCulled=false;
     Z.group.add(mesh);
     Z.terrainMesh=mesh;
+    buildTerrainFine();
     /* No satellite ground (Han, 2026-10-23): Waitematā is a built
        village, not a photo of Auckland. The terrain keeps its crafted
        vertex-colour bands and the village dressing carries the place. */
+  }
+
+  /* Fine inner terrain (Han, 2026-10-24): a 10 m mesh over the inner
+     +/-1300 m. Two jobs: the rolling heightfield actually reads as
+     terrain (the 100 m backdrop facets read as one flat plane), and
+     the Globe bend's chord error inside a 10 m cell is ~0.08 m, so
+     bent buildings meet bent ground instead of floating over chords.
+     Heights come from the same groundLocal law as physics - one law
+     for feet, buildings and pixels. The rim lifts up to 6 cm across
+     the overlap band so the seam with the coarse backdrop never gaps;
+     inside the village the lift is 0 and plaza/paths sit as before. */
+  function buildTerrainFine(){
+    var N=200, half=1300, step=(half*2)/N, pos=[], col=[], idx=[], uv=[];
+    for(var r=0;r<=N;r++)for(var c=0;c<=N;c++){
+      var lx=-half+c*step, lz=-half+r*step;
+      var h=groundLocal(lx,lz), rr=Math.sqrt(lx*lx+lz*lz);
+      var lift=0.06*smoothstep(1220,1300,rr);
+      pos.push(CX+lx, h+lift, CZ+lz);
+      uv.push((lx+half)/28, (half-lz)/28);
+      bandColor(h, rr, col);
+    }
+    for(var r2=0;r2<N;r2++)for(var c2=0;c2<N;c2++){
+      var a=r2*(N+1)+c2, b=a+1, d=a+N+1, e=d+1;
+      idx.push(a,d,b, b,d,e);
+    }
+    var g=new THREE.BufferGeometry();
+    g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+    g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));
+    g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
+    g.setIndex(idx); g.computeVertexNormals();
+    var m=new THREE.MeshLambertMaterial({vertexColors:true, map:groundTexture()});
+    applyCurve(m);
+    var mesh=new THREE.Mesh(g,m);
+    mesh.receiveShadow=true; mesh.frustumCulled=false;
+    Z.group.add(mesh);
+    Z.terrainFineMesh=mesh;
   }
 
   /* ---------- plaza + paths (inside the flat town disc) ---------- */
