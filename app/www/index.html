@@ -10869,5 +10869,25 @@ tx.fillStyle=grad; ctx.fill();
   <script src="assets/zealandia/zvillages.js"></script>
 <script src="assets/zealandia/zparty.js"></script>
 <script src="assets/zealandia/zglobe.js"></script>
+<script>
+/* TEST-ONLY direct entry hook (Han, 2026-10-24): active ONLY when
+   test-direct.html set the espil_test_direct session flag. While an
+   entry is running it passes the login gate through the engine's
+   own pass-through (window.__espilLoginBypass - the same call the
+   ENTER AS GUEST button makes), so the test entry needs no clicks.
+   The flag clears itself once in-map, or after 10 minutes, and the
+   normal entry flow is completely unaffected without the flag. */
+(function(){
+  var on=false; try{ on=sessionStorage.getItem('espil_test_direct')==='1'; }catch(e){}
+  if(!on)return;
+  var started=Date.now();
+  var iv=setInterval(function(){
+    function stop(){ try{sessionStorage.removeItem('espil_test_direct');}catch(e){} clearInterval(iv); }
+    if(document.body&&document.body.classList.contains('in-map')){ stop(); return; }
+    if(Date.now()-started>600000){ stop(); return; }
+    if(window.__espilLoginBypass){ try{ window.__espilLoginBypass(); }catch(e){} }
+  },400);
+})();
+</script>
 </body>
 </html>
