@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var PX_M = 30;          /* pixels per metre at scale 1 */
+  var PX_M = 38;          /* pixels per metre at scale 1 - EverPlanet framing is close: actors are large on screen */
   var TILT = 0.74;        /* vertical compression of the ground plane */
   var GLOBE_K = 0.00312;  /* deck peek constant; Han tunes the look */
   var PERSP = 0.0035;     /* gentle depth perspective */
@@ -48,29 +48,138 @@
   }
 
   function buildGround() {
+    /* ONE continuous PAINTED ground - the EverPlanet way. The map's
+       ground is a single illustration, not a grid of tiles: grass is
+       painted in broad strokes across the whole canvas, and roads
+       are painted INTO it as continuous paths. The tile data still
+       decides WHERE roads run (the editor contract is unchanged),
+       but the texture flows across cell boundaries with no lattice,
+       and path edges are soft, like brushwork. The Globe transform
+       then bends this one plane at render time. */
+    var RES = 6;
+    GROUND_PX = RES;
+    var SIZE = MAP_EXTENT * 2 * RES;
     groundCv = document.createElement('canvas');
-    groundCv.width = groundCv.height = MAP_EXTENT * 2 * GROUND_PX;
+    groundCv.width = groundCv.height = SIZE;
     var gg = groundCv.getContext('2d');
-    /* base: the map's painted terrain fills the whole extent */
-    var terr = palette.__terrain;
-    if (terr) gg.drawImage(terr, 0, 0, groundCv.width, groundCv.height);
-    else { gg.fillStyle = '#7d9b58'; gg.fillRect(0, 0, groundCv.width, groundCv.height); }
-    /* tiles: cell (cx,cy) covers world [cx*S, cx*S+S) x [cy*S, cy*S+S),
-       the editor's own floor(wx/S) convention */
+    var R = rng(90210);
     var S = mapData.tileSizeM || 10;
-    var kinds = { 'village-road': 1, 'grass-road': 1, 'paved-road': 1, 'water': 1 };
-    var keys = Object.keys(mapData.tiles || {});
-    var pending = [];
-    keys.forEach(function (k) {
-      var parts = k.split(',');
-      var cx = +parts[0], cy = +parts[1], kind = mapData.tiles[k];
-      if (!kinds[kind]) return;
-      pending.push(loadImage('assets/tiles/' + kind + '.png').then(function (im) {
-        gg.drawImage(im, (cx * S + MAP_EXTENT) * GROUND_PX, (cy * S + MAP_EXTENT) * GROUND_PX,
-          S * GROUND_PX, S * GROUND_PX);
-      }).catch(function () {}));
+
+    /* --- painted grass base: broad tonal strokes + fine grain --- */
+    gg.fillStyle = '#7c9a52';
+    gg.fillRect(0, 0, SIZE, SIZE);
+    var tones = ['#86a657', '#74924a', '#8fae5e', '#6d8c46', '#93a95c', '#7f9c50'];
+    for (var i = 0; i < 900; i++) {
+      var bx = R() * SIZE, by = R() * SIZE, br = 60 + R() * 300;
+      var rg = gg.createRadialGradient(bx, by, 0, bx, by, br);
+      var c = tones[(R() * tones.length) | 0];
+      rg.addColorStop(0, c + '2e');
+      rg.addColorStop(1, c + '00');
+      gg.fillStyle = rg;
+      gg.beginPath(); gg.arc(bx, by, br, 0, 7); gg.fill();
+    }
+    for (var j = 0; j < 26000; j++) {
+      var gx = R() * SIZE, gy = R() * SIZE, gl = 2 + R() * 5;
+      gg.strokeStyle = R() > 0.5 ? 'rgba(70,95,40,0.13)' : 'rgba(190,205,130,0.11)';
+      gg.lineWidth = 1.4;
+      gg.beginPath(); gg.moveTo(gx, gy); gg.lineTo(gx + (R() * 2 - 1), gy - gl); gg.stroke();
+    }
+
+    /* --- continuous path textures, generated across the plane --- */
+    function pathTexture(kind) {
+      var c = document.createElement('canvas');
+      c.width = c.height = 512;
+      var x = c.getContext('2d');
+      var RR = rng(kind.length * 131 + 7);
+      var palettes = {
+        'village-road': ['#b3985e', '#a98f56', '#c0a468', '#9c814c'],
+        'paved-road': ['#8d9094', '#83868b', '#979a9e', '#7a7d82'],
+        'grass-road': ['#93a05e', '#8a9858', '#9da868', '#84924f'],
+        'water': ['#5d84a6', '#557b9c', '#678fb2', '#4f7394']
+      };
+      var pal = palettes[kind] || palettes['village-road'];
+      x.fillStyle = pal[0]; x.fillRect(0, 0, 512, 512);
+      for (var i = 0; i < 240; i++) {
+        var bx = RR() * 512, by = RR() * 512, br = 14 + RR() * 62;
+        var rg = x.createRadialGradient(bx, by, 0, bx, by, br);
+        var cc = pal[(RR() * pal.length) | 0];
+        rg.addColorStop(0, cc + '55'); rg.addColorStop(1, cc + '00');
+        x.fillStyle = rg;
+        x.beginPath(); x.arc(bx, by, br, 0, 7); x.fill();
+      }
+      for (var j = 0; j < 5200; j++) {
+        x.fillStyle = RR() > 0.5 ? 'rgba(60,48,28,0.10)' : 'rgba(255,246,220,0.09)';
+        x.fillRect(RR() * 512, RR() * 512, 1.6, 1.6);
+      }
+      if (kind === 'paved-road') {
+        x.strokeStyle = 'rgba(52,54,58,0.16)';
+        x.lineWidth = 2;
+        for (var k = 0; k < 26; k++) {
+          x.beginPath();
+          var sx = RR() * 512, sy = RR() * 512;
+          x.moveTo(sx, sy);
+          x.lineTo(sx + 30 + RR() * 70, sy + (RR() * 22 - 11));
+          x.stroke();
+        }
+      }
+      return c;
+    }
+
+    /* --- paint each road kind as one continuous path --- */
+    ['village-road', 'paved-road', 'grass-road', 'water'].forEach(function (kind) {
+      var cells = Object.keys(mapData.tiles || {}).filter(function (k) { return mapData.tiles[k] === kind; });
+      if (!cells.length) return;
+      var layer = document.createElement('canvas');
+      layer.width = layer.height = SIZE;
+      var lx = layer.getContext('2d');
+      cells.forEach(function (k) {
+        var parts = k.split(',');
+        lx.fillRect((+parts[0] * S + MAP_EXTENT) * RES, (+parts[1] * S + MAP_EXTENT) * RES, S * RES, S * RES);
+      });
+      /* soft painted edge: blur the mask, tint its silhouette as a
+         border, then fill the inside with the flowing texture */
+      var edge = document.createElement('canvas');
+      edge.width = edge.height = SIZE;
+      var ex = edge.getContext('2d');
+      ex.filter = 'blur(7px)';
+      ex.drawImage(layer, 0, 0);
+      ex.filter = 'none';
+      ex.globalCompositeOperation = 'source-in';
+      ex.fillStyle = kind === 'water' ? 'rgba(40,70,100,0.55)' : 'rgba(84,70,42,0.5)';
+      ex.fillRect(0, 0, SIZE, SIZE);
+      gg.drawImage(edge, 0, 0);
+      var inner = document.createElement('canvas');
+      inner.width = inner.height = SIZE;
+      var ix = inner.getContext('2d');
+      ix.filter = 'blur(3px)';
+      ix.drawImage(layer, 0, 0);
+      ix.filter = 'none';
+      ix.globalCompositeOperation = 'source-in';
+      ix.fillStyle = ix.createPattern(pathTexture(kind), 'repeat');
+      ix.fillRect(0, 0, SIZE, SIZE);
+      gg.drawImage(inner, 0, 0);
     });
-    return Promise.all(pending);
+
+    /* --- unifying grade over the whole painting --- */
+    for (var u = 0; u < 200; u++) {
+      var ux = R() * SIZE, uy = R() * SIZE, ur = 140 + R() * 420;
+      var ug = gg.createRadialGradient(ux, uy, 0, ux, uy, ur);
+      var uwarm = R() > 0.5;
+      ug.addColorStop(0, uwarm ? 'rgba(216,198,142,0.05)' : 'rgba(80,104,54,0.055)');
+      ug.addColorStop(1, 'rgba(0,0,0,0)');
+      gg.fillStyle = ug;
+      gg.beginPath(); gg.arc(ux, uy, ur, 0, 7); gg.fill();
+    }
+    return Promise.resolve();
+  }
+
+  /* deterministic rng for the painting passes */
+  function rng(seed) {
+    var t = seed >>> 0;
+    return function () {
+      t = (t * 1664525 + 1013904223) >>> 0;
+      return t / 4294967296;
+    };
   }
 
   function loadMap() {
@@ -95,9 +204,6 @@
             palette[id] = { img: im, w: e.defaultW || 2 };
           }).catch(function () {});
         });
-        jobs.push(loadImage('assets/terrain.jpg').then(function (im) {
-          palette.__terrain = im;
-        }).catch(function () {}));
         return Promise.all(jobs);
       })
       .then(buildGround)
@@ -237,7 +343,7 @@
     g.fillStyle = sky;
     g.fillRect(0, 0, W, horizon + 60);
     if (!groundCv) return;
-    var BAND = 2;                     /* metres per strip */
+    var BAND = 1;                     /* metres per strip - fine enough that the bend reads continuous */
     var AHEAD_FAR = 300, AHEAD_NEAR = -70;
     var halfWm = (W / 2) / PX_M + 30; /* metres of margin each side */
     for (var a1 = AHEAD_FAR; a1 > AHEAD_NEAR; a1 -= BAND) {
@@ -281,6 +387,15 @@
     for (var i = 0; i < items.length; i++) {
       var it = items[i];
       if (!it.img) continue;
+      /* contact shadow first: the soft ellipse baked under every
+         actor is what makes EverPlanet objects sit inside the
+         painting instead of floating on top of it */
+      var bp = project(it.x, it.y);
+      var sw = it.w * PX_M * bp.s * 0.62;
+      g.fillStyle = 'rgba(24,32,16,0.20)';
+      g.beginPath();
+      g.ellipse(bp.x, bp.y, sw / 2, sw * 0.16, 0, 0, 7);
+      g.fill();
       var bob = it.player && player.moving ? Math.abs(Math.sin(frame * 0.32)) * 0.09 : 0;
       if (drawSprite(it.img, it.x, it.y - bob, it.w, it.player && player.face < 0)) drawn++;
     }
