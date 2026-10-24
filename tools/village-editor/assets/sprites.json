@@ -1046,7 +1046,7 @@
    "name": "판자 다리"
   },
   {
-   "defaultW": 13,
+   "defaultW": 46,
    "id": "f02_huka_falls",
    "image": "assets/sprites/f02_huka_falls.png",
    "maps": [
@@ -1136,7 +1136,7 @@
    "name": "고사리 덤불"
   },
   {
-   "defaultW": 34,
+   "defaultW": 78,
    "id": "f12_taranaki",
    "image": "assets/sprites/f12_taranaki.png",
    "maps": [
@@ -1199,7 +1199,7 @@
    "name": "엠버 길돌"
   },
   {
-   "defaultW": 30,
+   "defaultW": 68,
    "id": "f19_finkol_volcano",
    "image": "assets/sprites/f19_finkol_volcano.png",
    "maps": [
@@ -1262,7 +1262,7 @@
    "name": "채석 비탈 바위"
   },
   {
-   "defaultW": 12,
+   "defaultW": 44,
    "id": "f26_sopoaga_falls",
    "image": "assets/sprites/f26_sopoaga_falls.png",
    "maps": [
@@ -1298,7 +1298,7 @@
    "name": "익사 길돌"
   },
   {
-   "defaultW": 40,
+   "defaultW": 56,
    "id": "f30_rano_kau_rim",
    "image": "assets/sprites/f30_rano_kau_rim.png",
    "maps": [
