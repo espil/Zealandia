@@ -5736,17 +5736,26 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
     function buildWalkMapOnce(){
       if(mapBuilt)return;mapBuilt=true;
       /* #8: Start loading OSM real building data */
-      if(typeof loadOsmChunks==='function')loadOsmChunks();
+      /* Zealandia app build: the Vancouver OSM chunk city is never
+         entered in this copy (the world module replaces the scenery),
+         and building its ~46k buildings synchronously during entry
+         froze the tab on the target PC - skip the load and the build
+         entirely when the Zealandia swap is armed. */
+      var zArmed=false; try{ zArmed=sessionStorage.getItem('espil_zswap')==='1'; }catch(e){}
+      if(!zArmed&&typeof loadOsmChunks==='function')loadOsmChunks();
       if(typeof loadEspilDistrict==='function')loadEspilDistrict(); /* ESPIL DISTRICT BUILD (self-city port, 2026-10-16) */
       /* Han 2026-10-10 rebuild: Build OSM city when data ready */
-      var osmBuildTimer=setInterval(function(){
-        if(typeof osmChunks!=='undefined'&&osmChunks&&typeof buildOsmCity==='function'){
-          clearInterval(osmBuildTimer);
-          buildOsmCity();
-        }
-      },500);
-      /* Timeout after 10s */
-      setTimeout(function(){clearInterval(osmBuildTimer);},10000);
+      var osmBuildTimer=null;
+      if(!zArmed){
+        osmBuildTimer=setInterval(function(){
+          if(typeof osmChunks!=='undefined'&&osmChunks&&typeof buildOsmCity==='function'){
+            clearInterval(osmBuildTimer);
+            buildOsmCity();
+          }
+        },500);
+        /* Timeout after 10s */
+        setTimeout(function(){if(osmBuildTimer)clearInterval(osmBuildTimer);},10000);
+      }
       mapScene=new THREE.Scene();
       mapScene.fog=new THREE.Fog(0x9ec8e8,200,1500);
       /* 5km city base ground: 10km x 10km plane at y=0, below downtown pads (.04)
@@ -7011,6 +7020,7 @@ window.__ESPIL_ENV_READY__=(window.fetch?fetch('/.env').then(function(r){return 
     }
     function updateChunks(px,pz){
       if(window.__zswapActive)return; /* Zealandia app build: no city chunks inside the Zealandia world */
+      try{ if(sessionStorage.getItem('espil_zswap')==='1')return; }catch(e){} /* Zealandia app build: no chunk generation at all - the swapped world replaces the scenery and the entry dive must not generate the home city's chunk grid */
       var pcx=Math.floor(px/CHUNK_SIZE),pcz=Math.floor(pz/CHUNK_SIZE);
       var R=2; /* 5x5 chunks = 1.25km view */
       var needed={};
