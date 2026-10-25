@@ -465,6 +465,14 @@
           Z.settleT += dt || 0.016;
           if (Z.settleT > 0.8) build();
         } else Z.settleT = 0;
+        /* Fallback (2026-10-24): if the landing detection never fires
+           on a given machine, do not wait forever behind the cover.
+           After 8 s in-map, build at the player's current column
+           anyway - the entry dive is vertical, so x/z are already the
+           spawn column, and the build's own spawn teleport settles
+           the player on the village ground. */
+        Z.armT = (Z.armT || 0) + (dt || 0.016);
+        if (Z.armT > 8) build();
       }
     }
     if (Z.active && performance.now() < Z.guardUntil) {
