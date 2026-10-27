@@ -195,7 +195,7 @@
 <script>
 'use strict';
 /* ================================================================
-   마을 맵 에디터 v3 (전 맵 사전 제작: 마을 7 + 사이맵 9 + 던전 3)
+   마을 맵 에디터 v3 (전 맵 사전 제작: 마을 6 + 성 1 + 사이맵 9 + 던전 3)
    좌표계: 지형 배경(1024px) 중심이 원점(0,0). 맵 크기는 맵마다
    다르다 (마을 600m, 사이맵 400m, 던전 300m).
    x = 동쪽(+), y = 남쪽(+) [화면 아래]. 셀 인덱스 (cx, cy)는
@@ -205,10 +205,10 @@ const MAPS = [
   { id: 'waitemata', name: 'Waitematā - 첫 마을', kind: '마을', size: 600, bg: 'assets/terrain.jpg' },
   { id: 'nan-madol', name: 'Nan Madol - 난 마돌', kind: '마을', size: 600, bg: 'assets/backdrops/nan-madol.jpg' },
   { id: 'haamonga', name: "Ha'amonga - 하아몽가", kind: '마을', size: 600, bg: 'assets/backdrops/haamonga.jpg' },
-  { id: 'taputapuatea', name: 'Taputapuatea - 타푸타푸아테아', kind: '마을', size: 600, bg: 'assets/backdrops/taputapuatea.jpg' },
+  { id: 'taputapuatea', name: 'Taputapuatea - 타푸타푸아테아 성', kind: '성', size: 600, bg: 'assets/backdrops/taputapuatea.jpg' },
   { id: 'ahu-tongariki', name: 'Ahu Tongariki - 아후 통가리키', kind: '마을', size: 600, bg: 'assets/backdrops/ahu-tongariki.jpg' },
   { id: 'leluh', name: 'Leluh - 렐루', kind: '마을', size: 600, bg: 'assets/backdrops/leluh.jpg' },
-  { id: 'pulemelei', name: 'Pulemelei - 풀레멜레이', kind: '마을', size: 600, bg: 'assets/backdrops/pulemelei.jpg' },
+  { id: 'pulemelei', name: 'Pulemelei - 풀레멜레이 (잠금 - 후일 개방)', kind: '마을', size: 600, bg: 'assets/backdrops/pulemelei.jpg', locked: true },
   { id: 'field:town>nan-madol#1', name: '사이맵 1 - 후카 폭포와 와이카토 강', kind: '사이맵', size: 400, bg: 'assets/backdrops/f1-huka.jpg' },
   { id: 'field:nan-madol>haamonga#1', name: '사이맵 2 - 소케스 능선', kind: '사이맵', size: 400, bg: 'assets/backdrops/f2-sokehs.jpg' },
   { id: 'field:nan-madol>haamonga#2', name: '사이맵 3 - 케피로히 폭포', kind: '사이맵', size: 400, bg: 'assets/backdrops/f3-kepirohi.jpg' },
@@ -217,7 +217,7 @@ const MAPS = [
   { id: 'field:taputapuatea>ahu-tongariki#2', name: '사이맵 6 - 핀콜 산', kind: '사이맵', size: 400, bg: 'assets/backdrops/f6-finkol.jpg' },
   { id: 'field:ahu-tongariki>leluh#1', name: '사이맵 7 - 라노 라라쿠 채석장', kind: '사이맵', size: 400, bg: 'assets/backdrops/f7-raraku.jpg' },
   { id: 'field:leluh>pulemelei#1', name: '사이맵 8 - 소포아가 폭포', kind: '사이맵', size: 400, bg: 'assets/backdrops/f8-sopoaga.jpg' },
-  { id: 'field:leluh>pulemelei#2', name: '사이맵 9 - 라노 카우 분화구 호수', kind: '사이맵', size: 400, bg: 'assets/backdrops/f9-ranokau.jpg' },
+  { id: 'field:leluh>pulemelei#2', name: '사이맵 9 - 라노 카우 분화구 호수 (잠금 구간)', kind: '사이맵', size: 400, bg: 'assets/backdrops/f9-ranokau.jpg', locked: true },
   { id: 'sunken-grotto', name: '던전 - 가라앉은 동굴 (Sunken Grotto)', kind: '던전', size: 300, bg: 'assets/backdrops/d-grotto.jpg' },
   { id: 'emberdeep', name: '던전 - 엠버딥 (Emberdeep)', kind: '던전', size: 300, bg: 'assets/backdrops/d-emberdeep.jpg' },
   { id: 'drowned-vault', name: '던전 - 익사한 금고 (Drowned Vault)', kind: '던전', size: 300, bg: 'assets/backdrops/d-vault.jpg' }
