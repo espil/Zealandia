@@ -1266,7 +1266,7 @@
    "id": "f26_sopoaga_falls",
    "image": "assets/sprites/f26_sopoaga_falls.png",
    "maps": [
-    "field:leluh>pulemelei#1"
+    "field:ahu-tongariki>leluh#2"
    ],
    "name": "소포아가 폭포"
   },
@@ -1275,7 +1275,7 @@
    "id": "f27_observation_deck",
    "image": "assets/sprites/f27_observation_deck.png",
    "maps": [
-    "field:leluh>pulemelei#1"
+    "field:ahu-tongariki>leluh#2"
    ],
    "name": "전망 데크"
   },
@@ -1284,7 +1284,7 @@
    "id": "f28_lotus_pond_rocks",
    "image": "assets/sprites/f28_lotus_pond_rocks.png",
    "maps": [
-    "field:leluh>pulemelei#1"
+    "field:ahu-tongariki>leluh#2"
    ],
    "name": "연꽃 못 바위"
   },
@@ -1293,7 +1293,7 @@
    "id": "f29_drowned_path_stones",
    "image": "assets/sprites/f29_drowned_path_stones.png",
    "maps": [
-    "field:leluh>pulemelei#1"
+    "field:ahu-tongariki>leluh#2"
    ],
    "name": "익사 길돌"
   },
@@ -1386,7 +1386,7 @@
    "image": "assets/sprites/d07_drowned_vault.png",
    "maps": [
     "drowned-vault",
-    "field:leluh>pulemelei#1"
+    "field:ahu-tongariki>leluh#2"
    ],
    "name": "익사한 금고 입구"
   },

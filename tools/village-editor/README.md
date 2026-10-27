@@ -65,7 +65,7 @@ python -m http.server 8000
 ## 맵 목록 (19개)
 
 - **마을 (600 m)**: `waitemata` (Waitematā), `nan-madol`, `haamonga`, `taputapuatea`, `ahu-tongariki`, `leluh`, `pulemelei`
-- **사이맵 (400 m)**: 게임의 길 순서 그대로입니다. `field:town>nan-madol#1` (후카 폭포와 와이카토 강), `field:nan-madol>haamonga#1` (소케스 능선), `field:nan-madol>haamonga#2` (케피로히 폭포), `field:haamonga>taputapuatea#1` (타라나키 산), `field:taputapuatea>ahu-tongariki#1` (파우타우아 협곡), `field:taputapuatea>ahu-tongariki#2` (핀콜 산), `field:ahu-tongariki>leluh#1` (라노 라라쿠 채석장), `field:leluh>pulemelei#1` (소포아가 폭포), `field:leluh>pulemelei#2` (라노 카우 분화구 호수)
+- **사이맵 (400 m)**: 게임의 길 순서 그대로입니다. `field:town>nan-madol#1` (후카 폭포와 와이카토 강), `field:nan-madol>haamonga#1` (소케스 능선), `field:nan-madol>haamonga#2` (케피로히 폭포), `field:haamonga>taputapuatea#1` (타라나키 산), `field:taputapuatea>ahu-tongariki#1` (파우타우아 협곡), `field:taputapuatea>ahu-tongariki#2` (핀콜 산), `field:ahu-tongariki>leluh#1` (라노 라라쿠 채석장), `field:ahu-tongariki>leluh#2` (소포아가 폭포), `field:leluh>pulemelei#2` (라노 카우 분화구 호수)
 - **던전 (300 m)**: `sunken-grotto`, `emberdeep`, `drowned-vault`
 
 내보내기 JSON의 `village` 값에는 선택한 맵의 id가 그대로 들어갑니다. 형식은 맵 종류와 무관하게 동일합니다 (village-map.json v1).
