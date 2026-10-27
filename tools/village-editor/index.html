@@ -483,6 +483,19 @@ function computeCollisions() {
   const out = [];
   const R = (x, y, w, h) => out.push({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, w: Math.round(w * 10) / 10, h: Math.round(h * 10) / 10 });
   const ts = state.tileSizeM;
+  /* 울타리(wm_p05) 방향 인식 (마을 울타리 표준, 2026-10-27): 이웃 울타리
+     배치와의 정렬로 세로 띠(0.35 x w)/가로 띠(w x 0.35)를 정한다. 촘촘한
+     구간(간격 <= w + 0.6)은 봉합되고, 희소한 장식 울타리는 기존과 같다. */
+  const fencePts = state.placements.filter(p => p.asset.startsWith('wm_p05')).map(p => [p.x, p.y]);
+  const fenceAxes = (px, py, w) => {
+    let h = false, v = false;
+    for (const [qx, qy] of fencePts) {
+      if (qx === px && qy === py) continue;
+      if (Math.abs(qy - py) <= 0.75 && Math.abs(qx - px) > 0 && Math.abs(qx - px) <= w + 0.6) h = true;
+      if (Math.abs(qx - px) <= 0.75 && Math.abs(qy - py) > 0 && Math.abs(qy - py) <= w + 0.6) v = true;
+    }
+    return [h, v];
+  };
   for (const k in state.tiles) {
     if (state.tiles[k] !== 'water') continue;
     const [gx, gz] = k.split(',').map(Number);
@@ -504,12 +517,17 @@ function computeCollisions() {
       R(px + 0.10 * w, py - fd, 0.37 * w, fd);
       continue;
     }
+    if (a.startsWith('wm_p05')) {
+      const [hNear, vNear] = fenceAxes(px, py, w);
+      if (vNear) R(px - 0.35, py - w / 2, 0.35, w);
+      if (hNear || !vNear) R(px - w / 2, py - 0.35, w, 0.35);
+      continue;
+    }
     let fw, fd;
     if (a.startsWith('wm_b') || a.startsWith('house_') || a.startsWith('v')) { fw = 0.92 * w; fd = 0.34 * w; }
     else if (['wm_x05', 'wm_x06', 'wm_x07', 'wm_x08'].some(t => a.startsWith(t)) || a.startsWith('tree_')) { fw = Math.max(0.9, 0.16 * w); fd = 0.6; }
     else if (['wm_x19', 'wm_x20', 'wm_x21', 'wm_x22', 'wm_x23', 'wm_x24'].some(t => a.startsWith(t))) { fw = 0.85 * w; fd = 0.5 * w; }
     else if (a.startsWith('wm_p01')) { fw = 0.9 * w; fd = 0.55 * w; }
-    else if (a.startsWith('wm_p05')) { fw = w; fd = 0.35; }
     else if (COLL_THIN.some(t => a.startsWith(t))) { fw = Math.max(0.5, 0.3 * w); fd = 0.4; }
     else { fw = 0.8 * w; fd = 0.45 * w; }
     R(px - fw / 2, py - fd, fw, fd);
