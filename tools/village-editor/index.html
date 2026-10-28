@@ -483,6 +483,18 @@ function computeCollisions() {
   const out = [];
   const R = (x, y, w, h) => out.push({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, w: Math.round(w * 10) / 10, h: Math.round(h * 10) / 10 });
   const ts = state.tileSizeM;
+  /* 건물 풋프린트 실측 (크기 기준표 SCALE-STANDARD.md, 에셋 방 2026-10-27):
+     GLB 건물 wm_b01..b18은 목표 높이 기준 지면 점유 (W x D)의 중심
+     0.92배 직사각형으로 충돌을 잡는다 (클라이언트 GLB 충돌 규약과 동일).
+     남문(b15)은 통행로를 비우는 두 기둥 직사각형 (깊이 = 풋프린트 D). */
+  const FOOTPRINT = {
+    'wm_b01': [5.5, 5.5], 'wm_b02': [5.8, 5.1], 'wm_b03': [5.4, 5.2],
+    'wm_b04': [5.8, 5.3], 'wm_b05': [5.3, 5.2], 'wm_b06': [5.8, 5.3],
+    'wm_b07': [7.2, 7.1], 'wm_b08': [6.4, 6.4], 'wm_b09': [12.1, 11.8],
+    'wm_b10': [7.1, 7.2], 'wm_b11': [10.3, 9.6], 'wm_b12': [7.0, 6.7],
+    'wm_b13': [9.1, 9.2], 'wm_b14': [6.3, 6.2], 'wm_b15': [9.2, 5.1],
+    'wm_b16': [4.8, 6.9], 'wm_b17': [6.6, 6.6], 'wm_b18': [6.9, 6.4]
+  };
   /* 울타리(wm_p05) 방향 인식 (마을 울타리 표준, 2026-10-27): 이웃 울타리
      배치와의 정렬로 세로 띠(0.35 x w)/가로 띠(w x 0.35)를 정한다. 촘촘한
      구간(간격 <= w + 0.6)은 봉합되고, 희소한 장식 울타리는 기존과 같다. */
@@ -506,9 +518,15 @@ function computeCollisions() {
     if (a === 'portal_city' || a.startsWith('wm_c') || COLL_NO_SOLID.some(t => a.startsWith(t))) continue;
     if (a === 'strayer' || a === 'spitter' || a === 'brute') continue;
     if (a.startsWith('wm_b15')) {
-      const fd = 0.34 * w;
-      R(px - 0.46 * w, py - fd, 0.30 * w, fd);
-      R(px + 0.16 * w, py - fd, 0.30 * w, fd);
+      const [W, D] = FOOTPRINT['wm_b15'];
+      R(px - 0.46 * W, py - D / 2, 0.30 * W, D);
+      R(px + 0.16 * W, py - D / 2, 0.30 * W, D);
+      continue;
+    }
+    const fp = FOOTPRINT[a.slice(0, 6)];
+    if (fp) {
+      const fw = 0.92 * fp[0], fd = 0.92 * fp[1];
+      R(px - fw / 2, py - fd / 2, fw, fd);
       continue;
     }
     if (a.startsWith('v31')) {
